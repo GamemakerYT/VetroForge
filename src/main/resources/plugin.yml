@@ -1,0 +1,28 @@
+name: VetroForge
+main: com.vetroforge.FactionsPlugin
+version: 1.0.0
+api-version: '1.19'
+author: VetroForge Team
+commands:
+  lootdrop:
+    description: Manage loot drop spawn locations.
+    usage: /<command> at <x> <y> <z> [world]
+    permission: vetroforge.command.lootdrop
+  holo:
+    description: Manage faction holograms.
+    usage: /<command> <set|remove|respawn> <type>
+    permission: vetroforge.command.holo
+  skill:
+    description: View or manage player skills.
+    usage: /<command> [player]
+    permission: vetroforge.command.skill
+permissions:
+  vetroforge.command.lootdrop:
+    description: Allows usage of /lootdrop.
+    default: op
+  vetroforge.command.holo:
+    description: Allows managing holograms.
+    default: op
+  vetroforge.command.skill:
+    description: Allows checking skill progress.
+    default: true

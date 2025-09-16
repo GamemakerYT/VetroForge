@@ -1,0 +1,78 @@
+logger-prefix: "[VetroForge]"
+
+skills:
+  autoLevelAbilities: true
+  bossBarSeconds: 3
+  progressBarColor: BLUE
+  disabledWorlds: []
+  disabledSkills: []
+  disabledAbilities: []
+  xpCurve:
+    base: 125.0
+    multiplier: 1.45
+  stageRequirements:
+    assassin:
+      novice: 5
+      adept: 12
+    healer:
+      novice: 4
+    warrior:
+      veteran: 10
+    raider:
+      pillager: 8
+  abilityRequirements:
+    assassin:
+      shadowstep: 5
+      invisibility: 12
+    healer:
+      renewal: 6
+    warrior:
+      riposte: 8
+    raider:
+      siege: 10
+  xpRewards:
+    assassin:
+      kill: 55
+      backstab: 35
+    healer:
+      splash: 25
+      lingering: 20
+    warrior:
+      melee: 12
+      block: 18
+    raider:
+      obsidian: 30
+      core: 80
+
+holo:
+  refreshSeconds: 20
+  warzoneTitle: "&bWarzone Live"
+  warzoneLines:
+    - "&71. &fAlphaTeam &8- &a5.6 K/D"
+    - "&72. &fBetaSquad &8- &a4.1 K/D"
+    - "&73. &fGammaUnit &8- &a3.2 K/D"
+  positions: {}
+
+warzone:
+  world: world
+  center:
+    x: 0.0
+    y: 64.0
+    z: 0.0
+  radius: 150
+
+lootdrop:
+  doubleWeekend: false
+  lifetime: 300
+  actionbarRadius: 40
+
+scoreboard:
+  refreshTicks: 100
+  title: "&bVetroForge"
+  lines:
+    - "&7Faction: &fNone"
+    - "&7Balance: &f0"
+    - "&7Online: &f%players_online%"
+
+chat:
+  useAdventure: false
