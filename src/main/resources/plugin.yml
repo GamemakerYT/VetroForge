@@ -1,28 +1,725 @@
 name: VetroForge
-main: com.vetroforge.FactionsPlugin
 version: 1.0.0
-api-version: '1.19'
-author: VetroForge Team
+main: com.vetroforge.FactionsPlugin
+api-version: '1.21'
+author: GamemakerYT
+description: Umfangreiches Factions-Plugin mit Raid, Warzone, AI, Web-API und mehr.
+softdepend:
+  - Vault
+  - PlaceholderAPI
+  - FastAsyncWorldEdit
+  - WorldEdit
+  - WorldGuard
+  - VetroPerms
+
 commands:
-  lootdrop:
-    description: Manage loot drop spawn locations.
-    usage: /<command> at <x> <y> <z> [world]
-    permission: vetroforge.command.lootdrop
-  holo:
-    description: Manage faction holograms.
-    usage: /<command> <set|remove|respawn> <type>
-    permission: vetroforge.command.holo
+  # Cosmetics
+  cosmetics:
+    description: Öffnet das Cosmetics-Menü
+    usage: /cosmetics
+  staffcosmetics:
+    description: Öffnet Staff-Cosmetics (VetroPerms)
+    usage: /staffcosmetics
+    permission: vetroforge.staff.cosmetics
+  coins:
+    description: Zeigt deine Coins
+    usage: /coins
+  admincoins:
+    description: Coins eines Spielers setzen oder geben
+    usage: /admincoins <set|give> <spieler> <betrag>
+    permission: vetro.admin.coins
+    aliases: [coin, money]
+  # Moderation / Ranks liegen zentral bei VetroCore und VetroPerms.
+  notify:
+    description: Toggle & konfiguriere Staff-Notifications
+    usage: /notify
+    permission: vetroforge.staff.notify
+  autonotify:
+    description: Schaltet Notify beim Join automatisch an
+    usage: /autonotify
+    permission: vetroforge.staff.notify
+  tc:
+    description: Teamchat schreiben oder toggeln
+    usage: /tc [nachricht]
+    permission: vetroforge.staff.teamchat
+  staffprotect:
+    description: Verwaltet die Staff-Schutzliste
+    usage: /staffprotect <add|remove|list> [name|uuid]
+    permission: vetroforge.staff.protect
+  staffgui:
+    description: Öffnet das Staff-Center
+    usage: /staffgui
+    permission: vetroforge.staff.gui
+  linkweb:
+    description: Verknuepft deinen Minecraft-Account mit dem Web-Dashboard
+    usage: /linkweb <code>
+
+  # Shop
+  shop:
+    description: Allgemeiner Shop
+    usage: /shop [debug cactus [fix]]
+    permission: vetroforge.shop.open
+  ah:
+    description: Spieler-Auktionshaus
+    usage: /ah [sell <preis>|auction <startpreis> <minuten>|bid <id> <betrag>|search <item>|category <name>|cancel <id>]
+    aliases: [auction, auctionhouse, auctionshaus, auktionshaus, auktion]
+    permission: vetroforge.auction.open
+  adminshop:
+    description: Server-Shop administrieren und NPC setzen
+    usage: /adminshop <set|remove|spawn|info|tune|gui> [Name|buy|sell]
+    permission: vetroforge.shop.admin
+  adminah:
+    description: Auktionshaus administrieren und NPC setzen
+    usage: /adminah <set|remove|spawn|info|open|gui> [Name]
+    permission: vetroforge.auction.admin
+  sell:
+    description: Items verkaufen
+    usage: /sell
+    permission: vetroforge.shop.sell
+
+  # Faction- & Allgemein-Commands (so wie zuvor)
+  f:
+    description: Faction-Verwaltung
+    usage: /f <create|invite|accept|warp|home|disband|ally|leave|kick|promote|demote|setleader|allies|sethome|rewind>
+  frelation:
+    description: Setzt oder zeigt Faction-Relations
+    usage: /frelation [<faction> <ally|truce|neutral|enemy|war>]
+    permission: vetroforge.faction.relation
+
+
+  vworld:
+    description: VetroForge world/template admin command.
+    usage: /vworld
+    aliases:
+      - vw
+
+  raid:
+    description: Raid System
+    usage: /raid
+    aliases:
+      - raids
+      - Raid
+      - Raids
+
+  raidadmin:
+    description: Raid-Adminbefehle
+    usage: /raidadmin <start|stop|add|spec|unspec> ...
+    permission: vetroforge.raid.admin
+  energyadmin:
+    description: Raid-Energie eines Spielers verwalten
+    usage: /energyadmin <give|set> <spieler> <menge>
+    permission: vetro.energy.admin
+  raidjoin:
+    description: Raid beitreten
+    usage: /raid join
+    aliases: [rjoin]
+  maintenance:
+    description: Wartungsmodus
+    usage: /maintenance <on|off|add> [Spieler]
+  vetroforge:
+    description: VetroForge Diagnose und Config-Reload
+    usage: /vetroforge <doctor|reload>
+    aliases: [vf]
+    permission: vetroforge.admin
+  updater:
+    description: Update-Check manuell
+    usage: /updater check
+  stats:
+    description: Server-Statistiken
+    usage: /stats [Spieler]
+  vimage:
+    description: Erstellt Map-Bilder aus dem Plugin-Bildordner
+    usage: "/vimage <list|pending|approve <datei>|create <datei>|padding <datei> <breite> <höhe>>"
+    permission: vetroforge.vimage
+  spawn:
+    description: Teleportiert dich zum Spawn
+    usage: /spawn
+  hub:
+    description: Verbindet dich mit dem Lobby-Server
+    usage: /hub
+    aliases: [lobbyserver]
+  setspawn:
+    description: Setzt den Server-Spawn oder die sichere Spawn-Region
+    usage: /setspawn [pos1|pos2|info|clear]
+    permission: vetroforge.spawn.set
+  gm:
+    description: Wechselt den Gamemode
+    usage: /gm <0|1|2|3> [spieler]
+    permission: vetroforge.gamemode
+    aliases: [gamemode]
+  speed:
+    description: Setzt deine Lauf- oder Fluggeschwindigkeit
+    usage: /speed <1-10|reset>
+    permission: vetroforge.speed
+  admingui:
+    description: Öffnet das Admin-Control-Menü
+    usage: /admingui
+    aliases: [agui]
+  invsee:
+    description: Sieht das Inventar eines Online-Spielers
+    usage: /invsee <spieler>
+    permission: vetroforge.staff.invsee
+  endersee:
+    description: Sieht die Enderchest eines Online-Spielers
+    usage: /endersee <spieler>
+    aliases: [ecsee, enderchestsee]
+  guide:
+    description: Öffnet den Neue-Spieler-Guide
+    usage: /guide
+  deliveries:
+    description: Öffnet das Zustellfach für Web-Shop-Käufe
+    usage: /deliveries [admin]
+  booster:
+    description: Coin- und Raid-Booster aktivieren
+    usage: /booster [activate <coin|raid>|give <spieler> <coin|raid> [anzahl]|buy globalcoin|globalcoin]
+    aliases: [boosters]
+  clearlag:
+    description: Entfernt Boden-Items manuell oder per Countdown
+    usage: /clearlag [now|countdown]
+    permission: vetroforge.clearlag
+  rewards:
+    description: Öffnet das Reward Center
+    usage: /rewards [daily]
+    aliases: [dailyrewards]
+  daily:
+    description: Öffnet deinen Daily Reward
+    usage: /daily
+  eloshop:
+    description: Fraktionsmacht-Shop und Evo-Upgrades
+    usage: /eloshop
+    aliases: [fupgrade, factionupgrade, evoshop]
+  explosions:
+    description: Schaltet Explosionen serverweit
+    usage: /explosions <on|off|status>
+    permission: vetroforge.explosions
+  build:
+    description: Schaltet den Staff-Buildmodus
+    usage: /build [on|off|toggle|list]
+    permission: vetroforge.build.toggle
+  buildbot:
+    description: Baut kleine Admin-Templates blockweise
+    usage: /buildbot <preview|confirm|speed|stop|undo|templates>
+    permission: vetroforge.buildbot
+  fusionbooks:
+    description: Admin-GUI für Fusion-Book Dropchancen
+    usage: /fusionbooks
+    permission: vetroforge.admin
+  forge:
+    description: Öffnet die Forge zum Anwenden von Enchant-/Fusion-Büchern
+    usage: /forge
+  errors:
+    description: Plugin-Fehler anzeigen
+    usage: /errors
+    permission: vetroforge.staff.errors
+
+  spell:
+    description: Zauber wirken
+    usage: /spell <spellId>
+  story:
+    description: Story-System
+    usage: /story [gui|list|start <id>|abandon|admin <...>]
+  storyadmin:
+    description: Story-Admin
+    usage: /storyadmin <reload|complete>
+    permission: vetroforge.story.admin
+  top:
+    description: Top-Liste (Kills)
+    usage: /top [Seite]
+
+  wiki:
+    description: Ingame-Wiki
+    usage: /wiki
+  wikisearch:
+    description: Wiki-Suche
+    usage: /wikisearch <Begriff>
+  wikiadmin:
+    description: Wiki-Admin
+    usage: /wikiadmin <...>
+
+  prestige:
+    description: Prestige-System
+    usage: /prestige
+  prestigedebug:
+    description: Prestige-Adminbefehle
+    usage: /prestigedebug
+    permission: vetroforge.admin
+    permission-message: §cKeine Rechte.
+  reward:
+    description: Belohnungen
+    usage: /reward <...>
+  fmenu:
+    description: Faction-Hauptmenü
+    usage: /fmenu
+
+  ticket:
+    description: ModMail-Ticket
+    usage: /ticket <Nachricht>
+
   skill:
-    description: View or manage player skills.
-    usage: /<command> [player]
-    permission: vetroforge.command.skill
+    description: Öffnet den Skill-Tree
+    usage: /skill [assassin|healer|warrior|raider]
+    aliases: [skills]
+
+  season:
+    description: Seasons anzeigen
+    usage: /season
+
+  fshop:
+    description: Fraktions-Shop
+    usage: /fshop [list|buy <itemId>]
+  scoreboard:
+    description: Scoreboard wechseln
+    usage: /scoreboard [lobby|faction|warzone|raid]
+
+  fworld:
+    description: Faction-Welt erstellen/teleport
+    usage: /fworld [spawn|tp <Faction>|list]
+  fworldadmin:
+    description: Faction-Welt Admin
+    usage: /fworldadmin <create|load|tp|setspawn|regen|list|unload|delete> ...
+    permission: vetroforge.admin
+  warzone:
+    description: Warzone-Zone setzen
+    usage: /warzone <shape|center|radius|pos1|pos2|commit|save|info>
+
+  wzchestadmin:
+    description: Admin-Befehle für Warzone-Kisten
+    usage: /wzchestadmin <spawn|start|stop|restart|clear|reload|status>
+    permission: vetroforge.admin
+  chest:
+    description: Warzone-Chest-Spawnpunkte verwalten
+    usage: /chest <set|add|remove|list|force>
+    permission: vetroforge.chest.admin
+
+  key:
+    description: Crate öffnen
+    usage: /key
+  cratenpc:
+    description: Crate-NPC verwalten
+    usage: /cratenpc <add|remove|list>
+  cratekey:
+    description: Crate-Key vergeben
+    usage: /cratekey <spieler> [common|rare|epic|legendary|mystic] [anzahl]
+    permission: vetroforge.crates.give
+  cratehistory:
+    description: Zeigt Crate-Gewinne eines Spielers
+    usage: /cratehistory <spieler> [anzahl]
+    permission: vetroforge.crates.history
+  keytrader:
+    description: Tauscht Coins gegen Crate-Keys
+    usage: /keytrader
+    aliases: [keyshop, keyhaendler, keyhandler]
+    permission: vetroforge.keytrader.open
+  bosstrader:
+    description: Tauscht Boss-Fragmente gegen besondere Items
+    usage: /bosstrader [set|remove|list|give]
+    aliases: [bossmerchant, bosshaendler]
+    permission: vetroforge.bosstrader.open
+  iteminbox:
+    description: Öffnet deine Item-Inbox für volle Inventare
+    usage: /iteminbox
+
+  balancetune:
+    description: Führt Preis-/Economy-Tuning aus
+    usage: /balancetune
+    permission: vetroforge.balancetune
+  loot:
+    description: Loot anwenden
+    usage: /loot <context>
+  lobby:
+    description: Lobby-System
+    usage: /lobby [spawn|fly|setspawn]
+  fly:
+    description: Schaltet Fly im Lobby-Bereich um.
+    usage: /fly [on|off|toggle]
+
+  broadcast:
+    description: Broadcast senden
+    usage: /broadcast <Nachricht>
+  help:
+    description: Hilfe (Spieler)
+    usage: /help [factions|lobby|staff|admin]
+  commands:
+    description: Zeigt alle fuer dich freigeschalteten Befehle
+    usage: /commands [seite]
+  pv:
+    description: Öffnet deinen Private Vault
+    usage: /pv [nummer]
+    aliases: [privatevault, vault, tresor]
+  kit:
+    description: Rank-Kits
+    usage: /kit [starter|daily|weekly|monthly]
+  starterkit:
+    description: Holt dein einmaliges Starter-Kit
+    usage: /starterkit
+  dailykit:
+    description: Holt dein Daily Rank-Kit
+    usage: /dailykit
+  weeklykit:
+    description: Holt dein Weekly Rank-Kit
+    usage: /weeklykit
+  monthlykit:
+    description: Holt dein Monthly Rank-Kit
+    usage: /monthlykit
+  apply:
+    description: Wendet Items wie Level-XP-Flaschen direkt an
+    usage: /apply
+
+  ip:
+    description: IP anzeigen
+    usage: /ip <Spieler>
+    permission: vetroforge.staff.ip
+  onlinetime:
+    description: Online-Zeit anzeigen
+    usage: /onlinetime
+    permission: vetroforge.staff.onlinetime
+  slowchat:
+    description: Chat-Delay setzen
+    usage: /slowchat <Sekunden>
+    permission: vetroforge.chat.slow
+  playhider:
+    description: Spieler ausblenden/anzeigen
+    usage: /playhider
+    permission: vetroforge.staff.playhider
+
+  report:
+    description: Reportet einen Spieler per Index oder Text
+    usage: /report <Spieler> <GrundIndex|Grund>
+    permission: vetroforge.report
+  kdr:
+    description: Zeigt K/D
+    usage: /kdr [Spieler]
+
+  language:
+    description: Sprache setzen oder GUI öffnen
+    usage: /language [key|gui]
+    aliases: [lang, languages]
+  optimize:
+    description: Optimierungs-Tools
+    usage: /optimize
+  quest:
+    description: Daily-/Quest-Status
+    usage: /quest
+  breachcharge:
+    description: Give Breach-Charge
+    usage: /breachcharge give <player> <amount>
+    permission: vetroforge.admin
+  rune:
+    description: Runes apply
+    usage: /rune apply <type>
+  crystals:
+    description: Zeigt Kriegsbeute
+    usage: /crystals [give <spieler> <menge>]
+  topraiders:
+    description: Top Kriegsbeute GUI
+    usage: /topraiders
+  scout:
+    description: Scouting starten
+    usage: /scout <factionId> [seconds]
+  motd:
+    description: MOTD verwalten
+    usage: /motd
+    permission: vetroforge.motd.admin
+  lootdrop:
+    description: Lootdrop steuern
+    usage: /lootdrop <here|at|storm|flare|list|remove>
+    permission: vetroforge.admin
+  adminlootdrop:
+    description: Admin-Region für automatische Lootdrops setzen
+    usage: /adminlootdrop <pos1|pos2|info|clear>
+    permission: vetroforge.admin
+
+  flare:
+    description: Ruft einen Lootdrop zu dir
+    usage: /flare [tier]
+    permission: vetroforge.admin
+  chat:
+    description: Wechselt den Chat-Kanal (global/faction/ally/local/staff)
+    usage: /chat <global|faction|ally|local|staff>
+    permission: vetroforge.chat.use
+
+  toggleplayers:
+    description: Spieler im Lobby-Bereich ein-/ausblenden
+    usage: /toggleplayers
+    permission: vetroforge.lobby.toggleplayers
+
+  events:
+    description: Öffnet das Event-Board
+    usage: /events
+    permission: vetroforge.events.open
+
+  eventadmin:
+    description: Verwaltet Community-Events
+    usage: /eventadmin <list|start|stop|pause|resume|set|add|info|progress|reload>
+    permission: vetroforge.event.admin
+
+  eventadmingui:
+    description: Öffnet das Community-Event Admin-GUI
+    usage: /eventadmingui
+    permission: vetroforge.event.admin
+
+  changelog:
+    description: Zeigt den Changelog
+    usage: /changelog
+    permission: vetroforge.changelog.open
+
+  contracts:
+    description: Öffnet das Vertrags-/Auftragsmenü
+    usage: /contracts
+    permission: vetroforge.contracts.open
+
+  raidshop:
+    description: Open the Raid Shop
+    usage: /raidshop [admin]
+    permission: vetroforge.raidshop
+
+  givecustom:
+    description: Give VetroForge custom items/keys/enchants
+    permission: vetroforge.givecustom
+    usage: /<command> help
+
+  loottest:
+    description: Spawn a test loot chest at your feet
+    usage: /loottest
+    permission: vetroforge.admin
+
+  level:
+    description: Öffnet deine Level-Progression
+    usage: /level
+    aliases: [levels, lvl]
+  crateadmin:
+    description: Öffnet den Crate Reward Editor
+    usage: /crateadmin
+    permission: vetroforge.crates.admin
+
+  customitems:
+    description: Zeigt alle Custom-Items (GUI)
+    usage: /customitems list
+    permission: vetroforge.customitems
+    aliases: [citems, cilist]
+
+  item:
+    description: Custom-Item Werkbank, Kodex und Staff-Inspect
+    usage: /item <inspect|reroll|salvage|soulbind|protect|upgrade|codex>
+    permission: vetroforge.customitems
+
+  eventshop:
+    description: Tauscht Event Tokens gegen Forge-Ressourcen
+    usage: /eventshop [buy <reroll|soulbind|protection>]
+    permission: vetroforge.customitems
+
+  holo:
+    description: Verwalte VetroForge Hologramme
+    usage: /holo set <Type> | /holo remove <id|nearest> | /holo list | /holo tp <id> | /holo refresh | /holo clearall
+    permission: vetroforge.admin
+
+  energy:
+    description: Zeigt deine aktuelle Energy und den Countdown
+    usage: /energy
+    permission: vetroforge.energy
+
+  givekey:
+    description: (Debug) Gibt einem Spieler Crate-Keys
+    usage: /givekey <player> <common|rare|epic|legendary|mystic> <amount>
+    permission: vetroforge.admin
+
+  cifuse:
+    description: Fusioniert 2 gleiche Custom-Items (Debug/Staff)
+    usage: /cifuse
+    permission: vetroforge.forge
+
+  skilladmin:
+    description: Verwalte Skill- und Ability-Punkte
+    permission: vetroforge.skilladmin
+    usage: /skilladmin
+
+  admincapture:
+    description: Setzt und verwaltet die Warzone-Capture-Flagge
+    usage: /admincapture <set|list|remove|info> [Flag Name]
+    permission: vetroforge.capture.admin
+  adminboss:
+    description: Spawnt und verwaltet aktive Warzone-Bosse
+    usage: /adminboss <set|spawn|list|remove>
+    permission: vetroforge.boss.admin
+  admintraveler:
+    description: Setzt und verwaltet den wöchentlichen Reisenden Händler
+    usage: /admintraveler <set|remove|list|info|spawn>
+    permission: vetroforge.traveler.admin
+  adminfactions:
+    description: Verwaltet Factions, Mitglieder und Fraktionsmacht
+    usage: /adminfactions <list|delete|remove|elo>
+    permission: vetroforge.factions.admin
+
+  # Lokale Moderations-Fallbacks (nur aktiv, wenn integration.vetrocore.moderation=false,
+  # d.h. kein VetroCore-Proxy die Moderation übernimmt).
+  ban:
+    description: Sperrt einen Spieler
+    usage: /ban <Spieler> [Grund]
+    permission: vetroforge.staff.ban
+  tempban:
+    description: Sperrt einen Spieler befristet
+    usage: /tempban <Spieler> <Dauer> [Grund]
+    permission: vetroforge.staff.tempban
+  kick:
+    description: Kickt einen Spieler vom Server
+    usage: /kick <Spieler> [Grund]
+    permission: vetroforge.staff.kick
+  mute:
+    description: Stummt einen Spieler
+    usage: /mute <Spieler> <Dauer> [Grund]
+    permission: vetroforge.staff.mute
+  unmute:
+    description: Hebt eine Stummschaltung auf
+    usage: /unmute <Spieler>
+    permission: vetroforge.staff.unmute
+  unban:
+    description: Hebt eine Sperre auf
+    usage: /unban <Spieler>
+    permission: vetroforge.staff.unban
+  banlist:
+    description: Zeigt aktuell gesperrte Spieler
+    usage: /banlist
+    permission: vetroforge.staff.banlist
+  history:
+    description: Zeigt die Straf-Historie eines Spielers
+    usage: /history <Spieler>
+    permission: vetroforge.staff.history
+  reasons:
+    description: Zeigt vordefinierte Straf-Gründe
+    usage: /reasons
+    permission: vetroforge.staff.reasons
+  aiban:
+    description: KI-gestützte Ban-Empfehlung für einen Spieler
+    usage: /aiban <Spieler> [--apply] [--silent]
+    permission: vetroforge.staff.aiban
+  auron:
+    description: Öffnet das AURON AntiCheat-Center
+    usage: /auron [player|alerts|clear|test]
+    aliases: [anticheat, ac]
+
 permissions:
-  vetroforge.command.lootdrop:
-    description: Allows usage of /lootdrop.
+  vetroforge.*:                 { description: Alle Rechte, default: op }
+  vetroforge.admin:             { description: Adminrechte für VetroForge, default: op }
+  vetroforge.staff.*:
+    description: Alle Staff-Rechte
     default: op
-  vetroforge.command.holo:
-    description: Allows managing holograms.
-    default: op
-  vetroforge.command.skill:
-    description: Allows checking skill progress.
+    children:
+      vetroforge.staff.ban: true
+      vetroforge.staff.tempban: true
+      vetroforge.staff.kick: true
+      vetroforge.staff.mute: true
+      vetroforge.staff.unmute: true
+      vetroforge.staff.unban: true
+      vetroforge.staff.banlist: true
+      vetroforge.staff.history: true
+      vetroforge.staff.reasons: true
+      vetroforge.staff.notify: true
+      vetroforge.staff.gui: true
+      vetroforge.staff.teamchat: true
+      vetroforge.staff.protect: true
+      vetroforge.staff.audit: true
+      vetroforge.staff.cosmetics: true
+      vetroforge.staff.aiban: true
+      vetroforge.staff.help: true
+      vetroforge.staff.errors: true
+      vetroforge.staff.ip: true
+      vetroforge.staff.onlinetime: true
+      vetroforge.staff.playhider: true
+  vetroforge.staff.ban:       { default: op }
+  vetroforge.staff.tempban:   { default: op }
+  vetroforge.staff.kick:      { default: op }
+  vetroforge.staff.mute:      { default: op }
+  vetroforge.staff.unmute:    { default: op }
+  vetroforge.staff.unban:     { default: op }
+  vetroforge.staff.banlist:   { default: op }
+  vetroforge.staff.history:   { default: op }
+  vetroforge.staff.reasons:   { default: op }
+  vetroforge.staff.notify:    { default: op }
+  vetroforge.staff.gui:       { default: op }
+  vetroforge.staff.teamchat:  { default: op }
+  vetroforge.staff.protect:   { default: op }
+  vetroforge.staff.errors:    { default: op }
+  vetroforge.staff.help:      { default: op }
+  vetroforge.stats.reset:     { default: op }
+  vetroforge.crystals.admin:  { default: op }
+  vetroforge.staff.audit:     { default: op }
+  vetroforge.staff.cosmetics: { default: op }
+  vetroforge.staff.aiban:     { default: op }
+  vetroforge.staff.ip:        { default: op }
+  vetroforge.staff.onlinetime: { default: op }
+  vetroforge.staff.playhider: { default: op }
+  vetroforge.shop.open:   { default: true }
+  vetroforge.auction.open: { default: true }
+  vetroforge.auction.admin: { default: op }
+  vetroforge.shop.sell:   { default: true }
+  vetroforge.shop.tune:   { default: op }
+  vetroforge.shop.admin:  { default: op }
+  vetroforge.auction.open: { default: true }
+  vetroforge.auction.admin: { default: op }
+  vetroforge.cosmetics.open: { default: true }
+  vetroforge.report:            { default: true }
+  vetroforge.chat.slow:         { default: op }
+  vetroforge.chat.slow.bypass:  { default: op }
+  vetroforge.faction.relation:  { default: op }
+  vetroforge.raid.admin:        { default: op }
+  vetroforge.balancetune:       { default: op }
+  vetroforge.maintenance.admin: { default: op }
+  vetroforge.motd.admin:        { default: op }
+  vetroforge.loot.lockpick.bypass: { default: op }
+  vetroforge.crates.give: { default: op }
+  vetroforge.crates.history: { default: op }
+  vetroforge.keytrader.open: { default: true }
+  vetroforge.keytrader.admin: { default: op }
+  vetroforge.bosstrader.open: { default: true }
+  vetroforge.chat.use:            { default: true }
+  vetroforge.chat.channel.global: { default: true }
+  vetroforge.chat.channel.faction:
     default: true
+  vetroforge.chat.channel.ally:   { default: true }
+  vetroforge.chat.channel.local:  { default: true }
+  vetroforge.chat.channel.staff:  { default: op }
+  vetroforge.lobby.toggleplayers: { default: true }
+  vetroforge.lobby.fly:           { default: op }
+  vetro.lobby.fly:                { default: op }
+  vetro.fly:                      { default: op }
+  vetroforge.fly.faction:         { default: false }
+  vetroforge.events.open:         { default: true }
+  vetroforge.event.admin:         { default: op }
+  vetroforge.story.admin:         { default: op }
+  vetroforge.combat.bypass:       { default: op }
+  vetro.energy.admin:             { default: op }
+  vetro.admin.coins:              { default: op }
+  vetroforge.changelog.open:      { default: true }
+  vetroforge.contracts.open:      { default: true }
+  vetroforge.raidshop: { default: true }
+  vetroforge.raidshop.admin: { default: op }
+  vetroforge.givecustom: { default: op }
+  vetroforge.raid.start:
+    default: true
+
+  vetroforge.raid.join:
+    default: true
+  vetroforge.capture.admin:
+    default: op
+  vetroforge.vimage:
+    default: op
+  vetroforge.vimage.moderate:
+    default: op
+  vetroforge.boss.admin:
+    default: op
+  vetroforge.anticheat.alerts:
+    default: op
+  vetroforge.auron.view:
+    default: op
+  vetroforge.auron.alerts:
+    default: op
+  vetroforge.auron.test:
+    default: op
+  vetroforge.auron.manage:
+    default: op
+  vetroforge.auron.bypass:
+    default: op
+  vetroforge.traveler.admin:
+    default: op
+  vetroforge.factions.admin:
+    default: op

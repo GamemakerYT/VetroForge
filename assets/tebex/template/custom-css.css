@@ -1,0 +1,246 @@
+/*
+ * VetroForge Tebex Store Template
+ * Einfuegen unter Tebex -> Webstore -> Appearance -> Custom CSS.
+ */
+
+:root {
+  --vf-bg: #050507;
+  --vf-panel: rgba(16, 18, 24, 0.92);
+  --vf-panel-soft: rgba(255, 255, 255, 0.045);
+  --vf-line: rgba(255, 255, 255, 0.1);
+  --vf-text: #f7f7fb;
+  --vf-muted: #a4acb8;
+  --vf-red: #ff263f;
+  --vf-red-dark: #8f1020;
+  --vf-gold: #ffc857;
+  --vf-cyan: #68d6d2;
+}
+
+body {
+  background:
+    radial-gradient(circle at 50% -10%, rgba(255, 38, 63, 0.24), transparent 34rem),
+    radial-gradient(circle at 85% 12%, rgba(255, 200, 87, 0.14), transparent 28rem),
+    linear-gradient(180deg, #09090d 0%, #020203 100%) !important;
+  color: var(--vf-text) !important;
+}
+
+.header,
+.store-header,
+.jumbotron,
+.page-header {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.82)),
+    radial-gradient(circle at 70% 20%, rgba(255, 38, 63, 0.22), transparent 30rem) !important;
+  border-bottom: 1px solid rgba(255, 38, 63, 0.22) !important;
+}
+
+.header h1,
+.store-header h1,
+.jumbotron h1,
+.page-header h1 {
+  color: #fff !important;
+  font-size: clamp(46px, 6vw, 92px) !important;
+  font-weight: 950 !important;
+  letter-spacing: -0.07em !important;
+  text-shadow: 0 24px 80px rgba(255, 38, 63, 0.34) !important;
+}
+
+.navbar,
+.sidebar,
+.module,
+.panel,
+.card,
+.package,
+.category,
+.well {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.022)),
+    var(--vf-panel) !important;
+  border: 1px solid var(--vf-line) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 26px 90px rgba(0, 0, 0, 0.32) !important;
+  backdrop-filter: blur(14px);
+}
+
+.sidebar a,
+.nav a,
+.navbar a {
+  color: var(--vf-muted) !important;
+  font-weight: 800 !important;
+}
+
+.sidebar a:hover,
+.nav a:hover,
+.navbar a:hover,
+.active > a {
+  color: #fff !important;
+  background: rgba(255, 38, 63, 0.14) !important;
+  border-radius: 14px !important;
+}
+
+.package {
+  overflow: hidden !important;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease !important;
+}
+
+.package:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(255, 38, 63, 0.48) !important;
+  box-shadow: 0 30px 100px rgba(255, 38, 63, 0.18) !important;
+}
+
+.package img,
+.package .image img,
+.package-image img {
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  object-fit: cover !important;
+  border-radius: 18px !important;
+}
+
+.package h3,
+.package-name,
+.product-title {
+  color: #fff !important;
+  font-size: 24px !important;
+  font-weight: 950 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.price,
+.package-price,
+.product-price {
+  color: var(--vf-gold) !important;
+  font-weight: 950 !important;
+  font-size: 22px !important;
+}
+
+.btn,
+.btn-primary,
+.btn-success,
+button[type="submit"],
+.button {
+  color: #fff !important;
+  background: linear-gradient(135deg, var(--vf-red), var(--vf-red-dark)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 16px !important;
+  font-weight: 950 !important;
+  letter-spacing: -0.02em !important;
+  box-shadow: 0 18px 46px rgba(255, 38, 63, 0.22) !important;
+  transition: transform 0.16s ease, box-shadow 0.16s ease !important;
+}
+
+.btn:hover,
+.btn-primary:hover,
+.btn-success:hover,
+button[type="submit"]:hover,
+.button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 24px 70px rgba(255, 38, 63, 0.32) !important;
+}
+
+.vf-hero,
+.vf-section,
+.vf-rank-grid,
+.vf-info-grid {
+  color: var(--vf-text);
+}
+
+.vf-hero {
+  display: grid;
+  gap: 18px;
+  padding: 32px;
+  border: 1px solid rgba(255, 38, 63, 0.24);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(255, 38, 63, 0.24), transparent 25rem),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025));
+}
+
+.vf-kicker {
+  display: inline-flex;
+  width: fit-content;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 38, 63, 0.38);
+  border-radius: 999px;
+  color: #ffd9df;
+  background: rgba(255, 38, 63, 0.12);
+  font-weight: 900;
+}
+
+.vf-hero h2,
+.vf-section h2 {
+  margin: 0;
+  font-weight: 950;
+  letter-spacing: -0.06em;
+}
+
+.vf-hero h2 {
+  font-size: clamp(34px, 5vw, 70px);
+}
+
+.vf-section h2 {
+  font-size: 36px;
+}
+
+.vf-muted {
+  color: var(--vf-muted);
+}
+
+.vf-actions,
+.vf-pills,
+.vf-info-grid,
+.vf-rank-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.vf-pill,
+.vf-info,
+.vf-rank {
+  border: 1px solid var(--vf-line);
+  border-radius: 18px;
+  background: var(--vf-panel-soft);
+}
+
+.vf-pill {
+  padding: 8px 12px;
+  color: var(--vf-muted);
+  font-weight: 800;
+}
+
+.vf-info,
+.vf-rank {
+  flex: 1 1 220px;
+  padding: 18px;
+}
+
+.vf-rank strong {
+  display: block;
+  color: #fff;
+  font-size: 20px;
+}
+
+.vf-rank span {
+  color: var(--vf-gold);
+  font-weight: 950;
+}
+
+.vf-alert {
+  border: 1px solid rgba(255, 200, 87, 0.35);
+  border-radius: 20px;
+  padding: 16px;
+  color: #ffe8b7;
+  background: rgba(255, 200, 87, 0.09);
+}
+
+@media (max-width: 760px) {
+  .vf-hero {
+    padding: 22px;
+  }
+
+  .package {
+    border-radius: 20px !important;
+  }
+}

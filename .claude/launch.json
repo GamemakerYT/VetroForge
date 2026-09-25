@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "web-dashboard",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "cd /Users/castelijn/Desktop/VetroForgeFinal/web-dashboard && exec npx next dev -p 3000"],
+      "port": 3000
+    }
+  ]
+}

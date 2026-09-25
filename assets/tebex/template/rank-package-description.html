@@ -1,0 +1,38 @@
+<!--
+  Template fuer einzelne Rank-Packages.
+  Platzhalter ersetzen:
+  {{RANK}}, {{PRICE}}, {{COMMAND_RANK}}, {{PV}}, {{KIT}}, {{PERKS}}
+-->
+
+<section class="vf-hero">
+  <span class="vf-kicker">{{RANK}} Rank</span>
+  <h2>{{RANK}} fuer VetroForge Factions</h2>
+  <p class="vf-muted">
+    Schalte {{RANK}} frei und erhalte faire QoL- und Cosmetic-Vorteile fuer deine Season.
+    Keine Pay-to-win Kampfwerte, keine unfairen Damage-Boni.
+  </p>
+  <div class="vf-pills">
+    <span class="vf-pill">{{PRICE}}</span>
+    <span class="vf-pill">{{PV}}</span>
+    <span class="vf-pill">{{KIT}}</span>
+  </div>
+</section>
+
+<section class="vf-section">
+  <h2>Enthalten</h2>
+  <div class="vf-info-grid">
+    {{PERKS}}
+  </div>
+</section>
+
+<section class="vf-section">
+  <h2>Lieferung</h2>
+  <p class="vf-muted">
+    Nach dem Kauf wird dein Rank automatisch auf dem Server gesetzt. Bitte gib deinen Minecraft-Namen korrekt ein.
+  </p>
+  <code class="command-box">vperms user {username} setrank {{COMMAND_RANK}}</code>
+</section>
+
+<div class="vf-alert">
+  Digitale Inhalte koennen nach erfolgreicher Freischaltung nicht einfach zurueckgegeben werden. Bei Problemen hilft dir der Support.
+</div>

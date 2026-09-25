@@ -1,0 +1,1151 @@
+{
+  "updated": "2026-09-25",
+  "legend": {
+    "erledigt": "Stufe abgeschlossen",
+    "teilweise": "Teilweise abgeschlossen oder nur oberflaechlich geprueft",
+    "offen": "Noch nicht geprueft / noch zu tun",
+    "-": "Nicht zutreffend fuer diesen Bereich"
+  },
+  "stufen": [
+    "geplant",
+    "implementiert",
+    "getestet",
+    "gebaut",
+    "geladen",
+    "ingame_abgenommen"
+  ],
+  "items": [
+    {
+      "id": "vpn-exempt",
+      "bereich": "VPN-Exempt-Liste (/vpnexempt)",
+      "repo": "VetroCore",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "VpnExemptService.java",
+        "VpnExemptCommand.java",
+        "SecurityModule.java"
+      ],
+      "geplant": "erledigt",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Kein echter Test mit /vpnexempt add/remove + VPN-Verbindung durchgefuehrt.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "report-threat-score",
+      "bereich": "Report + Threat-Score-Verknuepfung",
+      "repo": "VetroCore",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "ReportCommand.java"
+      ],
+      "geplant": "erledigt",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Threat-Score-Anzeige im Staff-Report-Alert noch nicht an einem echten Fall gesehen.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "ban-appeal",
+      "bereich": "Ban-Appeal ueber Web (Formular + Staff-Queue)",
+      "repo": "VetroForgeFinal + web-dashboard",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "WebApiManager.java",
+        "BanAppealPanel.tsx",
+        "BanAppealQueue.tsx"
+      ],
+      "geplant": "erledigt",
+      "implementiert": "erledigt",
+      "getestet": "teilweise",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Kein echter Appeal-Durchlauf (einreichen -> Staff sieht ihn -> annehmen/ablehnen -> Spieler entbannt) live getestet.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "displayitem-chat",
+      "bereich": "[item] Chat-Token fuer CustomItems/Crystals",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "ChatListener.java"
+      ],
+      "geplant": "erledigt",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Hover-Tooltip mit Lore fuer ein echtes Custom-Item/Crystal noch nicht ingame gesehen.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "punish-self-echo",
+      "bereich": "Doppelte Ban/Mute-Eintraege (Redis-Self-Echo-Fix)",
+      "repo": "VetroCore",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "PunishModule.java (PunishSubscriber/Publisher entfernt)"
+      ],
+      "geplant": "erledigt",
+      "implementiert": "erledigt",
+      "getestet": "teilweise",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "teilweise",
+      "risiken": "Keine doppelten Eintraege mehr beobachtet, aber kein systematischer Vorher/Nachher-Test mit mehreren Bans.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "module-boot-order",
+      "bereich": "VetroCore Boot-Fehler (NotifyService/Modul-Reihenfolge)",
+      "repo": "VetroCore",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "ModuleManager.java",
+        "VetroCore.java"
+      ],
+      "geplant": "erledigt",
+      "implementiert": "erledigt",
+      "getestet": "erledigt",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "erledigt",
+      "risiken": "Sauberer Neustart mehrfach beobachtet, keine offenen Punkte.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "faction-world-reuse-exploit",
+      "bereich": "Faction-Welt-Wiederverwendungs-Exploit (disband+recreate)",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "WorldManager.java",
+        "FactionCommand.java",
+        "AdminFactionsCommand.java"
+      ],
+      "geplant": "erledigt",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Kritisch: konkreter Test noch offen (Faction disbanden, gleichen Namen neu gruenden, pruefen dass NICHT die alte Welt/Bauten kommen).",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "faction-world-creation-ux",
+      "bereich": "Faction-Welt-Erstellung: Auto /f home, Loading-Titel, Chat-Message",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "WorldManager.java"
+      ],
+      "geplant": "erledigt",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Neues Loading-Titel-Design und die vereinfachte Chat-Message noch nicht ingame gesehen.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "maintenance-rework",
+      "bereich": "Maintenance UX/Bugfixes (unbegrenzte Dauer, Chat-Listener, MOTD-Sprache, Dopplung mit Factions)",
+      "repo": "VetroCore + VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "MaintenanceCommand.java",
+        "MaintenanceMessages.java",
+        "MaintenanceChatListener.java",
+        "MotdManager.java",
+        "FactionsPlugin.java (externalMaintenanceActive)"
+      ],
+      "geplant": "erledigt",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Unbegrenzte-Dauer-Warnung und die Zusammenlegung der beiden Wartungssysteme noch nicht live mit /maintenance durchgespielt.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "recovery-31-classes",
+      "bereich": "31 wiederhergestellte Live-Features (Booster, ClearLag, DailyRewards, EnderSee, FactionUpgrade, FusionBooks, Guide, InvSee, Speed, SellShop, ConfigDoctor, LegacyEntityCleaner, VaultReceipt, ItemSafety, CustomEnchantBookApply, BuildVersionJoin, DailyRewardJoin, BoosterManager, BuildBotService, BuildModeService, ClearLagService, DailyRewardService, ExplosionToggle, OwnerProtection, RegionDebug, FrostalCoreGenerator, VetroMapGenerator, Branding, WarzoneActivityHeatmap, DeliveryInventory/WebDeliveryService)",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude (Quelle: Codex factions-repair, Stand Sep-12-Live-Jar)",
+      "dateien": [
+        "siehe Commit d48ef36"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "teilweise",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Automatischer Wiring-Audit (24.09. abends) fand 27/31 Klassen sauber verdrahtet, keine stillen Fehler in plugin.yml/Command-Registrierung. LeaderboardService bleibt unbenutzt (unkritisch, ueberholt durch HoloLeaderboardService/TopCornerManager), SellShopActions ist totes Duplikat von ShopListener (unkritisch), RegionDebugService.toggle() ist unerreichbar (Admin-Debug-Tool, unkritisch). Ansonsten weiterhin: keine der 31 Funktionen einzeln ingame durchgespielt.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "deliveries-command-gap",
+      "bereich": "/deliveries Command fehlte in plugin.yml (echter Bug, gefunden durch Wiring-Audit)",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "DeliveriesCommand.java (nachtraeglich aus factions-repair kopiert)",
+        "plugin.yml",
+        "FactionsPlugin.java"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "GuideCommand und WebDeliveryService verwiesen beide auf /deliveries, das nie registriert war -> 'Unknown command' beim Klick auf 'Zustellfach' im /guide-Menu oder bei vollem Inventar waehrend einer Web-Shop-Lieferung. Live deployed (Jar-Hash lokal/remote geprueft), aber noch nicht mit echtem Spieler ingame getestet. Beim Deploy: Stop-Timeout-Bug im Script trat erneut auf, Server war ~7min offline bis manueller Neustart.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "vetroperms-deploy",
+      "bereich": "VetroPerms Deploy",
+      "repo": "VetroPerms",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "-"
+      ],
+      "geplant": "erledigt",
+      "implementiert": "-",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Rechte/Ranks nach dem Deploy nicht einzeln nachgeprueft.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "nextjs-cve-patch",
+      "bereich": "Next.js Sicherheitspatch (CVE-Cluster, RCE)",
+      "repo": "web-dashboard",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "package.json"
+      ],
+      "geplant": "erledigt",
+      "implementiert": "erledigt",
+      "getestet": "erledigt",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "-",
+      "risiken": "npm audit clean, Dashboard laeuft nach Patch stabil. Alte Malware-Spuren in PM2-Logs waren historisch, nicht aktiv.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "aikey-leak",
+      "bereich": "SICHERHEIT: Geleakter OpenAI-Key in Git-Historie (aikey)",
+      "repo": "VetroForgeFinal (+ geteiltes Repo VetroForgeNET)",
+      "verantwortlich": "Claude (Fund), User (Rotation noetig)",
+      "dateien": [
+        "aikey"
+      ],
+      "geplant": "-",
+      "implementiert": "offen",
+      "getestet": "-",
+      "gebaut": "-",
+      "geladen": "-",
+      "ingame_abgenommen": "-",
+      "risiken": "Key noch nicht rotiert (Stand 24.09. Abend). Danach: Datei aus Arbeitsbaum entfernen und Historie im geteilten Repo bereinigen.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "mapbuilder-spawn",
+      "bereich": "VetroMapBuilder Spawn-Redesign (Frost/Feuer, Vulkan, Galerie)",
+      "repo": "Documents/VetroForge/map-builder (separates Projekt, nicht in Claude-Repos)",
+      "verantwortlich": "Codex",
+      "dateien": [
+        "VetroMapBuilder-3.2.2-preview.jar"
+      ],
+      "geplant": "erledigt",
+      "implementiert": "erledigt (lokal bei Codex)",
+      "getestet": "teilweise (Abnahmebericht 3.2.2-preview, keine Live-Pruefung)",
+      "gebaut": "erledigt",
+      "geladen": "offen (Live-Server laeuft noch 3.0.0, nicht 3.2.2-preview)",
+      "ingame_abgenommen": "offen",
+      "risiken": "Live-Server hat eine aeltere Version als der neueste lokale Preview-Build von Codex. Noch nicht abgestimmt, ob 3.2.2-preview ueberhaupt deployt werden soll.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "vetrobuild-warzone",
+      "bereich": "VetroBuild: Blender-Bauplan fuer Warzone/Spawn (2400x3000)",
+      "repo": "Desktop/VetroBuild (separates Projekt, nicht in Claude-Repos)",
+      "verantwortlich": "Codex / User",
+      "dateien": [
+        "VetroForge_2400x3000_20260913/VF/manifest.json"
+      ],
+      "geplant": "erledigt",
+      "implementiert": "offen",
+      "getestet": "-",
+      "gebaut": "erledigt (Plugin laeuft live, v2.1.0)",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "/vbuild status zeigt 'Kein aktiver Auftrag, Undo nicht vorhanden' fuer den bekannten Spawn-Plan. Unklar ob die Struktur je gebaut wurde oder die Job-Historie geloescht ist. Muss ingame geprueft werden -- vermutlich Ursache fuer 'Warzone sieht nicht mehr so geil aus'.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "errors-command",
+      "bereich": "/errors Fehleruebersicht (Ingame-GUI + Web-Admin)",
+      "repo": "Documents/VetroForge (factions-repair, nicht in Claude-Repos integriert)",
+      "verantwortlich": "Codex",
+      "dateien": [
+        "ErrorHandlerManager.java",
+        "ErrorsCommand.java",
+        "system-errors.php"
+      ],
+      "geplant": "erledigt",
+      "implementiert": "erledigt (lokal bei Codex, Release 23.09.)",
+      "getestet": "teilweise (isolierte PHP-Tests, keine Live-Pruefung)",
+      "gebaut": "erledigt",
+      "geladen": "offen",
+      "ingame_abgenommen": "offen",
+      "risiken": "Von Codex selbst als 'nicht hochgeladen, nicht live geladen, keine Ingame-Abnahme' markiert. Noch nicht mit Claudes Recovery-Stand abgeglichen.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "research-vault-trade-auction",
+      "bereich": "Faction Research/Vault (neu), Trade, Auction-Buy-Orders, AURON-Anticheat",
+      "repo": "Documents/VetroForge/factions-repair (nicht in Claude-Repos integriert)",
+      "verantwortlich": "Codex",
+      "dateien": [
+        "FactionResearchMenu.java",
+        "FactionVaultService.java",
+        "TradeService.java",
+        "AuctionBuyOrderService.java",
+        "AuronAntiCheatService.java"
+      ],
+      "geplant": "erledigt",
+      "implementiert": "erledigt (lokal bei Codex)",
+      "getestet": "offen",
+      "gebaut": "offen",
+      "geladen": "offen",
+      "ingame_abgenommen": "offen",
+      "risiken": "War nicht Teil vom Sep-12-Live-Jar, also nie live bestaetigt. Bewusst ausserhalb der heutigen Recovery gelassen -- noch keine Entscheidung ob/wann integrieren.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "website-portal-relaunch",
+      "bereich": "Website/Portal-Relaunch (Branding, Profil, Community, Tebex)",
+      "repo": "Documents/VetroForge (verschiedene Quellen)",
+      "verantwortlich": "Codex",
+      "dateien": [
+        "-"
+      ],
+      "geplant": "erledigt (grosser Wunschkatalog dokumentiert)",
+      "implementiert": "teilweise",
+      "getestet": "offen",
+      "gebaut": "offen",
+      "geladen": "offen",
+      "ingame_abgenommen": "-",
+      "risiken": "Sehr grosser Scope, viele Einzelentscheidungen noch offen (siehe Handover Abschnitt 21). Noch nicht priorisiert.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "report-gui-uuid-bug",
+      "bereich": "Report-GUI zeigte UUID statt Spielername (Protokoll-Bug VetroCore -> Factions)",
+      "repo": "VetroCore + VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "StaffGuiService.java"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "VetroCore schrieb Reporter-UUID + targetName (2 Felder), Factions las nur 1 Feld und interpretierte die UUID als Spielername. Fix: Factions liest jetzt beide Felder in der richtigen Reihenfolge. Live deployed, noch nicht mit echtem Report getestet.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "f-sethome-outside-faction-world",
+      "bereich": "/f sethome war ueberall moeglich (auch am Spawn), nicht nur in eigener Faction-Welt",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "FactionCommand.java",
+        "lang/*.yml (neuer Key home.wrong_world)"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Kein Weltcheck vorhanden -- Leader/Officer konnte das Faction-Home ueberall setzen, auch am Spawn. Fix prueft jetzt gegen WorldManager.worldNameForFaction(f). Live deployed, noch nicht getestet.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "live-test-feedback-2026-09-24",
+      "bereich": "Restliste aus dem grossen Live-Test-Feedback (25+ Punkte) -- Raid-Teil und GUI-Polish-Teil sind ausgelagert und erledigt, das hier ist der echte Rest",
+      "repo": "VetroForgeFinal + VetroCore",
+      "verantwortlich": "Claude (Triage), User (Prioritaet)",
+      "dateien": [
+        "-"
+      ],
+      "geplant": "erledigt (vom Nutzer beim Live-Test aufgeschrieben)",
+      "implementiert": "offen",
+      "getestet": "-",
+      "gebaut": "-",
+      "geladen": "-",
+      "ingame_abgenommen": "-",
+      "risiken": "Erledigt (in eigenen Dashboard-Eintraegen): Join-Message-/Nametag-Farbe, Redis-Spam, Auto-Maintenance-bei-Crash, Sideboard, komplettes Raid-System (Leben/Allianz/Rewind/Regen-Walls), /top /raid /skill /forge /lootdrop, AURON-Rebranding fuer Ban/Mute/Kick/Report. NIE ANGEFANGEN, nach wie vor offen: Encoding (ae/ue/oe fehlen ueberall, braucht konkretes Repro vom Nutzer), fehlende Texturen (Varyn/Crystal-NPC existiert nicht, Steve-Koepfe statt echter Skins in /f und /ah), Disparity-System (Mobs/Spawns/Optik insgesamt ueberholt, nicht nur der Spawn-Ausschluss), UI-Ueberarbeitung fuer /crystals /energy /commands /help /adminboss /chest und Hoverchat, Maintenance-GUI, kompletter Boss-Overhaul (Name/Spawn/Commands/Effekte), Runen-GUI, Warzone-Death-Loss-Regel (Item-Verlust nur bei aktivem Combat-Log, mit eigenem Dauer-Command), 'zu viele Aktionen bei /ban' auf der Factions-Seite pruefen, Maintenance/Restart-Kickscreen-Redesign (Wortlaut noch mit Nutzer klaeren, Englisch vs Deutsch). Ausserhalb Java-Scope: Spawn-Punkt braucht /setspawn ingame, VetroBuild-Warzone-Struktur nie bestaetigt fertig gebaut.",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "join-nametag-rank-color",
+      "bereich": "Join-Nachricht und Overhead-Nametag: Spielername war hartkodiert Gelb/Weiss statt Rang-Farbe",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "StaffJoinListener.java",
+        "NametagTabManager.java",
+        "scripts/reference/tablist-parity.sha256"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "NametagTabManager hatte bereits eine rankColor()-Methode, die nie aufgerufen wurde -- t.color() war hart auf WHITE gesetzt. Live deployed, noch nicht angeschaut.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "redis-console-spam",
+      "bereich": "Redis-Metriken spammten die Velocity-Konsole voll (3700+ Zeilen/Session)",
+      "repo": "VetroCore",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "RedisModule.java"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "-",
+      "gebaut": "erledigt",
+      "geladen": "offen",
+      "ingame_abgenommen": "-",
+      "risiken": "System.out.println alle 5s mit EPS/total/failed, direkt aus einem Debug-Thread. Entfernt; RedisMetrics bleibt als Service fuer On-Demand-Abfragen. Noch nicht deployed (Passwort-Restart noetig, User muss das selbst machen).",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "auto-maintenance-crash",
+      "bereich": "Automatische Wartung bei Server-Crash aktiviert",
+      "repo": "VetroCore",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "vetrocore.yml (maintenance.auto.crash-enable)",
+        "AutoMaintenanceCrashListener.java (entfernt, tot/ueberholt)",
+        "maintenance.yml (entfernt, nie geladen)"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "-",
+      "gebaut": "erledigt",
+      "geladen": "erledigt (Config direkt auf dem Server angepasst)",
+      "ingame_abgenommen": "offen",
+      "risiken": "MaintenanceHeartbeatMonitor war schon voll fertig verdrahtet, nur per Flag deaktiviert. Flag jetzt an, Config-Aenderung ist sofort aktiv. Der eigentliche VetroCore-Code-Fix (Redis-Spam) braucht noch den Passwort-Restart vom Nutzer.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "top-gui-uuid-fix",
+      "bereich": "/top zeigte rohe UUID statt Spielername",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "TopGuiManager.java",
+        "WebApiManager.java (lookupCachedNames)"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "offen",
+      "ingame_abgenommen": "offen",
+      "risiken": "Async Batch-Lookup gegen player_cache als Fallback wenn Bukkits OfflinePlayer-Cache keinen Namen kennt. Noch nicht deployed.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "admincoins-command",
+      "bereich": "/admincoins set|give <spieler> <betrag>",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "AdminCoinsCommand.java"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "offen",
+      "ingame_abgenommen": "offen",
+      "risiken": "Duenner Wrapper um die bereits existierenden /coins add|remove|set Admin-Subcommands (gleiche Permission vetro.admin.coins). Noch nicht deployed.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "deploy-script-pgrep-selfmatch",
+      "bereich": "KRITISCH: deploy-factions.sh Stop-Erkennung war strukturell kaputt (pgrep matchte sich selbst)",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "deploy-factions.sh"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "erledigt (live reproduziert und verifiziert)",
+      "gebaut": "-",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "-",
+      "risiken": "pgrep -f 'java .*Paper.jar' matchte die eigene bash -c Elternprozess-Kommandozeile (der komplette remote_exec-Skripttext wird als ein bash -c String an den Server geschickt). Dadurch schlug die Stop-Erkennung IMMER fehl, unabhaengig vom echten Server-Zustand -- und blockierte danach auch start.sh's eigenen Duplicate-Check auf die gleiche Art, was den Server bei diesem Vorfall ca. 10 Minuten offline hielt bis ich den haengenden Wrapper-Prozess manuell gekillt habe. Jetzt auf screen-list-Erkennung umgestellt (gleiche Methode wie known_good_restore()), Root-Cause behoben, nicht nur das Timeout hochgesetzt.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "gui-polish-batch-2026-09-24",
+      "bereich": "[ERLEDIGT, siehe gui-polish-round-1 und gui-polish-round-2] Urspruengliche GUI-Politur-Sammlung -- nur noch als Referenz auf die urspruengliche Nutzerliste stehen gelassen",
+      "repo": "VetroForgeFinal + VetroCore",
+      "verantwortlich": "User (Feedback), Claude (Umsetzung)",
+      "dateien": [
+        "-"
+      ],
+      "geplant": "erledigt (vom Nutzer aufgeschrieben)",
+      "implementiert": "erledigt",
+      "getestet": "-",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "-",
+      "risiken": "Alle Punkte dieser Liste sind in gui-polish-round-1 (Lootdrop/Shop/RaidShop/Booster/Faction-Prompt) und gui-polish-round-2 (/top /raid /skill /forge, danach /pv-Titel + AURON-Rebranding separat) umgesetzt. /auron als voller AntiCheat-Command bewusst NICHT gebaut, siehe research-vault-trade-auction-Eintrag.",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "protection-system-spec-2026-09-24",
+      "bereich": "Vollstaendige Bau-/PvP-/Schutz-Spezifikation (Faction-Zonen, Raider-Grenzen, Warzone-PvP, Spawn-Schutz, TNT, Disparity-Mob-Spawns, Scouting-Modus)",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "FactionMenuManager.java",
+        "WarzoneDamageRulesListener.java",
+        "LobbyProtectionListener.java",
+        "RaidBuildProtectionListener.java",
+        "SpawnWarzoneTntListener.java (neu)"
+      ],
+      "geplant": "erledigt (detaillierte Spec vom Nutzer)",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Ueberraschung bei der Umsetzung: der grosse Teil der Spec war schon fertig und aktiv -- Bauen/Abbauen nur in eigener Faction-Zone bzw. Raider-Grenze (RaidBuildProtectionListener), PvP nur Warzone/Faction-Welten (WarzoneDamageRulesListener.isPvpZone), kein Schaden im Spawn (LobbyProtectionListener.onDamage), Disparity-Mobs koennen den Spawn nicht betreten (dreifache Mob-Purge in LobbyProtectionListener). Tatsaechlich gefehlt haben nur: Team-Kill/Allianz-Toggle (neu im /f-GUI unter Rollenrechte->Leader), /build als echter Admin-Bypass (BuildModeService.hasAccess existierte, hatte aber ueberall null Aufrufer), Drops in Scouting blockieren statt in Spawn (war genau andersrum), und TNT-Zuendung in Spawn/Warzone (komplett neuer Listener). Noch nicht ingame getestet.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "gui-polish-round-1",
+      "bereich": "Erste Runde GUI-Politur aus dem gui-polish-batch: /f-Erstellungs-Prompt, Shop-Namen/IDs, Booster/RaidShop-Lore, /admintraveler",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "FactionMenuManager.java",
+        "AdminTravelerCommand.java",
+        "ShopGui.java",
+        "RaidShopGui.java",
+        "BoosterCommand.java"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "offen",
+      "ingame_abgenommen": "offen",
+      "risiken": "6 Teilfixes: /f ohne Faction zeigt jetzt einen zentrierten Gruenden/Beitreten-Hinweis statt des vollen (leeren) Menues; GUI-Titel jetzt 'Faction >> Name'; /admintraveler ohne Subcommand spawnt jetzt sofort statt nur Usage zu zeigen; Shop-Items/Kategorien ohne konfigurierten Namen zeigen jetzt einen lesbaren Materialnamen statt der rohen id; rohe 'ID:'-Zeile entfernt; RaidShop-Reward-Namen humanisiert (ENDER_PEARL -> Ender Pearl); Booster-Status von einer gequetschten Zeile auf drei aufgeteilt, Tebex-Admin-Commands nur noch fuer vetroforge.booster.admin sichtbar. Live deployed. Rest der Liste (Lootdrop/Skill/Top/Raid-Redesign, /forge) noch offen.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "pv-title-and-auron-rebrand",
+      "bereich": "/pv-GUI-Titel restyled, Ban/Unban/Mute/Unmute/Kick/Report/Reasons von VetroForge auf AURON umbenannt",
+      "repo": "VetroForgeFinal + VetroCore",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "PrivateVaultService.java",
+        "VetroUI.java (auronMsg)",
+        "BanCommand.java",
+        "UnbanCommand.java",
+        "MuteCommand.java",
+        "UnmuteCommand.java",
+        "KickCommand.java",
+        "BanListCommand.java",
+        "HistoryCommand.java",
+        "PunishReasonsCommand.java",
+        "ReportCommand.java",
+        "ReportPluginMessageListener.java"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "teilweise (Factions-Seite deployed, VetroCore-Seite wartet auf Passwort-Restart)",
+      "ingame_abgenommen": "offen",
+      "risiken": "AURON-Prefix bewusst nur fuer Ban/Unban/Mute/Unmute/Kick/Report/Reasons, NICHT global -- Maintenance/Notify/Staff-Tools bleiben VetroForge-gebrandet. /auron als eigener AntiCheat-Command (Speed/Reach/KillAura-Erkennung) bewusst NICHT gebaut -- braucht AuronAntiCheatService + AntiCheatBridge aus factions-repair, nie live getestet, verdient eigene Session statt Mitnahme in diesem Rebrand.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "gui-polish-round-2",
+      "bereich": "Zweite Runde: Lootdrop-Branding+Commands, /top/Raid/Skill-Redesign, neues /forge",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "ActiveDrop.java",
+        "LootChestUX.java",
+        "LootDropManager.java",
+        "LockpickGui.java",
+        "LootDropCommand.java",
+        "TopGuiManager.java",
+        "RaidGui.java",
+        "SkillsGui.java",
+        "ForgeGui.java (neu)",
+        "ForgeCommand.java (neu)"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Lootdrop sagt ueberall 'Lootdrop' statt 'VetroForge' (Label, Kiste, Lockpick-GUI, Command-Header), plus /lootdrop list und /lootdrop remove <id>. /top: Gold/Silber/Bronze-Farben fuer Top 3. /raid: roter Rahmen + Header-Item. /skill: Rahmen, Header, fester Ability-Grid statt Wrap-Logik -- Click-Handling ist material-/text-basiert, nicht slot-basiert, daher risikoarm umstrukturierbar. /forge: komplett neue GUI, dupliziert aber KEINE Logik -- nutzt die bereits bestehende CustomEnchantBookApplyListener-Mechanik (Buch auf Item ziehen) unveraendert weiter, nur mit Rahmen/Beschriftung drumherum. Das ist die komplette gui-polish-batch-Liste vom Nutzer, alles live deployed, noch nicht ingame getestet.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "sidebar-reference-match",
+      "bereich": "Standard-Sideboard (Rank/Faction/Elo/Coins/Crystals) an Referenz-Screenshot angepasst",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "SidebarScoreboardManager.java"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "showLobbyBoard (das Standard-Board ausserhalb Raid/Warzone) hatte weder Rank noch Faction-Elo, dafuer eine Money-Zeile die im Referenz-Screenshot nicht vorkommt, und nutzte das generische addPair-Format ohne Icons. Die ICON_RANK/ICON_FACTION/ICON_ELO/ICON_COINS/ICON_CRYSTAL-Konstanten und getRankName()/getElo() existierten schon im selben File, wurden hier nur nie benutzt. Jetzt Rank -> Faction -> Faction Elo -> Coins -> Faction Crystals in der Reihenfolge und Optik vom Screenshot.",
+      "aktualisiert": "2026-09-24"
+    },
+    {
+      "id": "raid-system-audit-2026-09-24",
+      "bereich": "Raid-System-Rebuild (eigene Session): Leben-System, Allianz-Verteidigung, Faction-Rewind, Regen-Walls erledigt; Loot-Vorschau vom Nutzer bewusst verworfen",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "RaidManager.java",
+        "RaidLivesListener.java (neu)",
+        "RaidJoinService.java",
+        "WarzoneDamageRulesListener.java",
+        "RaidCommand.java",
+        "FactionCommand.java",
+        "ExplosionListener.java",
+        "RegenWallListener.java (neu)"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt (4 von 5 Teilfeatures, 5. bewusst nicht gewollt)",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "ERLEDIGT: Leben-System (3 Tode = raus, gilt fuer Angreifer+Verteidiger+Allianz-Verteidiger, PvP-Sperre auch nach Zurueck-Rennen), Allianz-Verteidigung (/raid defend, eigener allyDefenders-Set statt Wiederbelebung des fehlerhaften alten RaidJoinListener), Faction-Rewind (/f rewind confirm, kauft nur die waehrend des Raids zerstoerten Obsidian-Bloecke zurueck, Truheninhalte bleiben beim Angreifer, 24h-Fenster), Regen-Walls (additive Simulation: nicht-Obsidian-Waende mit Wasserquelle daneben kommen nach kurzer Zeit zurueck, ausser die Quelle wurde vorher entfernt -- Sandstacking-Gegenspiel -- laesst das bestehende Obsidian-HP-System unangetastet, bewusst NICHT ueber /f rewind rueckgaengig machbar). NICHT GEBAUT: Loot-/Verteidigungs-Vorschau beim Scouten -- User hat sich nach Abwaegen (voller Block-Scan zu teuer, einfache Chest-/Obsidian-Zaehlung als Alternative angeboten) bewusst dagegen entschieden, bleibt aus. Nebenbei aufgeraeumt: RaidWorldBuildProtectionListener und der alte RaidJoinListener geloescht (beide bestaetigt tot/ueberholt), ScoutingService NICHT geloescht -- laeuft tatsaechlich live ueber /scout, war ein Fehler im ersten Audit.",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "steve-heads-fix-2026-09-25",
+      "bereich": "Steve-Koepfe statt echter Skins: /f gepruefe (bereits korrekt), /ah gefixt",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "AuctionHouseManager.java"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "/f: FactionMenuManager.profileHead() ruft schon meta.setOwningPlayer(player) korrekt auf -- kein Codefehler gefunden, ein evtl. verbleibendes Steve-Kopf-Problem dort waere ein Mojang-Sessionserver-Timing-Artefakt, kein Bug. /ah: der 'Meine Auktionen'-Filterbutton in Slot 44 nutzte ein reines Material.PLAYER_HEAD ohne Owning-Player -- neue myAuctionsButton()-Methode mit SkullMeta.setOwningPlayer() behebt das. Noch kein Ingame-Test mit echtem Spieler-Skin.",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "booster-manager-reward-wiring-2026-09-25",
+      "bereich": "BoosterManager Coin/XP-Multiplikator in restliche Reward-Pfade verdrahtet",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "CaptureZoneManager.java",
+        "ChestSpawnManager.java",
+        "RaidRewardService.java",
+        "DailyRewardService.java",
+        "WarzoneMobService.java"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Vorbestehende, unfertige Aenderung aus einer frueheren Session vorgefunden (BoosterManager.applyCoinBoost/applyRaidXp existierte bereits und war an anderen Stellen verdrahtet) -- hier nur verifiziert, kompiliert und committed/deployed, keine neue Logik geschrieben.",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "warzone-death-loss-regel-2026-09-25",
+      "bereich": "Warzone-Death-Loss-Regel: Item-Verlust nur bei aktivem Combat-Tag + Admin-Command fuer Combat-Tag-Dauer",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "CombatTagService.java",
+        "WarzoneCommand.java",
+        "config.yml"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Bisher gab es KEINE plugin-seitige Steuerung fuer Inventar-Verlust bei Tod in der Warzone -- das hing komplett vom keepInventory-Gamerule der Welt ab (alles-oder-nichts). Neuer PlayerDeathEvent-Handler in CombatTagService (MONITOR-Prioritaet) bewahrt Inventar+XP, sobald das Opfer beim Tod nicht mehr im Combat-Tag steht, analog zur bestehenden dropItemsOnLogout-Logik und mit derselben Bypass-Permission vetroforge.combat.bypass. Neuer Master-Toggle warzone.combatTag.dropItemsOnDeath (default true). Dazu neues Admin-Subcommand '/warzone combattag <sekunden>' fuer warzone.combatTag.durationSeconds zur Laufzeit -- vorher nur per Hand in config.yml aenderbar. Noch kein Ingame-Test (PvP-Tod vs. Sturz/Mob-Tod in der Warzone) durchgefuehrt.",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "varyn-crystal-npc-audit-2026-09-25",
+      "bereich": "KORREKTUR: Varyn/Crystal-NPC ist NICHT komplett fehlend, sondern bereits voll implementiert -- nur nie platziert",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "CrateNpcManager.java",
+        "CrateNpcListener.java",
+        "CrateNpcCommand.java",
+        "KeyCrateManager.java"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt (bereits vorher vollstaendig gebaut)",
+      "getestet": "-",
+      "gebaut": "-",
+      "geladen": "-",
+      "ingame_abgenommen": "offen (NPC muss erst platziert werden)",
+      "risiken": "Urspruenglich auf der Nutzer-Liste als 'fehlt komplett' gefuehrt. Audit ergab: CrateNpcManager spawnt einen inerten Villager (AI aus, unverwundbar, Nitwit-Beruf), CrateNpcListener faengt PlayerInteractAtEntityEvent/PlayerInteractEntityEvent ab und ruft KeyCrateManager.redeemHeldKey(Player) auf -- das ist bereits exakt die 'Legendary Crystal beim Crystal NPC einloesen'-Mechanik aus der Item-Lore. Admin-Command /cratenpc add|remove|list|respawn|rename|glow existiert komplett und ist registriert. 'Varyn' selbst taucht nur als Fliesstext in GuideCommand.java auf ('Crystal-Rewards loest du bei Varyn ein'), es wurde aber nie tatsaechlich ein NPC in der Welt gespawnt/benannt. Fehlt also NICHT Code, sondern nur eine In-Game-Aktion: ein Admin muss sich an die gewuenschte Stelle stellen und '/cratenpc add Varyn' ausfuehren (oder einen vorhandenen NPC per '/cratenpc rename Varyn' umbenennen) -- Positionsentscheidung kann nicht von Claude getroffen werden.",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "varyn-crystal-npc-hardening-2026-09-25",
+      "bereich": "Varyn/Crystal-NPC gehaertet: kein Escape waehrend der Rolle, volles Inventar geht in die Inbox",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "RollGui.java",
+        "KeyCrateManager.java"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "RollGui.onRollClose erzwingt jetzt ein sofortiges Wiederoeffnen der GUI, solange die Rolle noch laeuft -- ein Spieler kann sich nicht mehr per ESC/Schliessen davor druecken (activeRolls von Set auf Map<Inventory,RollResult> umgestellt, damit der Callback beim echten Abbruch -- Spieler offline -- noch erreichbar ist). giveToInventoryOrDrop() in KeyCrateManager routet volle Inventare jetzt ueber ItemInboxService.giveOrStore() statt auf den Boden zu droppen. Alle 5 Crystal-Rarities waren schon vorher ohne Codeaenderung ueber den NPC einloesbar (isRedeemableCrate hat keine Rarity-Sperre) -- nur verifiziert, nicht veraendert. Noch kein Ingame-Test (Escape-Versuch waehrend Rolle, volles Inventar bei Redemption).",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "sacrifice-leveling-forge-redesign-2026-09-25",
+      "bereich": "Custom-Item-Sacrifice-Leveling komplett neu (ersetzt alte /fuse-Fusion-Table); /forge-Registrierungskonflikt behoben",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "CustomItemUtil.java",
+        "CustomItemSacrificeListener.java (neu)",
+        "ItemProgressionService.java",
+        "CustomItemFuseCommand.java",
+        "FactionsPlugin.java",
+        "config.yml",
+        "plugin.yml",
+        "ForgeGui.java (gelöscht)",
+        "items/cmd/ForgeCommand.java (gelöscht)",
+        "commands/FuseCommand.java (gelöscht)"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "GEFUNDEN waehrend Recherche fuer die Runen-GUI: /forge zeigte bisher NICHT die diese Session gebaute Buch-Anwenden-GUI (gui.ForgeGui) -- eine zweite, unabhaengige Registrierung fuer eine alte, komplett andere Sacrifice-Fusion-Table (items.ForgeGui, Slots Base/Sac/Out) ueberschrieb sie beim Boot (doppelter 'forge:'-Key in plugin.yml, letzter Eintrag gewinnt). User-Entscheidung (siehe Chat): kein /fuse mehr, Sacrifice direkt im Inventar wie bei Enchant-Buechern (Duplikat aufs Ziel-Item ziehen), Stufen 2/4/7/10/15 Sacrifices, Coins-Kosten 400/1000/2000/6000/20000, Max-Level 5 -- gilt fuer ALLE Custom-Items (User-Entscheidung, nicht nur Schwerter). Neuer globaler CustomItemSacrificeListener (analog zu CustomEnchantBookApplyListener). Alte lineare 1,1,2,3,4...-Formel und automatisches Gratis-Level-Up entfernt, dafuer CustomItemUtil.sacrificeOnto() mit Coins-Gate: reicht das Geld beim finalen Sacrifice nicht, wird nichts verbraucht (kein verlorenes Duplikat). Alte 'Level-Cap gegen Coins ueber Max hinaus anheben'-Mechanik (/item upgrade, KEY_LEVEL_CAP_BONUS) mit hartem Max-Level-5 nicht mehr sinnvoll, komplett entfernt statt nur deaktiviert. /cifuse (Staff-Debug) auf neue API umgestellt. ACHTUNG: falls bereits Items live ueber Level 5 existierten (altes maxLevel war 10), zeigt deren Lore jetzt 'maxed' bei ihrem gespeicherten Level -- keine Datenmigration durchgefuehrt, sollte harmlos sein (kein Crash), aber nicht explizit mit echten Spielerdaten getestet.",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "runes-gui-2026-09-25",
+      "bereich": "Runen-GUI (/rune): themenbasierte Oberflaeche fuer das bestehende Faction-Crystal-Runen-System",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "RunesGui.java (neu)",
+        "RunesCommand.java",
+        "FactionsPlugin.java",
+        "lang/de+en+fr+nl.yml"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "raid.runes (RuneType/RuneUtil: +10% Raid-Schaden, +20% Obsidian-Damage, +5% Crystal-Ertrag) war schon vorher voll funktionsfaehig, aber nur per Chat-Command '/rune apply <TYPE>' erreichbar -- keine GUI. Neue RunesGui folgt dem ForgeGui/SkillsGui-Muster: Item in Slot legen, Rune anklicken, zeigt Kosten und eigenes Crystal-Guthaben live in der Lore, markiert schon aufgetragene Runen. Ruft die bestehende RuneUtil/RaidCrystalManager-Logik nur auf, dupliziert sie nicht. '/rune' ohne Argumente oeffnet jetzt die GUI statt Usage-Text; '/rune apply <type>' bleibt fuer Makros/Gewohnheit erhalten. Neuer Lang-Key message.rune_item_required (alle 4 Sprachen, 484 statt 483 validierte Keys) fuer den Slot-leer-Fall in der GUI. Noch kein Ingame-Test (Rune anwenden, Dubletten-Sperre, zu wenig Crystals).",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "disparity-overhaul-2026-09-25",
+      "bereich": "Disparity-Overhaul: Balance (Schaden/Speed/Mob-Varianten) + Optik (Bossbar/Aura) -- volle Version",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "WarzoneMobService.java",
+        "WarzoneBossBarManager.java (neu geschrieben)",
+        "config.yml",
+        "lang/de+en+fr+nl.yml"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "User-Feedback 'absolut schrott' bei Optik UND Balance bestaetigt durch Audit: Mob-Staerke skalierte vorher NUR ueber HP (8+Level*4), Schaden/Speed blieben immer Vanilla-Niveau (Bullet-Sponge), Mob-Typ war immer Zombie/Skeleton-Muenzwurf unabhaengig von der Stufe. Bossbar (einziges Live-Feedback) fror bei Level 3 fest -- Farbe UND Text identisch von Level 4 bis 100, verschwand nach 15s. BALANCE-FIX: pickMobType() schaltet ab Tier-Grenzen (16/41/71, config warzone.disparity.tierLow/Medium/High) kumulativ Husk/Stray/Spider, dann Vindicator/Pillager, dann Vex/Evoker frei. Speed skaliert jetzt leicht mit Level (gedeckelt). Neuer onMobDamageDealt-Listener skaliert den TATSAECHLICHEN Schadenswert (nicht nur ATTACK_DAMAGE-Attribut), damit auch Fernkampf/Zauber (Skeleton-Pfeile, Evoker) mitskalieren -- Bosse ausgenommen (Aura-Debuffs statt Kontaktschaden). OPTIK-FIX: WarzoneBossBarManager komplett neu -- Bar ist jetzt PERSISTENT solange man in der Zone ist (kein 15s-Timer mehr), aktualisiert live beim Weiterlaufen, 6 statt 4 Eskalationsstufen (low/medium/high/severe/extreme/cataclysmic) mit denselben Tier-Grenzen wie die Mob-Varianten -- Optik und Mob-Staerke eskalieren jetzt konsistent zusammen. Leichte Partikel-Aura ab Tier 'high' (CRIT->WITCH->SOUL_FIRE_FLAME->DRAGON_BREATH), cataclysmic fuegt automatisch DARKEN_SKY hinzu. BEWUSST NICHT ANGEFASST: echtes Terrain-/Block-Reskinning (VetroBuild/MapBuilder-Territorium, ausserhalb Claude-Scope) und die bestehenden Chest-/Crystal-Rarity-Gewichtsleitern (ChestSpawnManager) -- die haben zwar auch inkonsistente Schwellen (8/16/25 vs. 10/25/50/80), wurden aber nicht angetastet um die laufende Loot-Oekonomie nicht ungefragt zu veraendern; nur die MOB-Balance war der explizite Beschwerdepunkt. Neue Lang-Keys warzone.disparity.severe/cataclysmic (486 statt 484 validierte Keys).",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "maintenance-kickscreen-branding-2026-09-25",
+      "bereich": "Maintenance-Kickscreen: hellblaues VetroForge-Branding statt rot/orange (VetroCore)",
+      "repo": "VetroCore",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "lang/de+en+fr+nl.yml"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "offen",
+      "ingame_abgenommen": "offen",
+      "risiken": "AUDIT-FUND: der Wartungsmodus-Kickscreen existierte schon komplett und war sogar schon auf Englisch (config-gesteuert in lang/en.yml, maintenance.kick-Key) -- urspruenglich als 'nie gebaut, Wortlaut ungeklaert' auf der Liste, war aber laengst fertig. Einziges echtes Problem: rot/orange-Gradient wirkte wie eine Bann-Meldung statt neutraler Wartungsinfo. Nur Farben auf das etablierte hellblaue AURON/VetroForge-Markenblau (#7fd4ff) umgestellt, Wortlaut/Aufbau/Platzhalter ({scope}/{target}/{reason}/{remaining}) unveraendert, fuer alle 4 Sprachen. VetroCore hat kein Git-Remote -- lokaler Commit, geht erst nach dem naechsten passwortbasierten Neustart live (reiht sich bei den anderen wartenden VetroCore-Fixes ein: Redis-Spam, Crash-Auto-Maintenance, AURON-Rebrand, /ban-Rate-Limit).",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "ui-overhaul-batch-2026-09-25",
+      "bereich": "UI-Ueberarbeitung: gemeinsame Chat-Box-Optik (/help, /adminboss, /chest, Hoverchat) + neue /commands-Uebersicht",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "ChatBoxUtil.java (neu)",
+        "HelpCommand.java",
+        "AdminBossCommand.java",
+        "ChestCommand.java",
+        "ChatListener.java",
+        "CrystalsCommand.java",
+        "EnergyCommand.java",
+        "CommandsCommand.java (neu)",
+        "plugin.yml",
+        "scripts/reference/tablist-parity.sha256"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "/crystals und /energy hatten schon eine boxed-Chat-Optik (unabhaengig dupliziert, leicht unterschiedliche Breite) -- Rest (/help, /adminboss, /chest, Hoverchat) war reiner Fliesstext. Neue ChatBoxUtil zentralisiert die Optik, /crystals+/energy delegieren jetzt dorthin statt eigener Kopien. /help behaelt Inhalt/Berechtigungspruefung unveraendert, nur Optik. /adminboss list + /chest list/Hilfe zeigen jetzt 'nichts vorhanden' explizit statt leerer Liste. Hoverchat-Namenskarte bekam Rahmenlinien + Icons (Rank/Level/Faction/Prestige/K-D) und das etablierte Hellblau (#7fd4ff) statt generischem Blau -- Item-Hover bewusst unveraendert (nutzt native Vanilla-Tooltips, Nachbau waere unnoetiges Risiko). Neu: /commands [seite] -- generierte, permissionsgefilterte Komplettuebersicht aller 141 in plugin.yml deklarierten Befehle (12/Seite), ergaenzt /help statt es zu ersetzen. WICHTIG: Erster Deploy-Versuch wurde vom Tablist-Parity-Guard (scripts/reference/tablist-parity.sha256) zu Recht blockiert, weil ChatListener.class sich geaendert hat -- Diff geprueft (nur hover()-Methode, rankColor()/Nametag-Faerbe-Logik unangetastet), Referenz-Hash mit Begruendung aktualisiert, zweiter Versuch erfolgreich.",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "auron-alt-account-detection-2026-09-25",
+      "bereich": "AURON: Multi-Account-/Ban-Evasion-Erkennung auf Verbindungsebene (VetroCore)",
+      "repo": "VetroCore",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "AltAccountService.java (neu)",
+        "AltAccountJoinListener.java (neu)",
+        "SecurityModule.java",
+        "SecurityAlertService.java",
+        "ConfigManager.java"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "offen",
+      "ingame_abgenommen": "offen",
+      "risiken": "User wollte urspruenglich 'volles /auron AntiCheat' -- technischer Fund: Movement-/Reach-/Exploit-Checks koennen NICHT in VetroCore laufen (Velocity-Proxy hat keinen Zugriff auf Spielphysik/Weltkollisionen/Combat-Events, die nur auf dem Paper-Backend existieren). Scope nach Ruecksprache auf Verbindungs-/IP-Ebene begrenzt. ZWEITER FUND: Chat-Spam/Flood-Auto-Mute existierte schon VOLLSTAENDIG und live (ChatSecurityListener -> AutoMuteService -> Punish mit 'SYSTEM'-Konvention, Staff-Broadcast, Discord-Alert) -- nicht neu gebaut, nur verifiziert. NEU GEBAUT: Multi-Account-Erkennung. AltAccountService protokolliert IP<->UUID-Zuordnungen (account_ip_log Tabelle). AltAccountJoinListener unterscheidet bewusst zwei Faelle: (1) Ban-Evasion -- IP teilt sich mit einem AKTUELL gebannten Account -> einziger automatisch bestrafter Fall, neuer Account wird mitgebannt UND der Login abgelehnt, da eindeutiger Beweis. (2) Blosser Multi-Account-Verdacht (mehrere nicht gebannte Accounts an derselben IP, Schwelle konfigurierbar) -> NUR Staff-Meldung, bewusst KEINE automatische Strafe, da geteilte Netzwerke (Familie/Firma/Mobilfunk) legitim sind und ein Auto-Ban dafuer echte Spieler faelschlich sperren wuerde. Lokaler Commit in VetroCore (kein Remote) -- reiht sich bei den anderen wartenden Fixes ein, aktiv erst nach dem naechsten passwortbasierten Neustart.",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "auron-threat-categories-expansion-2026-09-25",
+      "bereich": "AURON: BOT_PATTERN, LINK_SPAM, TOKEN_GRABBER, RAID_ACTIVITY, FRESH_ACCOUNT ausgebaut",
+      "repo": "VetroCore",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "AutoMuteResult.java",
+        "AutoMuteService.java",
+        "AutoMuteSettings.java",
+        "ChatSecurityListener.java",
+        "SecurityModule.java",
+        "AltAccountJoinListener.java",
+        "AltAccountService.java",
+        "ConfigManager.java",
+        "BotPatternService.java (neu)",
+        "BotPatternJoinListener.java (neu)",
+        "RaidActivityService.java (neu)",
+        "RaidActivityJoinListener.java (neu)",
+        "AutoMuteServiceTest.java"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "erledigt (14 Unit-Tests gruen, davon 3 neu)",
+      "gebaut": "erledigt",
+      "geladen": "offen",
+      "ingame_abgenommen": "offen",
+      "risiken": "Baut alle 5 zuvor komplett toten ThreatReason-Werte aus (0 Aufrufer vorher, per grep verifiziert). TOKEN_GRABBER war technisch schon fast da (AutoMuteService.matchesBlocked() deckte Phishing-Links ab, zaehlte aber pauschal als TOXICITY) -- jetzt eigene Kategorie, hoeheres Gewicht (40 Punkte), erweiterte Blockliste. DABEI ECHTEN BUG GEFIXT: die alte Blockliste haette den EIGENEN Discord-Invite (discord.gg/g56WRqp7) als Scam-Link automute -- neue Allowlist greift zuerst. LINK_SPAM, BOT_PATTERN, RAID_ACTIVITY, FRESH_ACCOUNT komplett neu. Bewusste Sicherheitsentscheidung durchgezogen: nur TOKEN_GRABBER (eindeutige Phishing-Muster) und weiterhin Ban-Evasion (aus vorherigem Batch) loesen automatische Strafen aus. BOT_PATTERN (schnelle erste Nachricht), RAID_ACTIVITY (netzwerkweite Join-Rate) und FRESH_ACCOUNT (Account ohne bekannte Historie) sind bewusst NUR Flags/Staff-Alerts ohne automatische Strafe -- alle drei sind fuer sich genommen zu False-Positive-anfaellig (schnelle Tipper, legitime Traffic-Spitzen, jeder neue Spieler) um allein eine Strafe auszuloesen; sie flieszen nur in den Threat-Score ein und wirken erst in Kombination mit anderen Signalen. Lokaler Commit UND gepusht -- VetroCore hat inzwischen ein GitHub-Remote (GamemakerYT/VetroCore). Aktiv erst nach dem naechsten passwortbasierten Neustart.",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "movement-anticheat-phase1-2026-09-25",
+      "bereich": "Phase-1 Movement-/Reach-AntiCheat (Speed/Fly/Reach) auf VetroForgeFinal, nur Logging",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "MovementAntiCheatService.java (neu)",
+        "MovementAntiCheatListener.java (neu)",
+        "FactionsPlugin.java",
+        "config.yml",
+        "plugin.yml"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Bewusst NUR Logging/Staff-Alert (NotifyManager 'cheat'-Kanal), KEIN Auto-Punish -- mit User abgestimmt, da Movement-Cheats erfahrungsgemaess wochenlanges Live-Tuning brauchen. Vor dem Bauen recherchiert, welche legitimen Mechaniken Bewegung/Speed/Reichweite beeinflussen (siehe Commit-Message fuer Details: /speed-Command, Ruestungsset-Speed-Effekte, /spell, alle Flug-Wege ueber allowFlight-Pruefung automatisch abgedeckt, kein Custom-Enchant verlaengert Reichweite). Bewusst NICHT in AntiCheatBridge.getSeverity() eingespeist (haette sonst indirekt Auto-Ban ueber /aiban --apply ausloesen koennen). Kulanzfenster nach Schaden/Teleport/Respawn/Fahrzeug-Ausstieg gegen Knockback-/Sprung-False-Positives. Bekannte akzeptierte Einschraenkung: Dragon's Breath Feuerfeld-Tick kann selten als ueberhoehte Reach geloggt werden (Bukkit unterscheidet nicht zwischen echtem Nahkampf und programmatischem target.damage()) -- da nur geloggt wird, kein echtes Problem. NACH DEPLOY VERIFIZIERT: sauberer Boot, TPS stabil bei 20.0/20.0/20.0 (1m/5m/15m) -- kein messbarer Performance-Impact trotz PlayerMoveEvent auf jede Spielerbewegung. Noch KEIN echter Ingame-Test mit tatsaechlichen Verstoessen (weder Fehlalarm-Pruefung noch Bestaetigung dass echte Cheats erkannt wuerden).",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "sidebar-design-unification-2026-09-25",
+      "bereich": "Sidebar-Design vereinheitlicht: Scouting/Raid-Boards wie Warzone-Board",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "SidebarScoreboardManager.java"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "User hat per Screenshot gezeigt: die Warzone-Sidebar (┃-Zeilenpaare, Leerzeilen-Abstand, 'vetroforge.net'-Footer) ist das richtige Design, aber Scouting- und Raid-Boards nutzten einen komplett anderen, primitiveren Stil (einzeilige Icon+Pfeil+Wert-Bloecke, Strichlinie statt Leerzeilen, KEIN Footer). showScoutingBoard, showJoinedRaidBoard und showRaidBoard(RaidContext) jetzt alle auf denselben addPair-Stil wie showWarzoneBoard umgestellt -- eigene Felder je Kontext (Ziel-Fraktion, Obsidian-Fortschritt, Raider-Zahl etc.) bleiben, nur die Optik ist jetzt identisch. Lobby-/Faction-Board (angezeigt wenn man in eigenem Fraktionsgebiet ist, ausserhalb Warzone/Raid) bewusst NICHT angefasst -- User hat auf Nachfrage bestaetigt, dass dessen fruehere Referenz-Screenshot-Optik bleiben soll, nur Scouting/Raid waren gemeint. Dabei aufgeraeumt: addBlock()-Helper und nur dafuer genutzte Icon-Konstanten entfernt (keine Aufrufer mehr). Noch kein Ingame-Test der drei umgestellten Boards.",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "bugfix-batch-varyn-nametag-crystals-skillgui-2026-09-25",
+      "bereich": "Batch: Varyn-Purge-Fix, Nametag Level+Prestige, /crystals-Wortlaut, Skill-GUI-Zentrierung",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "WarzoneMobService.java",
+        "NametagTabManager.java",
+        "SkillsGui.java",
+        "lang/de+en+fr+nl.yml",
+        "scripts/reference/tablist-parity.sha256"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "User-Hypothese bestaetigt: purgeVanillaMobs() (Warzone-Mob-Cleanup) entfernte JEDEN Mob-Typ ohne warzone-eigenes mobLevel-Tag in Warzone/Lobby-Spawn -- traf damit auch Varyn (Crate-NPC-Villager) sowie potenziell Traveler und Boss-Trader NPCs (alle implementieren Mob). Neue PDC-Tag-Ausnahme fuer alle drei NPC-Systeme. Nametag: Overhead-Anzeige zeigte nur Rang+Name+Fraktion, Level und Prestige fehlten (Tab-Liste hatte Level schon ueber einen anderen Code-Pfad) -- neue fullSuffix()/prestigeSuffix() ergaenzen beides, Prestige als roemische Ziffer ueber PrestigeUtil.titleFor(). /crystals: '(Fraktionsbank aktiv)'-Zusatz ersatzlos entfernt (alle 4 Sprachen), 'Fraktionsbank' zu 'Factionbank' umbenannt (nur Deutsch). SkillsGui: Abilities wurden sequentiell oben-links ins 7x3-Raster gefuellt, bei wenigen Abilities (z.B. 1 bei Warrior) sass der Eintrag schief am Rand -- neue centeredAbilitySlots() zentriert zeilen- und spaltenweise. Tablist-Parity-Referenz fuer NametagTabManager.class zweimal aktualisiert (Diff jeweils geprueft, nur additive Level/Prestige-Ergaenzung, Rang-Faerbe-Logik unangetastet).",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "bugfix-batch-lore-warpickaxe-advancements-2026-09-25",
+      "bereich": "Batch: Item-Lore aufgeraeumt, War Pickaxe umbenannt, Advancement-Broadcasts aus",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "CustomItemUtil.java",
+        "CustomItemCatalog.java",
+        "FactionsPlugin.java",
+        "WorldManager.java"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "'ID: <baseId>' und 'Source: <source>' Zeilen aus der Item-Lore entfernt (interne Debug-Info, /item inspect zeigt Source weiterhin explizit an, unveraendert). 'War Pickaxe' zu 'Breach Pick' umbenannt (nur Display-Name, interne ID 'war_pickaxe' unveraendert -- bereits vergebene Items/Referenzen bleiben intakt). GameRule.ANNOUNCE_ADVANCEMENTS ueberall auf false (Vanilla-Achievement-Chat-Spam war nie Teil des eigenen Progressions-UIs).",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "bugfix-batch-topgui-deathmessages-2026-09-25",
+      "bereich": "Batch: /top-Grid zentriert, Todesnachrichten (Chat + Todesbildschirm) deaktiviert",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "TopGuiManager.java",
+        "FactionsPlugin.java",
+        "WorldManager.java"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "TopGuiManager hatte dasselbe Zentrierungs-Problem wie SkillsGui -- gleiche centeredGridSlots()-Loesung uebernommen (generalisiert auf beliebiges Slot-Array). GameRule.SHOW_DEATH_MESSAGES ueberall auf false: der Vanilla-Todesbildschirm zeigte bisher die volle Warzone-Mob-Nametag-Zeichenkette als Toeter-Text (z.B. 'Disparity 7 · Vindicator · 38/53 ♥', eigentlich fuer den floatenden Overhead-Nametag gedacht) UND broadcastete das zusaetzlich an alle Spieler im Chat. ANNAHME (nicht live getestet): diese Gamerule steuert in aktuellen Minecraft-Versionen Chat-Broadcast UND Todesbildschirm-Untertitel gemeinsam, da beide denselben Server-Death-Message-String nutzen -- falls der Todesbildschirm dadurch nur LEER statt 'ueberarbeitet' wirkt, braucht es fuer einen custom Ersatztext tiefere Packet-Arbeit (separater Folge-Task).",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "auron-staffchat-fix-2026-09-25",
+      "bereich": "AURON: /staffchat-Bug behoben (leere Nachricht), Rang-Anzeige + orange Label",
+      "repo": "VetroCore",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "StaffChatCommand.java",
+        "StaffChatSubscriber.java"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "offen",
+      "ingame_abgenommen": "offen",
+      "risiken": "Bug bestaetigt: StaffChatCommand.execute() published IMMER an Redis, auch bei leeren inv.arguments() (String.join ergibt '') -- jeder '/staffchat' ohne Text sendete eine leere Zeile an alle Online-Staff. Jetzt Guard mit Nutzungshinweis. Payload traegt jetzt den Rang des Senders mit (username;RANK_NAME;nachricht statt nur username;nachricht), StaffChatSubscriber zeigt ihn als farbiges Rank.component() an. 'Staff'-Label von Rot auf Orange/Gold umgestellt. Alte Zwei-Feld-Nachrichten (Rolling-Restart-Uebergang) werden defensiv weiterhin ohne Rang gerendert statt verworfen. Lokaler Commit UND gepusht (VetroCore hat seit heute ein GitHub-Remote) -- aktiv erst nach dem naechsten passwortbasierten Neustart.",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "prestige-tier-pvp-protection-2026-09-25",
+      "bereich": "Prestige-Tier-PvP-Schutz je Disparity-Zone (neue Regel) + blocksPerLevel 25->50",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "WarzoneDamageRulesListener.java",
+        "config.yml"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Komplett neue Regel, vorher existierte KEINE Level-/Disparity-basierte PvP-Einschraenkung (per grep bestaetigt). Vor dem Bauen per Rueckfrage abgesichert, da die urspruengliche Beschreibung richtungsmaessig mehrdeutig war -- User hat bestaetigt: ein Spieler mit niedrigerer Prestige-Stufe ist in einer Disparity-Zone geschuetzt, SOLANGE die Zonen-Stufe unter der des Angreifers liegt (Prestige-2 kann Prestige-1 in Disparity 1 NICHT angreifen, nur wenn der Prestige-1-Spieler sich freiwillig in Disparity 2+ begibt). Gleich-/niedrigerstufige Angreifer sind nie eingeschraenkt. Prestige-Stufe = StatsManager.getPrestige() Rohwert (min. 1), 1:1 gegen Disparity-Level verglichen -- ANNAHME, da unklar war ob 'Prestige Level 1/2' den rohen Punktewert oder eine abgeleitete Kurzform meint; falls das nicht dem tatsaechlichen Spielgefuehl entspricht (z.B. Punkte wachsen schneller als erwartet und 'Level 2' wird zu frueh erreicht), braucht es eine andere Tier-Formel. blocksPerLevel von 25 auf 50 erhoeht (die ersten ~50 Bloecke ab Warzone-Rand sind jetzt Disparity 1 statt 25). Keine Nachricht an den blockierten Angreifer (Angriff wird still abgebrochen) -- passend zum bestehenden Stil der anderen Regeln in dieser Datei (friendlyFire etc. sind ebenfalls stumm).",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "wirtschafts-konsolidierung-2026-09-25",
+      "bereich": "Wirtschafts-Konsolidierung: Faction-Elo -> Fraktionsmacht, Raid Crystals -> Kriegsbeute, crystalShard()-Voucher-Bug behoben",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "LootItemFactory.java",
+        "LootDropChestUtil.java",
+        "EnergyCrystalItems.java",
+        "LeaderboardService.java",
+        "CrystalsCommand.java",
+        "RaidShopGui.java",
+        "HelpCommand.java",
+        "FactionUpgradeCommand.java",
+        "AdminFactionsCommand.java",
+        "RunesGui.java",
+        "lang/de.yml",
+        "lang/en.yml",
+        "lang/fr.yml",
+        "lang/nl.yml",
+        "events.yml",
+        "plugin.yml"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Folge des Wirtschafts-Audits (User: 'da stimmt was nicht'): 'Crystal' bedeutete bisher drei verschiedene Dinge (Waehrung, Varyn-Crate-Keys, totes Energy-Crystal-Item), 'Elo' zwei verschiedene Dinge (Faction-Elo-Waehrung vs. echte PvP-Elo). Umbenennung bewusst NUR fuer die Waehrungen (Faction-Elo->Fraktionsmacht, Raid Crystals->Kriegsbeute), Crate-Key-Items (Common/Rare/Epic/Legendary/Mystic/Warzone Boss Crystal) und die echte PvP-Elo blieben unangetastet, User hat das per Rueckfrage explizit so bestaetigt ('Raid Crystals umbenennen statt der Items'). Dabei zusaetzlich einen echten Bug gefunden und behoben: LootItemFactory.crystalShard() baute bisher ein UNGETAGGTES Amethyst-Item, das EnergyCrystalUseListener mangels PDC-Tag nie als einloesbar erkannte -- Loot-Drops aus Common/Rare/Epic/Legendary-Crates waren dadurch nie tauschbar, obwohl die Lore es versprach. Jetzt an EnergyCrystalItems.createCrystalItem() delegiert (den bereits vorhandenen, korrekt getaggten Builder); die alte Loot-Tabellen-'amount' (3/6/10/16) wird jetzt als Voucher-Wert statt als Stapelgroesse interpretiert -- ANNAHME, da das alte Item ohnehin nie einloesbar war und es keine 'richtige' Vorgabe gab. Zwei bereits vorher bekannte, separate Bugs (/crystals give schreibt in falschen Balance-Pfad bei useFactionBank=true; Prestige-XP-Desync zwischen StatsManager/PrestigeManager) sind NICHT Teil dieses Batches, User hat dafuer noch nicht gruenes Licht gegeben.",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "auron-anticheat-center-2026-09-25",
+      "bereich": "AURON AntiCheat-Center: Staff-GUI/Report/Test-Oberflaeche fuer /auron (VetroForgeFinal-Seite)",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "AuronAntiCheatService.java",
+        "AuronCommand.java",
+        "FactionsPlugin.java",
+        "plugin.yml"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Gibt den bereits zuvor gebauten Movement-/Reach-Erkennungen (MovementAntiCheatService, log-only wie vom User bestaetigt) eine richtige AURON-gebrandete Staff-Oberflaeche statt nur Chat-/Log-Alerts. Haelt bewusst einen EIGENEN In-Memory-Signal-Store statt in den geteilten AntiCheatBridge zu schreiben, damit /aiban --apply weiterhin ausschliesslich auf den bestehenden Connection-/Chat-Signalen basiert -- Movement-/Combat-Heuristiken bleiben wie vom User entschieden ohne Auto-Punish.",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "wartungsmodus-bypass-hinweis-2026-09-25",
+      "bereich": "Wartungsmodus: Bypass-Spielern beim Join eine Hinweisbox zeigen (Grund + /maintenance off fuer Admins)",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "MaintenanceListener.java"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Rein kosmetisch, keine Logikaenderung an der Wartungsmodus-Pruefung selbst.",
+      "aktualisiert": "2026-09-25"
+    },
+    {
+      "id": "crystals-give-und-prestige-xp-desync-2026-09-25",
+      "bereich": "/crystals give (Faction-Bank-Modus) und Prestige-XP-Desync (/prestige vs. /stats) behoben",
+      "repo": "VetroForgeFinal",
+      "verantwortlich": "Claude",
+      "dateien": [
+        "RaidCrystalManager.java",
+        "PrestigeManager.java",
+        "StoryManager.java",
+        "StatsYamlStore.java"
+      ],
+      "geplant": "-",
+      "implementiert": "erledigt",
+      "getestet": "offen",
+      "gebaut": "erledigt",
+      "geladen": "erledigt",
+      "ingame_abgenommen": "offen",
+      "risiken": "Die beiden im Wirtschafts-Audit gefundenen, offenen Bugs jetzt behoben. (1) /crystals give schrieb bei useFactionBank=true immer ins persoenliche Guthaben, das getAvailable/consume aber nie ansahen -- admin-/webshop-vergebene Crystals waren unsichtbar/unspendbar. Persoenliches Guthaben zaehlt jetzt zusaetzlich zur Faction-Bank dazu (consume() zieht zuerst persoenlich ab, Rest aus der Faction-Bank). (2) StatsManager.prestigeXp wurde von keinem Gameplay-Pfad live aktualisiert (nur PrestigeManager.xpCache/prestige.yml war live) -- /stats zeigte dadurch einen dauerhaft eingefrorenen Wert, /prestige den echten. PrestigeManager spiegelt XP jetzt bei jeder Aenderung nach StatsManager, inkl. Backfill beim Start; StatsYamlStore laedt/speichert prestigeXp nicht mehr (haette den frisch gespiegelten Wert sonst bei jedem Start wieder mit einem alten data/stats.yml-Snapshot ueberschrieben). ZUSAETZLICH gefunden und mitbehoben: StoryManager.finishStory() vergab Quest-Prestige bisher per direktem StatsManager.addPrestige()-Levelbump, ohne PrestigeManager.applyRewards() (config-Rewards je Level) oder PrestigeLevelUpEvent (Titel/Sound/Broadcast) auszuloesen -- laeuft jetzt ueber PrestigeManager.addLevels() wie jeder andere Prestige-Gewinn. ANNAHME bei der /crystals-give-Reihenfolge (erst persoenlich, dann Faction-Bank verbrauchen): es gab keine bestehende Vorgabe, da das persoenliche Guthaben vorher nie nutzbar war -- falls Spieler das anders herum erwarten (erst Faction-Bank, persoenliches Guthaben als Reserve), ist das eine reine Reihenfolge-Aenderung in RaidCrystalManager.consume().",
+      "aktualisiert": "2026-09-25"
+    }
+  ]
+}

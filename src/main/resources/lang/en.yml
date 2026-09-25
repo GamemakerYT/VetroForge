@@ -1,0 +1,435 @@
+language:
+  gui:
+    title: "&fChoose Language"
+    close: "&cClose"
+    close_lore: "&7Click to close the menu"
+  item:
+    de: { name: "&fGerman",     lore: "&7Click to set German" }
+    en: { name: "&fEnglish",    lore: "&7Click to set English" }
+    fr: { name: "&fFrench",     lore: "&7Click to set French" }
+    nl: { name: "&fDutch",      lore: "&7Click to set Dutch" }
+  set: "&aLanguage set: &f{lang}"
+  auto: "&aAutomatic language enabled: &f{lang}"
+fmenu:
+  title: "&c&lVetro&6&lForge &8• &fFactions"
+  profile: { faction: "&7Faction: &f{faction}", role: "&7Role: &f{role}", members: "&7Members: &f{members}", crystals_faction: "&7Faction War Spoils: &d{crystals}&8/&f{cap}", crystals_player: "&7Your War Spoils: &d{crystals}&8/&f{cap}", roles: { leader: "Leader", officer: "Officer", member: "Member", none: "None" } }
+  banner: { name: "&c&lFaction Banner", faction: "&7Faction: &f{faction}", members: "&7Members: &f{members}", crystals_faction: "&7Shared War Spoils Bank: &d{crystals}&8/&f{cap}", crystals_player: "&7Your War Spoils: &d{crystals}&8/&f{cap}", none: "&cCreate a faction first with /f create.", ready: "&8Your faction's shared banner" }
+  members:
+    name: "&b&lMembers"
+    lore: "&7Shows your &f{members} &7members."
+    title: "&8Faction Members &7• &f{page}/{pages}"
+    page: "&7Page &f{page}&7/&f{pages}"
+  raid: { name: "&c&lRaid System", lore: "&7Scout enemies and start an attack." }
+  stats: { name: "&e&lStatistics", lore: "&7Opens your statistics." }
+  shop: { name: "&a&lShop", lore: "&7Opens the factions shop." }
+  banner_design: { name: "&d&lDesign Banner", lore: "&7Design your shared faction banner." }
+  raid_shop: { name: "&5&lRaid Shop", lore: "&7Opens equipment for your next raid." }
+  upgrades: { name: "&6&lFaction Power Upgrades", lore: "&7Buy TNT and obsidian improvements." }
+  help: { name: "&6&lFaction Help", no_faction: "&7You are not in a faction yet.", ready: "&7Manage your faction here." }
+  message: { no_faction: "&cYou are not in a faction.", unavailable: "&cThe faction menu is currently unavailable." }
+  back: "&cBack"
+  previous: "&ePrevious Page"
+  next: "&aNext Page"
+faction:
+  command:
+    no_faction: "&cYou are not in a faction."
+    no_permission: "&cNo permission."
+    not_found: "&cFaction not found."
+    already_member: "&cYou are already in &f{faction}"
+    name_taken: "&cThat name is already taken."
+    invalid_name: "&cInvalid faction name. Use 2-16 letters, numbers or underscores only."
+    created: "&aFaction created: &f{faction}"
+    leader_or_admin: "&cOnly leaders or admins may disband the faction."
+    disbanded: "&aFaction &f{faction}&a disbanded."
+    disband_failed: "&cCould not disband the faction."
+    disband_confirm: "&cThis will permanently disband your faction! &7Confirm with &f/{label} disband confirm"
+    player_offline: "&cPlayer is not online."
+    player_not_found: "&cPlayer not found."
+    joined: "&aJoined: &f{faction}"
+    join_failed: "&cCould not join the faction."
+    leave_failed: "&cAs leader you cannot leave while members remain. Use &e/f setleader <player>&c or &e/f disband&c."
+    left: "&aYou left your faction."
+    unknown: "&cUnknown subcommand."
+    usage: { create: "&cUsage: /{label} create <name>", invite: "&cUsage: /{label} invite <player>", player: "&cUsage: /{label} {sub} <player>", ally: "&cUsage: /{label} ally <add|remove> <faction>" }
+    info: { name: "&6Faction: &f{faction}", members: "&6Members: &f{members} &7(online: &f{online}&7)" }
+    members: { title: "&6Members of &f{faction}&6:" }
+    role: { leader: "&cLeader", officer: "&6Officer", member: "&7Member" }
+    invite: { sent: "&aInvitation sent to &f{player}&a.", received: "&eYou were invited to &f{faction}&e. &7(/{label} accept)", none: "&cYou have no pending invitation." }
+    kick: { success: "&aKicked: &f{player}", failed: "&cKick failed. Check rank and faction." }
+    promote: { success: "&aPromoted: &f{player} &7→ &6Officer", failed: "&cPromotion failed. Check rank and faction." }
+    demote: { success: "&aDemoted: &f{player} &7→ &7Member", failed: "&cDemotion failed. Check rank and faction." }
+    leader: { success: "&aTransferred leadership to: &f{player}", failed: "&cTransfer failed. Check rank and faction." }
+    allies: { none: "&eNo allies.", list: "&6Allies of &f{faction}&6: &f{allies}", leader_only: "&cOnly leaders may change allies.", self: "&cYour own faction cannot be an ally.", added: "&aAlliance with &f{faction} &aenabled.", removed: "&eAlliance with &f{faction} &eremoved." }
+    home: { officer_only: "&cOnly leaders and officers may set the home.", wrong_world: "&cThe faction home can only be set inside your own faction world.", set: "&aFaction home set.", missing: "&cNo faction home is set.", teleported: "&aTeleported to the faction home." }
+  inbox:
+    no_faction: "&cYou are not in a faction."
+    empty: "&6Faction Inbox &8» &7No new entries."
+    header: "&6Faction Inbox &8» &f{count} entries"
+    hint: "&7Use &f/f inbox clear &7to remove these entries."
+    cleared: "&aFaction inbox cleared."
+    join_hint: "&6Faction Inbox &8» &e{count} unread entries. &7Use &f/f inbox&7."
+    entry: { attacked: "&c⚔ &f{actor} &7attacked your faction.", left: "&e• &f{actor} &7left the faction.", kicked: "&c• &f{actor} &7was removed by &f{target}&7.", raidshop_purchase: "&d✦ &f{actor} &7bought from the RaidShop: &d{target}&7." }
+    attacked_hint: "&c⚔ &7Your faction was last attacked by &f{attacker} &7&8({time})&7. &f{count} attacks in 24h &8» &f/raid revenge"
+  shop:
+    title: "&2Faction Shop"
+    empty: "&cThe faction shop is empty."
+    list_title: "&8—— &aFaction Shop &8——"
+    no_items: "&7No items are available."
+    price: "&7Price: &e{price} Coins"
+    click_buy: "&8Click to buy"
+    not_enough: "&cNot enough coins."
+    purchased: "&aPurchased: &f{item} &7for &e{price} Coins"
+    usage: { buy: "&e/{label} buy <itemId>", main: "&e/{label} list &8| &e/{label} buy <itemId>" }
+  banner:
+    title: "&c&lVetro&6&lForge &8• &fFaction Banner"
+    no_faction: "&cYou are not in a faction."
+    leader_only: "&cOnly the faction leader may change the banner."
+    not_enough: "&cYou need &e{cost} Coins&c."
+    option: "&fBanner: &e{color}"
+    price: "&7Price: &e{cost} Coins"
+    purchased: "&aFaction banner set. &7Cost: &e{cost} Coins"
+  upgrades:
+    title: "&c&lVetro&6&lForge &8• &fFaction Power"
+    no_faction: "&cYou are not in a faction."
+    leader_only: "&cOnly the faction leader may buy upgrades."
+    elo: { name: "&b&lFaction Power", lore: "&7Available: &b{elo} Power" }
+    tnt: { name: "&c&lTNT Damage", effect: "&7Bonus: &c+{value} obsidian damage" }
+    shard_bank: { name: "&d&lShard Bank", effect: "&7Bonus: &d+{value} shard capacity" }
+    obsidian: { name: "&5&lObsidian Health", effect: "&7Bonus: &d+{value} obsidian HP" }
+    level: "&7Level: &f{level}&8/&f{max}"
+    cost: "&7Next level: &b{cost} Power"
+    max: "&aMaximum level reached."
+    not_enough: "&cYou need &b{cost} Faction Power&c."
+    purchased: "&a{upgrade} &7is now level &f{level}&7."
+common:
+  back: "&cBack"
+  next: "&aNext"
+  page: "Page"
+  none: "None"
+  players_only: "&cPlayers only."
+kdr:
+  title: "&eK/D"
+  kills: "Kills"
+  deaths: "Deaths"
+  ratio: "K/D"
+  notfound: "&cPlayer not found or offline."
+  usage: "Usage"
+warzone:
+  disparity: { low: "&aLOW", medium: "&eMEDIUM", high: "&6HIGH", severe: "&5SEVERE", extreme: "&cEXTREME", cataclysmic: "&4&lCATACLYSMIC" }
+  enter:
+    title: "&4&lWARZONE"
+    subtitle: "&7Warning: PvP enabled"
+    actionbar: "&6VetroForge &8• &eYou entered the warzone &8» &fGood luck!"
+  leave:
+    title: "&a&lSPAWN"
+    subtitle: "&7You left the warzone"
+    actionbar: "&6VetroForge &8• &eYou left the warzone &8» &fStay alert!"
+events:
+  gui:
+    title: "&3Events"
+    calendar: "&eEvent Calendar"
+    none_active: "&7There is currently no active community event."
+    upcoming: "&8Upcoming events will appear here."
+    goal: "&7Goal: &f{goal}"
+    duration: "&7Duration: &f{duration}"
+    open: "Open"
+    activation: "&8Activated by staff or rotation."
+    progress: "&7Progress: &f{current}&7/&f{goal} &8({pct}%)"
+    ends: "&7Ends: &f{remaining}"
+    no_limit: "&7No time limit"
+    info: "&eInfo"
+    id: "&7ID: &f{id}"
+    paused: "&6Status: &ePAUSED"
+    active: "&aStatus: &aACTIVE"
+    started: "&7Started: &f{started}"
+    reward: "&6Reward: &fEvent Tokens"
+lootdrop:
+  spawn: "&6Lootdrop &8» &7{type} &8• &f{tier} &8• &e5:00 &8• &f{x}/{y}/{z}"
+  missing: "&cThis drop no longer exists."
+  already_opened: "&eThis drop has already been opened."
+  already_looted: "&eThis drop has already been looted."
+  cooling: "&eThe meteor is cooling down: &f{seconds}s"
+  exclusive: "&cThis drop is briefly exclusive to &f{faction}"
+  too_late: "&eSomeone was faster - already opened."
+  looted: "&aYou looted the {tier}&a lootdrop!"
+  rare_find: "&d&lRARE FIND &8» &f{player} &7found &d{item}&7!"
+  lockpick_failed: "&cLockpick failed!"
+  actionbar: { loot: "&aLOOT", lock: "&eLOCK {seconds}s" }
+skills:
+  gui:
+    title: "&d&lSkills &8» &7Choose your path"
+    detail_title: "&d&l{skill} &8» &7Abilities"
+    tree: "&6Skill Tree"
+  tree:
+    title: "&6Skill Tree"
+    level: "&6Level {level}"
+    status: { label: "&7Status:", unlocked: "&aUnlocked", next: "&eNext level", locked: "&7Locked" }
+    reward: "&8• &7Reward coming soon"
+    power: "&8• &7More power"
+gui: { close: "&cClose", previous: "&ePrevious", next: "&eNext", page: "&7Page {page}/{max}" }
+top:
+  crystals:
+    title: "&6Top War Spoils"
+    unavailable: "&cWar Spoils system unavailable"
+    empty: "&7No faction war spoils yet"
+    entry: "&f#{rank} &e{faction}"
+    amount: "&7War Spoils: &d{amount}"
+  players:
+    title: "&6&lTop Players &8» &7Kills"
+    unavailable: "&cTop GUI is currently unavailable."
+    opened: "&6Top list &8• &ePage &f{page}"
+    entry: "&f#{rank} &e{player}"
+    kills: "&7Kills: &a{amount}"
+    deaths: "&7Deaths: &c{amount}"
+    kdr: "&7K/D: &b{amount}"
+    prestige: "&7Prestige: &6{amount}"
+    help:
+      title: "&6VetroForge &7• &fTop List"
+      open: "&e/{label} &7- opens page &f1"
+      page: "&e/{label} <page> &7- e.g. &e/{label} 2"
+      next: "&e/{label} next &7- next page"
+      previous: "&e/{label} prev &7- previous page"
+help:
+  header: "&cVetro&6Forge &7• Help"
+  header_staff: "&cVetro&6Forge &7• Staff Help"
+  commands:
+    - "/help - Show this help"
+    - "/stats [player] - Show stats"
+    - "/f - Faction commands"
+    - "/fmenu - Open factions menu"
+    - "/shop - Open shop"
+    - "/story - View story"
+  staff:
+    commands:
+      - "/raidadmin start <atk> <tgt> <sec> <goal>"
+      - "/raidadmin stop <tgt>"
+      - "/ban <player> <reason>"
+      - "/mute <player> [minutes] <reason>"
+      - "/kick <player> <reason>"
+items:
+  codex:
+    title: "&8Item Codex"
+    discovered: "&aDiscovered"
+    missing: "&7Not discovered yet"
+    new: "&6Item Codex &8» &aNew discovery: &f{item}"
+  dragons_breath:
+    cooldown: "&6Dragon's Breath &8» &cCooldown: &f{seconds}s"
+crates:
+  hold_key: "&6Crates &8» &cHold a crate key in your main hand."
+  opening: "&6Crates &8» &7Opening &f{crate}&7..."
+  npc_only: "&6Crystals &8» &7Please redeem your Crystal at the &fCrystal NPC&7."
+  key_lore:
+    line1: "&7This {rarity} Crystal can be"
+    line2: "&7redeemed at the &fCrystal NPC&7."
+prestige:
+  gui:
+    title: "&8Prestige"
+    overview: "&6Prestige Overview"
+    level: "&7Level: &f{level}"
+    rank: "&7Rank: &e{rank}"
+    xp: "&7XP: &f{xp}&8/&f{need}"
+    next: "&aNext Rank"
+    progress: "&7Progress: &f{pct}%"
+    remaining: "&7Remaining: &f{xp} XP"
+links:
+  discord: "dc.vetroforge.net"
+energy:
+  regenerated: "&a+1 Energy &7({current}/{cap})"
+  command: { unavailable: "&cEnergy system is not initialized.", title: "⚡ Raid Energy", max: "Maximum reached - fully charged!", max_title: "⚡ Max Energy", max_subtitle: "You are fully charged", next: "Next +1 in ", next_actionbar: "⏳ {remaining} until +1 Energy", rate: "(1 Energy per hour · Max. {cap})" }
+crystals:
+  command:
+    unavailable: "&cWar spoils are currently unavailable."
+    title: "✦ War Spoils"
+    source: { faction: "Faction Bank", player: "Player Depot", label: "Source: " }
+    mode: { shared: "Shared faction account", personal: "Personal war spoils account" }
+    owner: { no_faction: "&7You are not in a faction.", faction: "&7Faction: &e{faction}", player: "&7Player: &e{player}" }
+    redeem: "Redeem: "
+    top: "Top Factions"
+    tip: "✨ Tip: Earn war spoils through events, lootdrops & capture zones"
+scoreboard:
+  rank: "Rank"
+  faction: "Faction"
+  faction_crystals: "Faction War Spoils"
+  player_crystals: "Your War Spoils"
+  money: "Money"
+  coins: "Coins"
+  elo: "Faction Power"
+  energy: "Energy"
+  status: "Status"
+  scouting_active: "&6Scouting active"
+  own_faction: "Your Faction"
+  target_faction: "Target Faction"
+  own_online: "Your Online"
+  target_online: "Target Online"
+  scouts: "Scouts"
+  raid_active: "&cRaid active"
+  target: "Target"
+  raiders: "Raiders"
+  join_time: "Join Time"
+  building: "Building"
+  before_red_line: "&aBefore red line"
+  prestige: "Prestige"
+  warzone_online: "Warzone Online"
+  lootdrop: "LootDrop"
+  time: "Time"
+  distance: "Distance"
+  modifier: "Modifier"
+  obsidian: "Obsidian"
+  attackers: "Attackers"
+tablist:
+  mode:
+    scouting: "&6👁 &eRaid Scouting &6👁"
+    warzone: "&6⚔ &eWarzone Combat Zone &6⚔"
+    spawn: "&c✦ &fFactions Network &c✦"
+  status:
+    scouting: "&6Scouting &8» &eActive"
+    warzone: "&6Warzone &8» &cPvP active"
+    spawn: "&aSpawn &8» &7Safe"
+  features:
+    scouting: "Fly • Invisible • Scout Mode"
+    default: "Raids • Warzone • Factions"
+  label:
+    faction: "Faction"
+    faction_elo: "Faction Power"
+    status: "Status"
+    online: "Online"
+combat:
+  blocked: "&cYou are in combat and cannot use this command. &7{seconds}s left."
+raid:
+  broadcast:
+    started: "&cRaid &8» &7{attacker} is attacking &f{target}&7!"
+    fight: "&6Raid &8» &eCombat phase!"
+    ended: "&cRaid &8» &7Ended (&f{reason}&7)"
+  reason: { completed: "Completed", timeout: "Time expired", admin: "Admin stop", cancelled: "Cancelled by faction" }
+  actionbar: { active: "&c⚔ &f{target} &8| &6{broken}/{goal} &8| &e{seconds}s" }
+  shop:
+    title: "&5Raid Shop"
+    balance: { name: "&dWar Spoils", lore: "&7Balance: &f{current} &8/ &f{max}" }
+    offer: { breach2: "&aBreach Charge x2", obsidian_64: "&aObsidian x64", pearls_16: "&aEnder Pearls x16", speed2: "&aSpeed II (8:00)", strength2: "&aStrength II (1:30)", creeper_eggs_2: "&aCreeper Eggs x2" }
+    price: "&7Price: &f{price} ✦"
+    click_buy: "&8Click to buy"
+    not_enough: "&cNot enough War Spoils."
+    purchased: "&aPurchased! New balance: &f{balance} ✦"
+    potion: { speed2: "&bSpeed II (8:00)", strength2: "&cStrength II (1:30)" }
+  gui:
+    title: "&4&lRaid &8» &7System"
+    revenge_title: "&8Revenge Targets"
+    start: { name: "&6Raid &8» &aStart Raid", description: "&7Starts raid scouting." }
+    attack: { name: "&6Raid &8» &cStart Attack", description: "&7Starts the 30-minute attack on your target." }
+    join: { name: "&6Raid &8» &aJoin Raid", description: "&7Teleports you into the active attack phase." }
+    stats: { name: "&6Raid &8» &eRaid Stats", description: "&7Shows the current progress of your raid." }
+    target: "&7Target: &c{target}"
+    costs: "&7Costs:"
+    energy_cost: "&8• &f3 Energy &7(current: &e{current}&7)"
+    crystal_cost: "&8• &f3 War Spoils &7(current: &d{current}&7)"
+    already_scouting: "&cYou are already scouting."
+    click_start: "&eClick to start"
+    click_attack: "&cClick to start the attack"
+    click_join: "&aClick to join the raid"
+    click_stats: "&eClick to view raid stats"
+    cancel: { name: "&6Raid &8» &cCancel Raid", description: "&7Cancels scouting or your raid.", scouting: "&eCurrent: &fScouting", raid: "&eCurrent: &fRaid", none: "&7Nothing active." }
+    shop: { name: "&6Raid &8» &aRaid Shop", description: "&7Opens the raid shop." }
+    click_open: "&eClick to open"
+    status:
+      scouting: "&eStatus &8» &fScouting"
+      raid: "&cStatus &8» &fIn Raid"
+      ready: "&7Status &8» &fReady"
+      faction: "&7Faction: &f{faction}"
+      target: "&7Target: &c{target}"
+      energy: "&7Energy: &e{energy}"
+      crystals: "&7War Spoils: &d{crystals}"
+  title: { scouting: "&6Scouting started", target: "&7Target: &f{target}", prepared: "&6Raid prepared", join: "&7Use &f/raid join&7 to enter", fight: "&c⚔ Combat phase", fight_subtitle: "&7The attack begins now", fight_locked: "&cNot yet!", wait_for_fight: "&7Wait for the combat phase", seconds: "&7{seconds}s", under_attack: "&c&l{attacker} &c&lis attacking the faction!", under_attack_subtitle: "&7Defend yourselves or use &f/raid revenge later" }
+  session: { next: "&6Raid &8» &eNext Faction", start: "&6Raid &8» &aStart Attack", cancel: "&6Raid &8» &cCancel Scouting", legacy_start: "&6Raid &8» &eStart Raid", lore_title: "&8VetroForge Raid", lore_locked: "&7This item cannot be dropped." }
+  item: { breach_charge: "&cBreach Charge" }
+  message:
+    session_unavailable: "&6Raid &8» &cRaidSessionService is unavailable."
+    system_unavailable: "&6Raid &8» &cThe raid system is not ready yet."
+    under_attack: "&c⚔ &lRAID! &7{attacker} &7is attacking your faction!"
+    join_unavailable: "&6Raid &8» &cThe raid join service is unavailable."
+    faction_manager_unavailable: "&6Raid &8» &cFactionManager is unavailable."
+    already_scouting: "&6Raid &8» &cYou are already scouting."
+    already_raiding: "&6Raid &8» &cYou are already in a raid."
+    no_faction: "&6Raid &8» &cYou are not in a faction."
+    not_enough_energy: "&6Raid &8» &cNot enough Energy &8(&f{amount} required&8)&c."
+    not_enough_crystals: "&6Raid &8» &cNot enough War Spoils &8(&f{amount} required&8)&c."
+    no_targets: "&6Raid &8» &cNo valid targets are available."
+    target_without_spawn: "&6Raid &8» &cThis target has no valid faction spawn."
+    energy_charge_failed: "&6Raid &8» &cEnergy could not be charged."
+    scouting_failed_refunded: "&6Raid &8» &cScouting could not start. Costs were refunded."
+    nothing_active: "&6Raid &8» &cYou have no active scouting or raid session."
+    no_active_raid: "&6Raid &8» &cThere is no active raid."
+    eliminated_cannot_rejoin: "&6Raid &8» &cYou were eliminated from this raid and cannot rejoin."
+    eliminated_title: "&c&lELIMINATED"
+    eliminated_subtitle: "&7You have been excluded from this raid."
+    lives_remaining: "&6Raid &8» &7Lives remaining: &f{lives}"
+    no_ally_raid: "&6Raid &8» &cNo allied faction is currently under attack."
+    ally_defend_joined: "&6Raid &8» &aYou are now helping defend &f{target}&a."
+    no_revenge_targets: "&6Raid &8» &7No one has attacked your faction in the last 24h."
+    scouting_stopped: "&6Raid &8» &fScouting stopped."
+    stop_confirm: "&6Raid &8» &eConfirm cancellation: &f/raid stop confirm &7(10 seconds)"
+    stats_title: "&6Raid Stats &8————————"
+    stats_target: "&8» &7Target: &f{target}"
+    stats_obsidian: "&8» &7Obsidian: &f{broken}&7/&f{goal}"
+    stats_raiders: "&8» &7Raiders: &f{raiders}"
+    stats_winner: "&8» &7Winner: &f{winner}"
+    stats_reason: "&8» &7Reason: &f{reason}"
+    unknown_command: "&6Raid &8» &cUnknown command."
+    join_phase_started: "&6Raid &8» &aJoin phase started."
+    target_faction: "&8» &7Target faction: &c{target}"
+    join_instruction: "&8» &7Use &f/raid join &7within &f{seconds} seconds&7."
+    join_phase_expired: "&6Raid &8» &cThe join phase has expired."
+    no_join_phase: "&6Raid &8» &cYour faction has no active join phase."
+    joined: "&6Raid &8» &fYou joined the raid against &e{target}&f."
+    red_line_building: "&8» &7You may build before the red line, but not behind it."
+    left: "&6Raid &8» &cYou left the raid."
+    ended: "&6Raid &8» &cThe raid has ended."
+    cannot_build_enemy: "&6Raid &8» &cYou cannot build behind the red line."
+    cannot_break_enemy: "&6Raid &8» &cYou cannot break blocks behind the red line."
+    crossed_red_line: "&6Raid &8» &cYou crossed the red line."
+    enemy_territory: "&8» &7This is enemy territory. Building is disabled."
+    before_red_line: "&6Raid &8» &aYou are back before the red line."
+    building_enabled: "&8» &7You can build here again."
+    cannot_break_here: "&6Faction &8» &cYou cannot break blocks here."
+    cannot_build_here: "&6Faction &8» &cYou cannot build here."
+    obsidian_tnt_only: "&6Raid &8» &cObsidian can only be breached with TNT."
+    breach_active_raid_only: "&6Raid &8» &cBreach Charges only work during your active raid."
+    breach_wrong_target: "&6Raid &8» &cThis charge can only be placed on your raid target's obsidian."
+    breach_armed: "&6Raid &8» &eBreach Charge armed. Detonating in 4 seconds."
+    underground_protected: "&6Faction &8» &cThe underground is protected."
+    energy_manager_unavailable: "&6Raid &8» &cEnergyManager is unavailable."
+    target_service_unavailable: "&6Raid &8» &cRaidTargetService is unavailable."
+    crystal_manager_unavailable: "&6Raid &8» &cRaidCrystalManager is unavailable."
+    raid_manager_unavailable: "&6Raid &8» &cRaidManager is unavailable."
+    item_no_drop: "&6Raid &8» &cYou cannot drop this item."
+    faction_scouted: "&6Raid &8» &cYour faction is being scouted!"
+    attacker_faction: "&8» &7Attacking faction: &f{faction}"
+    scouting_target: "&6Raid &8» &fYou are now scouting &e{target}&f."
+    zone_missing: "&6Raid &8» &cThe raid zone could not be found."
+    invalid_target: "&6Raid &8» &cNo valid target found."
+    scouting_started: "&6Raid &8» &7Scouting started at &c{target}&7."
+    not_scouting: "&6Raid &8» &cYou are not scouting."
+    no_scouting_target: "&6Raid &8» &cNo scouting target found."
+    start_failed: "&6Raid &8» &cThe raid could not start. The target may already be fighting."
+    prepared: "&6Raid &8» &aRaid prepared."
+    reset: "&6Raid &8» &7Your raid state was reset."
+    new_scouting_target: "&6Raid &8» &7New scouting target: &c{target}"
+    spawn_missing: "&6Raid &8» &cSpawn could not be found."
+    scouting_restart: "&6Raid &8» &cScouting ended due to a server restart."
+    raid_restart: "&6Raid &8» &cRaid ended due to a server restart."
+    crystals_spent: "&c-{amount} War Spoils"
+    reward_progress: "&dWar Spoils &8» &a+{crystals} &7(Raid: {broken}/{goal} obsidian)"
+    attack_active: "&c⚔ You are actively attacking now!"
+    spectating: "&7You are spectating the raid."
+    spectating_left: "&cYou left spectator mode."
+    spectating_target: "&7New target: &f{target}"
+    spectating_started: "&aRaid started against &f{target}"
+    scouting_expired: "&6Raid &8» &cScouting has expired."
+    scouting_actionbar: "&6Scouting &8» &fRemaining: &e{remaining}"
+    ping: "&ePing &8» &f{block}{hp} &8(&7{x},{y},{z}&8)"
+    rune_unknown_command: "&cUnknown subcommand."
+    rune_invalid: "&cInvalid rune."
+    rune_hand_required: "&cHold an item in your hand."
+    rune_item_required: "&cPlace an item in the slot first."
+    rune_added: "&aRune added: &f{rune} &7(-{cost} War Spoils)"
+    rune_already_applied: "&cThis rune is already on that item."
+    rune_insufficient_crystals: "&cNot enough War Spoils. Required: &f{cost}"
