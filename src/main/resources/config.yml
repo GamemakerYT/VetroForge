@@ -1,78 +1,883 @@
-logger-prefix: "[VetroForge]"
+# ===========================
+# VetroForge Konfiguration
+# ===========================
 
-skills:
-  autoLevelAbilities: true
-  bossBarSeconds: 3
-  progressBarColor: BLUE
-  disabledWorlds: []
-  disabledSkills: []
-  disabledAbilities: []
-  xpCurve:
-    base: 125.0
-    multiplier: 1.45
-  stageRequirements:
-    assassin:
-      novice: 5
-      adept: 12
-    healer:
-      novice: 4
-    warrior:
-      veteran: 10
-    raider:
-      pillager: 8
-  abilityRequirements:
-    assassin:
-      shadowstep: 5
-      invisibility: 12
-    healer:
-      renewal: 6
-    warrior:
-      riposte: 8
-    raider:
-      siege: 10
-  xpRewards:
-    assassin:
-      kill: 55
-      backstab: 35
-    healer:
-      splash: 25
-      lingering: 20
-    warrior:
-      melee: 12
-      block: 18
-    raider:
-      obsidian: 30
-      core: 80
+mysql:
+  enabled: true
+  host: 127.0.0.1
+  port: 3306
+  database: VF
+  user: VF
+  password: ""
 
-holo:
-  refreshSeconds: 20
-  warzoneTitle: "&bWarzone Live"
-  warzoneLines:
-    - "&71. &fAlphaTeam &8- &a5.6 K/D"
-    - "&72. &fBetaSquad &8- &a4.1 K/D"
-    - "&73. &fGammaUnit &8- &a3.2 K/D"
-  positions: {}
+discord-bridge:
+  enabled: false
+  server-name: "Factions"
 
-warzone:
-  world: world
-  center:
-    x: 0.0
-    y: 64.0
-    z: 0.0
-  radius: 150
+status:
+  enabled: true
+  update-seconds: 15
+  max-players: 500
+  public-url: "https://vetroforge.net/status/"
+  alerts:
+    enabled: false
+    webhookUrl: ""
+    cooldown-seconds: 300
 
-lootdrop:
-  doubleWeekend: false
-  lifetime: 300
-  actionbarRadius: 40
+redis:
+  enabled: false
+  host: 127.0.0.1
+  port: 6379
+  password: ""
 
+presence:
+  enabled: true
+  server-name: "Factions"
+  heartbeat-seconds: 10
+  ttl-seconds: 30
+
+proxy:
+  lobby-server: "Lobby"
+
+lobby:
+  autoFly: false
+  spawnRadius: 48
+
+
+
+
+ai:
+  enabled: true
+  key: ""
+
+economy:
+  factionCoins:
+    enabled: true
+    raidWin: 100
+    zoneCapture: 50
+
+energy:
+  cap: 10
+  tickMinutes: 60
+  perRaidWin: 0
+
+# ===========================
+# I18N
+# ===========================
+i18n:
+  default: "de"
+  shared:
+    enabled: false
+
+  de:
+    common:
+      back: "&cZurück"
+      next: "&aWeiter"
+      close: "&cSchließen"
+
+    story:
+      started: "&7Story gestartet: &f{title}"
+      completed_title: "&aStory abgeschlossen:&f {title}"
+      gui:
+        title:
+          list: "&fStories"
+        hint:
+          msg: "Fortschritt wird automatisch gezählt."
+        state:
+          done: "Abgeschlossen"
+          active: "Aktiv"
+          available: "Verfügbar"
+
+  en:
+    common:
+      back: "&cBack"
+      next: "&aNext"
+      close: "&cClose"
+
+    story:
+      started: "&7Story started: &f{title}"
+      completed_title: "&aStory completed:&f {title}"
+      gui:
+        title:
+          list: "&fStories"
+        hint:
+          msg: "Progress is tracked automatically."
+        state:
+          done: "Completed"
+          active: "Active"
+          available: "Available"
+
+  fr:
+    common:
+      back: "&cRetour"
+    story:
+      gui:
+        title:
+          list: "&fHistoires"
+        hint:
+          msg: "Progression automatique."
+        state:
+          done: "Terminé"
+          active: "Actif"
+          available: "Disponible"
+
+  nl:
+    common:
+      back: "&cTerug"
+    story:
+      gui:
+        title:
+          list: "&fVerhalen"
+        hint:
+          msg: "Voortgang automatisch."
+        state:
+          done: "Voltooid"
+          active: "Actief"
+          available: "Beschikbaar"
+
+# ===========================
+# SCOREBOARD
+# ===========================
 scoreboard:
-  refreshTicks: 100
-  title: "&bVetroForge"
-  lines:
-    - "&7Faction: &fNone"
-    - "&7Balance: &f0"
-    - "&7Online: &f%players_online%"
+  lobby:
+    title: "&cVetroForge &l• &aSpawn"
+    lines:
+      - "&7Faction"
+      - "&f%faction%"
+      - "&7Money"
+      - "&f$%money%"
+  warzone:
+    title: "&6&lWarzone"
+    lines:
+      - "&7Faction"
+      - "&f%faction%"
+      - "&7Prestige"
+      - "&f%prestige%"
+  raid:
+    title: "&c&lRaid"
+    lines:
+      - "&7Target"
+      - "&f%raid_target%"
+      - "&7Obsidian"
+      - "&f%raid_broken%/%raid_goal%"
+      - "&7Time"
+      - "&f%raid_time%s"
+
+# ===========================
+# SHOP
+# ===========================
+shop:
+  dynamic:
+    enabled: true
+    minBuy: 1.0
+    maxBuy: 1000000.0
+    minSell: 1.0
+    maxSell: 1000000.0
+    stepBuyPct: 0.02
+    stepSellPct: 0.02
+  categories:
+    factions:
+      name: "&cFactions"
+      icon: RED_BANNER
+      items: [diamond, emerald, gold_ingot, iron_ingot, obsidian]
+    farming:
+      name: "&aFarming"
+      icon: CACTUS
+      items: [cactus, sugar_cane, potato, carrot]
+    raid:
+      name: "&cRaid"
+      icon: TNT
+      items: [tnt, obsidian, ender_pearl, gunpowder]
+    warzone:
+      name: "&6Warzone"
+      icon: GOLDEN_APPLE
+      items: [golden_apple, diamond, netherite_scrap, emerald]
+    food:
+      name: "&eFood"
+      icon: COOKED_BEEF
+      items: [cooked_beef, potato, carrot]
+    brewing:
+      name: "&dBrewing"
+      icon: BLAZE_ROD
+      items: [blaze_rod, slime_ball, redstone, lapis]
+    building:
+      name: "&fBuilding"
+      icon: STONE
+      items: [cobblestone, stone, sand, oak_log, quartz, glass]
+    luxury:
+      name: "&5Luxury-Sinks"
+      icon: NETHERITE_SCRAP
+      items: [netherite_scrap, emerald, diamond, golden_apple]
+  general:
+    items:
+      cobblestone:
+        material: COBBLESTONE
+        amount: 1
+        name: "&7Bruchstein"
+      stone:
+        material: STONE
+        amount: 1
+        name: "&7Stein"
+      cactus:
+        material: CACTUS
+        amount: 1
+        name: "&aKaktus"
+      sand:
+        material: SAND
+        amount: 1
+        name: "&eSand"
+      oak_log:
+        material: OAK_LOG
+        amount: 1
+        name: "&6Eichenholz"
+      coal:
+        material: COAL
+        amount: 1
+        name: "&8Kohle"
+      iron_ingot:
+        material: IRON_INGOT
+        amount: 1
+        name: "&fEisen"
+      gold_ingot:
+        material: GOLD_INGOT
+        amount: 1
+        name: "&eGold"
+      diamond:
+        material: DIAMOND
+        amount: 1
+        name: "&bDiamant"
+      obsidian:
+        material: OBSIDIAN
+        amount: 1
+        name: "&5Obsidian"
+      tnt:
+        material: TNT
+        amount: 1
+        name: "&cTNT"
+      ender_pearl:
+        material: ENDER_PEARL
+        amount: 1
+        name: "&dEnderperle"
+      cooked_beef:
+        material: COOKED_BEEF
+        amount: 1
+        name: "&cSteak"
+      potato:
+        material: POTATO
+        amount: 1
+        name: "&eKartoffel"
+      carrot:
+        material: CARROT
+        amount: 1
+        name: "&6Karotte"
+      sugar_cane:
+        material: SUGAR_CANE
+        amount: 1
+        name: "&aZuckerrohr"
+      redstone:
+        material: REDSTONE
+        amount: 1
+        name: "&cRedstone"
+      lapis:
+        material: LAPIS_LAZULI
+        amount: 1
+        name: "&9Lapis"
+      emerald:
+        material: EMERALD
+        amount: 1
+        name: "&aSmaragd"
+      gunpowder:
+        material: GUNPOWDER
+        amount: 1
+        name: "&8Schwarzpulver"
+      string:
+        material: STRING
+        amount: 1
+        name: "&fFaden"
+      leather:
+        material: LEATHER
+        amount: 1
+        name: "&6Leder"
+      slime_ball:
+        material: SLIME_BALL
+        amount: 1
+        name: "&aSchleimball"
+      blaze_rod:
+        material: BLAZE_ROD
+        amount: 1
+        name: "&6Lohenrute"
+      quartz:
+        material: QUARTZ
+        amount: 1
+        name: "&fQuarz"
+      glass:
+        material: GLASS
+        amount: 1
+        name: "&fGlas"
+      golden_apple:
+        material: GOLDEN_APPLE
+        amount: 1
+        name: "&6Goldener Apfel"
+      netherite_scrap:
+        material: NETHERITE_SCRAP
+        amount: 1
+        name: "&8Netherite-Schrott"
+  prices:
+    cobblestone:
+      buy: 2
+      sell: 1
+    stone:
+      buy: 2
+      sell: 1
+    cactus:
+      buy: 4
+      sell: 2
+    sand:
+      buy: 2
+      sell: 1
+    oak_log:
+      buy: 8
+      sell: 3
+    coal:
+      buy: 12
+      sell: 5
+    iron_ingot:
+      buy: 30
+      sell: 12
+    gold_ingot:
+      buy: 45
+      sell: 18
+    diamond:
+      buy: 180
+      sell: 75
+    obsidian:
+      buy: 40
+      sell: 16
+    tnt:
+      buy: 125
+      sell: 45
+    ender_pearl:
+      buy: 80
+      sell: 30
+    cooked_beef:
+      buy: 12
+      sell: 4
+    potato:
+      buy: 5
+      sell: 18
+    carrot:
+      buy: 50
+      sell: 18
+    sugar_cane:
+      buy: 6
+      sell: 14
+    redstone:
+      buy: 18
+      sell: 8
+    lapis:
+      buy: 32
+      sell: 12
+    emerald:
+      buy: 250
+      sell: 110
+    gunpowder:
+      buy: 65
+      sell: 24
+    string:
+      buy: 18
+      sell: 6
+    leather:
+      buy: 35
+      sell: 12
+    slime_ball:
+      buy: 55
+      sell: 20
+    blaze_rod:
+      buy: 90
+      sell: 35
+    quartz:
+      buy: 16
+      sell: 6
+    glass:
+      buy: 6
+      sell: 2
+    golden_apple:
+      buy: 450
+      sell: 180
+    netherite_scrap:
+      buy: 950
+      sell: 40
+
+auction:
+  minPrice: 1
+  maxPrice: 10000000
+  listingFeePct: 0.03
+  salesTaxPct: 0.05
+  minPrices:
+    RARE: 500
+    EPIC: 1500
+    LEGENDARY: 5000
+    MYSTIC: 10000
+  bid:
+    minMinutes: 10
+    maxMinutes: 2880
+    minIncrementPct: 0.02
+  history:
+    maxEntriesPerItem: 20
+
+# ===========================
+# FACTIONS
+# ===========================
+factions:
+  create:
+    requiredLevel: 4
+    costCoins: 1000
+  banner:
+    cost: 250
+  world:
+    generator: "RAID_ARENA_MYSTIC"
+    yLevel: 64
+    forceRegenerateOnCreate: true
+
+# ===========================
+# RAID
+# ===========================
+raid:
+  attack:
+    durationSeconds: 1800
+    obsidianGoal: 25
+  revenge:
+    windowHours: 24
+  crystals:
+    max: 100
+    required: 3
+    useFactionBank: true
+  shop:
+    maxCrystals: 100
+  reward:
+    perObsidian: 10
+
+raids:
+  obsidian:
+    hp: 1000
+    tntDamage: 120
+    breach: 260
+    allowPickaxeBreak: false
+
+runes:
+  bonus:
+    raidDamage: 1.10
+    tntExpert: 1.20
+    crystalGain: 1.05
+  cost:
+    RAID_DAMAGE: 50
+    TNT_EXPERT: 50
+    CRYSTAL_GAIN: 50
+
+# ===========================
+# WARZONE
+# ===========================
+warzone:
+  enabled: true
+  spawnSafe:
+    enabled: false
+  combatTag:
+    enabled: true
+    durationSeconds: 15
+    # Blockierte Befehle während des Combat-Tags. "f home" blockiert nur das
+    # Subcommand "home" von /f, nicht /f komplett. Aliase (z.B. /lobbyserver
+    # für /hub) werden automatisch mit erkannt.
+    blockedCommands:
+      - "spawn"
+      - "hub"
+      - "f home"
+    # Wer während eines aktiven Combat-Tags den Server verlässt, verliert seine
+    # komplette Ausrüstung (anders als ein normaler Tod, bei dem sie erhalten bleibt).
+    dropItemsOnLogout: true
+    # Wer in der Warzone stirbt, verliert seine Ausrüstung nur, wenn er zum
+    # Todeszeitpunkt noch im Combat-Tag steht. Ein Tod ohne aktives PvP
+    # (Sturz, Mob, o.ä.) bleibt ohne Verlust.
+    dropItemsOnDeath: true
+  disparity:
+    blocksPerLevel: 50
+    maxLevel: 100
+    # Gemeinsame Eskalationsstufen fuer Mob-Varianten (WarzoneMobService) UND
+    # Bossbar-Optik (WarzoneBossBarManager) -- ab hier schalten neue Mob-Typen frei
+    # und die Bossbar-Farbe/das Label eskaliert weiter statt bei Stufe 3 einzufrieren.
+    tierLow: 16
+    tierMedium: 41
+    tierHigh: 71
+    # Leichte Partikel-Aura um Spieler ab Tier "high", die mit der Stufe intensiver wird.
+    auraParticles: true
+  mobs:
+    max-active: 8
+    spawn-every-seconds: 28
+    boss-every-seconds: 300
+    killCoinsBase: 3
+    killCoinsPerDisparity: 2
+    speed: 0.11
+    boss-speed: 0.0
+    # Speed waechst leicht mit der Disparity-Stufe (vorher komplett flach).
+    speedPerLevel: 0.0015
+    speedCap: 0.32
+    # Schadens-Multiplikator pro Stufe -- wirkt auf den tatsaechlichen Schadenswert
+    # (Nahkampf, Pfeile, Zauber gleichermassen), nicht nur auf ein Attribut, damit
+    # Fernkampf-/Caster-Mobs (Skeleton, Stray, Pillager, Evoker) mitskalieren.
+    damagePerLevel: 0.06
+    damageMultiplierCap: 3.0
+  bossbar:
+    enabled: true
+    title: "&6&lWarzone &8» &7Disparity: {disparity}"
+    color: YELLOW
+    style: SEGMENTED_10
+  chests:
+    legacy-manager-enabled: false
+    spawn:
+      maxActive: 4
+      everySeconds: 120
+      despawnAfterOpenSeconds: 0
+      minRollsPerChest: 2
+      rollsPerChest: 6
+
+level:
+  maxLevel: 10
+  baseXp: 100
+  perLevel: 35
+  chestXp: 12
+  xpBottle: 15
+
+# ===========================
+# CHESTS
+# ===========================
+chests:
+  loot:
+    default:
+      iron:
+        material: IRON_INGOT
+        min: 3
+        max: 8
+        chance: 0.6
+
+# ===========================
+# MAINTENANCE
+# ===========================
+maintenance:
+  kickDelaySeconds: 60
+
+# ===========================
+# CHAT
+# ===========================
+staffgui:
+  reports:
+    refreshSeconds: 15
+    waitingThresholdMinutes: 10
+    oldThresholdMinutes: 30
 
 chat:
-  useAdventure: false
+  mentions:
+    # sound, sound+actionbar, off
+    mode: sound+actionbar
+    cooldownSeconds: 8
+  insults:
+    - "arsch.*"
+
+# ===========================
+# SPELLS
+# ===========================
+spells:
+  list:
+    fireball:
+      cooldownSeconds: 15
+    heal:
+      cooldownSeconds: 20
+
+# ===========================
+# WIKI
+# ===========================
+wiki:
+  pages:
+    intro:
+      title: "Willkommen"
+      content:
+        - "Nutze /f create"
+
+# ===========================
+# STORIES
+# ===========================
+stories:
+  starter:
+    title: "&fErste Schritte"
+    steps:
+      "1":
+        type: REACH_WARZONE
+        target: 1
+    rewards:
+      money: 250
+
+# ===========================
+# CRATES
+# ===========================
+crates:
+  jackpot:
+    mysticBroadcast: true
+  bridge:
+    provider: AUTO
+    ids:
+      COMMON: Common
+      RARE: Rare
+      EPIC: Epic
+      LEGENDARY: Legendary
+      MYSTIC: Mystic
+  Common:
+    keyName: "&7&lCommon Crystal"
+    rewards:
+      - material: ENDER_PEARL
+        amount: 3
+        name: "&7Warzone Pearls"
+      - material: OBSIDIAN
+        amount: 16
+        name: "&7Obsidian Pack"
+      - material: COOKED_BEEF
+        amount: 16
+        name: "&7Food Pack"
+      - material: POTATO
+        amount: 24
+        name: "&7Farm Pack"
+      - material: IRON_INGOT
+        amount: 12
+        name: "&7Common Material"
+  Rare:
+    keyName: "&9&lRare Crystal"
+    rewards:
+      - material: ENDER_PEARL
+        amount: 6
+        name: "&9Pearl Cache"
+      - material: OBSIDIAN
+        amount: 32
+        name: "&9Raid Blocks"
+      - material: SPLASH_POTION
+        amount: 2
+        name: "&9Warzone Heal Potions"
+      - material: EXPERIENCE_BOTTLE
+        amount: 16
+        name: "&9Level XP Bottles"
+      - material: DIAMOND
+        amount: 4
+        name: "&9Rare Material"
+  Epic:
+    keyName: "&d&lEpic Crystal"
+    rewards:
+      - material: SPLASH_POTION
+        amount: 2
+        name: "&dFight Potion Pack"
+      - material: EXPERIENCE_BOTTLE
+        amount: 32
+        name: "&dLevel XP Cache"
+      - material: DIAMOND_BLOCK
+        amount: 2
+        name: "&dEpic Material"
+      - material: NETHERITE_SCRAP
+        amount: 2
+        name: "&dForge Scrap"
+      - material: OBSIDIAN
+        amount: 48
+        name: "&dRaid Supply"
+  Legendary:
+    keyName: "&6&lLegendary Crystal"
+    rewards:
+      - material: BLAZE_ROD
+        amount: 1
+        name: "&6&lDragon's Breath"
+      - material: NETHERITE_SCRAP
+        amount: 4
+        name: "&6Legendary Forge Scrap"
+      - material: TOTEM_OF_UNDYING
+        amount: 1
+        name: "&6Raid Totem"
+      - material: EXPERIENCE_BOTTLE
+        amount: 48
+        name: "&6Large Level XP Cache"
+      - material: DIAMOND_BLOCK
+        amount: 6
+        name: "&6Legendary Material"
+  Mystic:
+    lootdropOnly: false
+    keyName: "&5&lMystic Crystal"
+    rewards:
+      - material: ECHO_SHARD
+        amount: 3
+        name: "&5Soulbind Shards"
+      - material: NETHER_STAR
+        amount: 1
+        name: "&5Mystic Forge Star"
+      - material: NETHERITE_INGOT
+        amount: 1
+        name: "&5Mystic Upgrade Core"
+      - material: EXPERIENCE_BOTTLE
+        amount: 64
+        name: "&5Mystic Level XP Cache"
+      - material: DRAGON_BREATH
+        amount: 2
+        name: "&5Event Catalyst"
+  default:
+    rewards:
+      - material: DIAMOND
+        amount: 2
+        weight: 10
+  boss:
+    keyName: "&4&lWarzone Boss Crystal"
+    rewards:
+      - material: NETHER_STAR
+        amount: 1
+        name: "&dMystic Forge Star"
+      - material: DIAMOND_BLOCK
+        amount: 4
+        name: "&bBoss Cache"
+      - material: ECHO_SHARD
+        amount: 3
+        name: "&5Soulbind Shards"
+
+keytrader:
+  prices:
+    common: 750
+    rare: 4000
+    epic: 12000
+    legendary: 37000
+
+# ===========================
+# WEB API
+# ===========================
+webapi:
+  enabled: true
+  bind: 0.0.0.0
+  port: 8500
+  apiKey: "5475698"
+
+# ===========================
+# COSMETICS
+# ===========================
+cosmetics:
+  items:
+    fairy_trail:
+      name: "&dFeen-Schweif"
+      icon: ALLIUM
+      price: 2500
+
+# ===========================
+# PUNISHMENTS
+# ===========================
+punishments:
+  # Namen oder UUIDs, die niemals von AI-Review/Auto-Punishments getroffen werden.
+  protectedStaff:
+    - "GamemakerYT"
+  reasons:
+    ban:
+      de:
+        - "Cheating"
+
+# ===========================
+# PRESTIGE
+# ===========================
+prestige:
+  autosaveMinutes: 3
+
+# ===========================
+# MOTD
+# ===========================
+motd:
+  profiles:
+    default:
+      lines:
+        - "&6VetroForge"
+        - "&7Online: &f{online}"
+customitems:
+  maxLevel: 5
+  # Sacrifices, die vom aktuellen Level zum naechsten noetig sind (Index 0 = Level 0->1, ...).
+  levelUpRequired: [2, 4, 7, 10, 15]
+  # Coins-Kosten fuer den jeweiligen Level-Up, sobald genug Sacrifices zusammen sind.
+  levelUpCost: [400, 1000, 2000, 6000, 20000]
+  armorSets:
+    fortune:
+      baseKillCoins: 10
+      killCoinMultiplier: 2.0
+    rewards:
+      common: 100
+      rare: 250
+      epic: 600
+      legendary: 1500
+      mystic: 4000
+  eventDrops:
+    enabled: true
+    tradeLockHours: 6
+    active:
+      - halloween_reaper
+      - winter_star
+    weekendActive:
+      - halloween_reaper
+      - winter_star
+      - lunar_relic
+      - anniversary_core
+  eventShop:
+    reroll: 2
+    soulbind: 4
+    protection: 10
+  seasonOneDropsEnabled: true
+
+quests:
+  daily:
+    kills: 20
+    rewardMoney: 50
+    rewardCoins: 25
+  weeklyFaction:
+    kills: 100
+    rewardFactionCoins: 250
+
+lootdrop:
+  mysticWeight: 1.0
+  factionExclusiveSeconds: 20
+  timed:
+    enabled: false
+    intervalSeconds: 900
+    radius: 64
+    slots: 6
+    region:
+      enabled: false
+  pity:
+    opens: 8
+
+# ===========================
+# ANTICHEAT (Phase 1: Speed/Fly/Reach, nur Logging/Staff-Alert, kein Auto-Punish)
+# ===========================
+anticheat:
+  enabled: true
+  alertStaff: true
+  # Cooldown pro Spieler zwischen zwei Staff-Alerts (egal welcher Check ausgeloest hat).
+  alertCooldownMillis: 15000
+  # Kulanzfenster nach Schaden/Teleport/Respawn/Fahrzeug-Ausstieg, in dem nichts geprueft wird
+  # (Knockback, Teleport-Sprung etc. sehen sonst wie Speed-/Fly-Hacks aus).
+  graceMillisAfterDamage: 600
+  graceMillisAfterTeleport: 1000
+  speed:
+    # Vielfaches der erwarteten Maximalgeschwindigkeit, bevor ueberhaupt ein Verstoss zaehlt.
+    toleranceMultiplier: 1.5
+    # So viele Verstoesse muessen innerhalb windowMillis passieren, bevor Staff alarmiert wird.
+    violationsToFlag: 4
+    windowMillis: 4000
+  reach:
+    maxDistance: 4.2
+    violationsToFlag: 3
+    windowMillis: 5000
+
+events:
+  weekendRotation:
+    enabled: true
+    active:
+      - halloween
+      - winter
+      - lunar
+      - anniversary
+  calendar:
+    - "Halloween: October"
+    - "Winter: December"
+    - "Lunar: January-February"
+    - "Anniversary: June"

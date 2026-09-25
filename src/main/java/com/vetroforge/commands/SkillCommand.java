@@ -1,96 +1,52 @@
+// src/main/java/com/vetroforge/commands/SkillCommand.java
 package com.vetroforge.commands;
 
-import com.vetroforge.skills.SkillManager;
-import com.vetroforge.skills.SkillProfile;
-import com.vetroforge.skills.SkillProgress;
+import com.vetroforge.FactionsPlugin;
 import com.vetroforge.skills.SkillType;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.command.TabCompleter;
+import org.bukkit.command.*;
 import org.bukkit.entity.Player;
-import org.bukkit.util.StringUtil;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 public class SkillCommand implements CommandExecutor, TabCompleter {
-
-    private final SkillManager skillManager;
-
-    public SkillCommand(SkillManager skillManager) {
-        this.skillManager = skillManager;
-    }
+    private final FactionsPlugin plugin;
+    public SkillCommand(FactionsPlugin plugin){ this.plugin = plugin; }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!sender.hasPermission("vetroforge.command.skill")) {
-            sender.sendMessage(ChatColor.RED + "You do not have permission to use this command.");
-            return true;
-        }
-        if (args.length == 0) {
-            if (!(sender instanceof Player player)) {
-                sender.sendMessage(ChatColor.RED + "Console must specify a player.");
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        if (!(sender instanceof Player p)) return true;
+        if (args.length >= 1) {
+            SkillType type = parse(args[0]);
+            if (type != null && plugin.getSkillManager().isEnabled(p, type)) {
+                plugin.getSkillsGui().openDetail(p, type);
                 return true;
             }
-            showProfile(player, player);
-            return true;
         }
-        Player target = Bukkit.getPlayerExact(args[0]);
-        if (target == null) {
-            sender.sendMessage(ChatColor.RED + "Player not found.");
-            return true;
-        }
-        if (sender instanceof Player player && !player.equals(target) && !sender.hasPermission("vetroforge.command.skill.other")) {
-            sender.sendMessage(ChatColor.RED + "You do not have permission to inspect other players.");
-            return true;
-        }
-        showProfile(sender, target);
+        plugin.getSkillsGui().openMain(p);
         return true;
     }
 
-    private void showProfile(CommandSender viewer, Player target) {
-        SkillProfile profile = skillManager.getProfile(target);
-        viewer.sendMessage(ChatColor.AQUA + "Skills for " + target.getName() + ":");
-        for (SkillType type : SkillType.values()) {
-            SkillProgress progress = profile.getProgress(type);
-            double required = Math.round(skillManager.getRequiredXp(progress.getLevel()));
-            viewer.sendMessage(ChatColor.GRAY + " - " + ChatColor.WHITE + type.displayName() + ChatColor.GRAY + ": Level " + ChatColor.AQUA + progress.getLevel()
-                    + ChatColor.GRAY + " | XP " + ChatColor.WHITE + Math.round(progress.getXp()) + "/" + Math.round(required)
-                    + ChatColor.GRAY + " | Points " + ChatColor.WHITE + progress.getPoints());
-            if (!progress.getUnlockedStages().isEmpty()) {
-                viewer.sendMessage(ChatColor.DARK_GRAY + "   Stages: " + ChatColor.WHITE + prettify(progress.getUnlockedStages()));
-            }
-            if (!progress.getUnlockedAbilities().isEmpty()) {
-                viewer.sendMessage(ChatColor.DARK_GRAY + "   Abilities: " + ChatColor.WHITE + prettify(progress.getUnlockedAbilities()));
-            }
-        }
-    }
-
-    private String prettify(Iterable<String> values) {
-        List<String> formatted = new ArrayList<>();
-        for (String value : values) {
-            if (value == null || value.isEmpty()) {
-                continue;
-            }
-            String normalized = value.replace('_', ' ');
-            formatted.add(Character.toUpperCase(normalized.charAt(0)) + (normalized.length() > 1 ? normalized.substring(1) : ""));
-        }
-        return String.join(", ", formatted);
-    }
-
     @Override
-    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+    public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
+        List<String> out = new ArrayList<>();
         if (args.length == 1) {
-            List<String> names = new ArrayList<>();
-            for (Player player : Bukkit.getOnlinePlayers()) {
-                names.add(player.getName());
+            String prefix = args[0].toLowerCase(Locale.ROOT);
+            for (SkillType type : SkillType.values()) {
+                String value = type.name().toLowerCase(Locale.ROOT);
+                if (value.startsWith(prefix)) out.add(value);
             }
-            return StringUtil.copyPartialMatches(args[0], names, new ArrayList<>());
         }
-        return Collections.emptyList();
+        return out;
+    }
+
+    private SkillType parse(String raw) {
+        if (raw == null) return null;
+        try {
+            return SkillType.valueOf(raw.toUpperCase(Locale.ROOT));
+        } catch (IllegalArgumentException ignored) {
+            return null;
+        }
     }
 }

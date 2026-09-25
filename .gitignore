@@ -35,4 +35,4 @@ build/
 .vscode/
 
 ### Mac OS ###
-.DS_Store
+.DS_Storeaikey,*.iml,out/,target/,dependency-reduced-pom.xml,*.save

@@ -1,0 +1,22 @@
+{
+  "updatedAt": "2026-09-24T00:00:00+02:00",
+  "category": {
+    "id": "3354292",
+    "name": "Ranks",
+    "cumulative": true,
+    "uploaded": false,
+    "note": "Category image can be uploaded manually in Tebex if desired."
+  },
+  "packages": {
+    "ember": { "uploaded": true, "packageId": "7499369", "image": "tebex-ranks/ember-final.png" },
+    "vanguard": { "uploaded": true, "packageId": "7499375", "image": "tebex-ranks/vanguard-final.png" },
+    "obsidian": { "uploaded": true, "packageId": "7499376", "image": "tebex-ranks/obsidian-final.png" },
+    "apex": { "uploaded": true, "packageId": "7499377", "image": "tebex-ranks/apex-final.png" },
+    "vetroplus": {
+      "uploaded": false,
+      "packageId": "7499378",
+      "image": "tebex-ranks/vetroplus-final.png",
+      "note": "Live package still shows an old 'VF+' logo image not tracked anywhere in this repo. Tried replacing it via Tebex's package image API on 2026-09-24: the endpoint returns 200 OK but serves back the old image bytes under a new filename instead of the uploaded file, so the swap did not take effect. Needs a manual upload in the Tebex dashboard (Packages -> Vetro+ Rank -> Media), or a retry once Tebex fixes the endpoint."
+    }
+  }
+}
