@@ -1,0 +1,78 @@
+messages:
+  start:    "&8[&dEvent&8] &d{event_name} &7gestartet. {ends_in}"
+  stop:     "&8[&dEvent&8] &c{event_name} &7gestoppt."
+  complete: "&8[&dEvent&8] &aAbgeschlossen: &f{event_name} &8(&f{current}&7/&f{goal}&8, &a{pct}%&8)"
+  timeout:  "&8[&dEvent&8] &eZeit abgelaufen: &f{event_name} &8(&f{current}&7/&f{goal}&8)"
+  pause:    "&8[&dEvent&8] &ePausiert: &f{event_name}"
+  resume:   "&8[&dEvent&8] &aFortgesetzt: &f{event_name}"
+  progress: "&8[&dEvent&8] &bFortschritt: &f{event_name} &8→ &f{current}&7/&f{goal} &8(&b{pct}%&8)"
+  milestone: "&8[&dEvent&8] &6Etappenziel: &f{event_name} &8— &e{pct}% &7erreicht! &8(&f{current}&7/&f{goal}&8)"
+
+milestones:
+  enabled: true
+  percents: [10, 25, 50, 75, 90]
+
+templates:
+  cactus_grind:
+    name: "1 Mio. Kaktus farmen"
+    description: "Community-Farming-Event für die Haupt-Coinquelle."
+    category: "Farming"
+    icon: CACTUS
+    goal: 1000000
+    duration: "2h"
+    rewards:
+      - "crystals:500"
+      - "coins:250000"
+      - "broadcast:&aEvent abgeschlossen! &7(1 Mio. Kaktus)"
+  lootdrop_hunt:
+    name: "Community Lootdrop Hunt"
+    description: "Öffnet gemeinsam Lootdrops in der Warzone."
+    category: "Warzone"
+    icon: ENDER_CHEST
+    goal: 75
+    duration: "48h"
+    rewards:
+      - "event_tokens:5"
+      - "broadcast:&aCommunity-Ziel erreicht! &7(75 Lootdrops geöffnet)"
+  raid_weekend:
+    name: "Raid Weekend"
+    description: "Gewinnt Raids als Community und sammelt Event-Belohnungen."
+    category: "Raid"
+    icon: TNT
+    goal: 25
+    duration: "48h"
+    rewards:
+      - "event_tokens:8"
+      - "broadcast:&aCommunity-Ziel erreicht! &7(25 Raids gewonnen)"
+  boss_slayer:
+    name: "Warzone Bossjagd"
+    description: "Besiegt gemeinsam Warzone-Bosse und jagt Boss-Crystals."
+    category: "Warzone"
+    icon: NETHER_STAR
+    goal: 12
+    duration: "24h"
+    rewards:
+      - "event_tokens:6"
+      - "crystals:300"
+      - "broadcast:&aBossjagd abgeschlossen! &7Die Warzone bebt."
+  chest_rush:
+    name: "Warzone Chest Rush"
+    description: "Plündert Warzone-Chests für Level-XP, Ressourcen und Crystals."
+    category: "Warzone"
+    icon: BARREL
+    goal: 150
+    duration: "24h"
+    rewards:
+      - "event_tokens:4"
+      - "coins:75000"
+      - "broadcast:&aChest Rush abgeschlossen! &7Die Kisten waren nicht sicher."
+  crystal_drive:
+    name: "Kriegsbeute-Drive"
+    description: "Sammelt Kriegsbeute für kommende Angriffe."
+    category: "Raid"
+    icon: END_CRYSTAL
+    goal: 500
+    duration: "36h"
+    rewards:
+      - "crystals:750"
+      - "broadcast:&aKriegsbeute-Drive abgeschlossen! &7Die Factions sind bereit."

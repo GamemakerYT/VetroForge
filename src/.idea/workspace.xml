@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d72a9c92-671a-4f3f-b835-366999d43fdf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../aikey" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/ai/AIBanManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/ai/NopAIService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/ai/OpenAIServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/BalanceTuningCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/BanCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/BaseCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/BroadcastCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/ChestCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/CrateCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/CrateKeyCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/CrateNpcCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/FMenuCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/FRelationCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/FWorldAdminCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/FactionCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/FactionWorldCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/GeyserIniCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/IpCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/KdrCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/KeyCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/KickCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/LanguageCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/LobbyCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/LootCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/MoneyCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/MuteCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/NotifyCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/OnlineTimeCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/PermsCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/PlayHiderCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/PrestigeCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/PrestigeDebugCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/RaidAdminCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/ReasonsCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/ReportCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/ScoreboardCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/SellCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/ShopAdminCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/ShopCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/SlowChatCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/StoryAdminCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/TopGuiCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/WarzoneChestAdminCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/WarzoneChestCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/WarzoneCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/WikiAdminCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/WikiSearchCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commerce/AICommerceManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commerce/ShopGui.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commerce/ShopListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/crates/CrateNpcListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/crates/CrateNpcManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/crates/KeyCrateManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/crates/RewardManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/crates/RollGui.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/display/NametagTabListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/display/SidebarScoreboardManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/display/TabHeaderFooterTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/economy/EconomyManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/factions/Faction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/factions/FactionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/factions/FactionRelationsManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/factions/RelationColor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/factions/RelationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/gui/FactionGui.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/gui/FactionGuiManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/gui/FactionMenuManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/gui/LanguageGuiManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/gui/StoryGuiManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/gui/TopGuiManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/i18n/I18nManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/i18n/LanguageManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/i18n/LanguageMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/language/LanguageGui.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/language/LanguageJoinListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/listeners/ChatFormatListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/listeners/ChatListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/listeners/ChestListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/listeners/FactionGuiListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/listeners/FriendlyFireListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/listeners/KillListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/listeners/LanguageListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/listeners/PrestigeListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/listeners/StoryListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/listeners/WarzoneChestListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/listeners/WarzoneEnterListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/listeners/WarzoneListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/maintenance/MaintenanceCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/maintenance/MaintenanceListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/maintenance/MaintenanceManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/BroadcastManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/BundleShopManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/ChestLootChanceManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/ChestSpawnManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/GeneralShopManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/GeyserIntegrationManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/HologramManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/OnlineTimeManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/ResourcePackManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/VetroPermsManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/WebhookManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/notify/NotifyManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/persistence/PersistenceManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/persistence/YamlIO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/persistence/store/AICommerceYamlStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/persistence/store/CrateYamlStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/persistence/store/EconomyYamlStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/persistence/store/FactionYamlStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/persistence/store/StatsYamlStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/prestige/ChestLootPrestigeListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/prestige/PrestigeLevelUpEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/prestige/PrestigeManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/prestige/PvpKillListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/prestige/WarzoneCaptureListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/punish/PunishmentManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/raid/ObsidianBreakListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/raid/RaidAnnouncements.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/raid/RaidManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/raid/spectator/RaidSpectatorListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/raid/spectator/RaidSpectatorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/scoreboard/ScoreboardManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/stats/StatsListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/tasks/TablistUpdater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/util/ActionBarUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/util/HeadUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/util/KickUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/util/PrestigeUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/warzone/WarzoneBossBarManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/warzone/WarzoneCaptureEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/warzone/WarzoneChestManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/warzone/WarzoneEnterLeaveListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/warzone/WarzoneRegionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/web/WebApiManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/world/WorldGeneratorManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/world/WorldManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/worldgen/CustomChunkGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/worldgen/VetroFlatGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/vetroforge/worldgen/VetroVoidGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/resources/config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/FactionsPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/FactionsPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/ai/AiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/ai/AIService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/ai/CachingAiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/ai/CachingAIService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/ai/NoopAiService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/ai/OpenAiService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/BalanceTuneCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/CosmeticsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/CosmeticsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/ErrorsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/ErrorsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/FactionCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/AIBanCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/FactionShopCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/FactionShopCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/HelpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/MaintenanceCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/OptimizeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/OptimizeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/QuestCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/QuestCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/RaidCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/RaidCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/RewardCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/RewardCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/SeasonCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/SeasonCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/SkillCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/SkillCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/SpellCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/SpellCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/StaffCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/StaffCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/StatsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/StatsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/StoryCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/StoryCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/TicketCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/TicketCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/UpdaterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/UpdaterCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/VetroForgeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/VetroForgeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/commands/WikiCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/commands/WikiCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/BalanceTuningManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/BalanceTuningManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/ConfigOptimizeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/ConfigOptimizeManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/CosmeticsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/CosmeticsManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/ErrorHandlerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/ErrorHandlerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/FactionCoinManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/FactionCoinManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/FactionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/TablistManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/FactionShopManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/FactionShopManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/MaintenanceManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/QuestManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/QuestManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/RaidManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/LobbyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/RewardManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/WarzoneManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/SeasonManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/SeasonManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/SkillManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/SkillManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/SpellManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/SpellManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/StatsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/ChestManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/StoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/StoryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/TicketManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/TicketManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/UpdateCheckerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/UpdateCheckerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/VoteManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/VoteManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/manager/WikiManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/manager/WikiManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/util/GradientUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/util/GradientUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/vetroforge/util/InputSanitizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/vetroforge/util/InputSanitizer.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="30uzYKRSvGZjmqKnKvOG31cesr7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/castelijn/Desktop/src&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.27812.49" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.27812.49" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d72a9c92-671a-4f3f-b835-366999d43fdf" name="Changes" comment="" />
+      <created>1754492291267</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1754492291267</updated>
+      <workItem from="1754492292455" duration="57000" />
+      <workItem from="1754731108959" duration="71000" />
+      <workItem from="1754843806161" duration="10000" />
+      <workItem from="1755351335967" duration="37000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

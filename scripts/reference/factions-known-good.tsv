@@ -1,0 +1,7 @@
+# label	remote_path	sha256	note
+# Beispiel:
+# features-latest	/home/Mc/Factions/plugins/vetroforge.jar.bak-ah-shop-roleperms-20260705-004932	02a52c50080fca8c485bcd992fc594898fdb4775264fc29f5733f3aa1334c96a	Raid/Crates/Shop/Factions neuer Stand
+wednesday-20260701	/home/Mc/Factions/plugins/vetroforge.jar.bak-codex-20260701-222359	58ab72775a72859aa57a2ffd92b244af74c82dbac544e86c26fd18ff9e34d48d	Mittwoch-Stand, aber Raid/Crates aelter
+tablist-good	/home/Mc/Factions/plugins/vetroforge.jar.bak-source-tablist-20260704-112952	fea189b3b939cbbf3e3e9586de672da34a12709b98977305ffba12cd685b9b8c	Tablist-Quelle vom 04.07, nur als Referenz/Notfall
+latest-live	/home/Mc/Factions/plugins/vetroforge.jar.bak-before-weekrollback-20260705-010359	157c6905fba415df773167667ef7507b004fb7f773b255b12cd0b4d3c06bce9a	Neuester Live-Stand vor Rollbacks: AH/Shop/Rollenrechte + aktuelle Features
+features-latest	/home/Mc/Factions/plugins/vetroforge.jar.bak-before-weekrollback-20260705-010359	157c6905fba415df773167667ef7507b004fb7f773b255b12cd0b4d3c06bce9a	Neuester Live-Stand vor Rollbacks: AH/Shop/Rollenrechte + aktuelle Features

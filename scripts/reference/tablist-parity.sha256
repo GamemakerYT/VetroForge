@@ -1,0 +1,23 @@
+# Expected SHA-256 hashes for the known-good tablist/chat/scoreboard layer.
+# Updated 2026-09-24 (2nd pass): NametagTabManager and StaffJoinListener now
+# color the player's overhead nametag/tab-list name and join-message name by
+# rank instead of hardcoded WHITE/YELLOW -- deliberate fix for a user-reported
+# bug, verified by reading the diff, not a regression. Live-tested by the user
+# after this deploy.
+# Updated 2026-09-25: ChatListener.hover() (the name-hover tooltip card shown
+# in chat) got a divider/icon polish pass as part of the "Hoverchat" UI
+# overhaul -- verified by reading the diff: only Component text/icon/color
+# literals inside hover() changed, rankColor()/player.getName() and the
+# actual nametag/tablist coloring logic elsewhere are untouched. Not yet
+# live-tested by the user.
+# Updated 2026-09-25 (2nd pass): NametagTabManager overhead nametag suffix
+# now also shows Level and Prestige (user-reported: missing next to the
+# name), added via new fullSuffix()/prestigeSuffix() that wrap the existing
+# factionSuffix() -- verified by reading the diff: purely additive, prefix()/
+# rankColor()/team.color() untouched. Not yet live-tested by the user.
+485488e9b84ea04cbdc4b3e219444df3466b10a13c36fd47991ad012f6a5a689  com/vetroforge/chat/ChatListener.class
+2f63f4e645cbafc564354ff69174004da2a570000e88e2d8b8421a0eec8e1aca  com/vetroforge/manager/TablistManager.class
+98b7d600d93517988e0dbe096d819ca356f09b361dd25680e95e9a48900a7701  com/vetroforge/scoreboard/ScoreboardUpdateTask.class
+6bd8eca5cb241b783b5c221146d09f1828f3f58e68db23f690594ae410a7131f  com/vetroforge/display/NametagTabManager.class
+9c011bb2d24d73921634163f7469cdc07bf37c1d94339e38d8f666de402ec8dd  com/vetroforge/display/TabHeaderFooterTask.class
+7b6a11d3d062412b0f784897ca5d2ccb38e7bce2a6975d034e9a28aa3a1dc161  com/vetroforge/listeners/StaffJoinListener.class

@@ -1,0 +1,435 @@
+language:
+  gui:
+    title: "&fTaal kiezen"
+    close: "&cSluiten"
+    close_lore: "&7Klik om het menu te sluiten"
+  item:
+    de: { name: "&fDuits",   lore: "&7Klik om Duits te zetten" }
+    en: { name: "&fEngels",  lore: "&7Klik om Engels te zetten" }
+    fr: { name: "&fFrans",   lore: "&7Klik om Frans te zetten" }
+    nl: { name: "&fNederlands", lore: "&7Klik om Nederlands te zetten" }
+  set: "&aTaal ingesteld: &f{lang}"
+  auto: "&aAutomatische taal actief: &f{lang}"
+fmenu:
+  title: "&c&lVetro&6&lForge &8• &fFactions"
+  profile: { faction: "&7Faction: &f{faction}", role: "&7Rol: &f{role}", members: "&7Leden: &f{members}", crystals_faction: "&7Faction-oorlogsbuit: &d{crystals}&8/&f{cap}", crystals_player: "&7Jouw oorlogsbuit: &d{crystals}&8/&f{cap}", roles: { leader: "Leader", officer: "Officer", member: "Lid", none: "Geen" } }
+  banner: { name: "&c&lFaction Banner", faction: "&7Faction: &f{faction}", members: "&7Leden: &f{members}", crystals_faction: "&7Gedeelde oorlogsbuit-bank: &d{crystals}&8/&f{cap}", crystals_player: "&7Jouw oorlogsbuit: &d{crystals}&8/&f{cap}", none: "&cMaak eerst een faction met /f create.", ready: "&8De gedeelde banner van je faction" }
+  members:
+    name: "&b&lLeden"
+    lore: "&7Toont jullie &f{members} &7leden."
+    title: "&8Faction-leden &7• &f{page}/{pages}"
+    page: "&7Pagina &f{page}&7/&f{pages}"
+  raid: { name: "&c&lRaid-systeem", lore: "&7Scout vijanden en start een aanval." }
+  stats: { name: "&e&lStatistieken", lore: "&7Opent je statistieken." }
+  shop: { name: "&a&lShop", lore: "&7Opent de factions-shop." }
+  banner_design: { name: "&d&lBanner ontwerpen", lore: "&7Ontwerp jullie gezamenlijke faction-banner." }
+  raid_shop: { name: "&5&lRaid-shop", lore: "&7Opent uitrusting voor jullie volgende raid." }
+  upgrades: { name: "&6&lFractiemacht-upgrades", lore: "&7Koop TNT- en obsidian-verbeteringen." }
+  help: { name: "&6&lFaction-help", no_faction: "&7Je zit nog niet in een faction.", ready: "&7Beheer hier je faction." }
+  message: { no_faction: "&cJe zit niet in een faction.", unavailable: "&cHet faction-menu is momenteel niet beschikbaar." }
+  back: "&cTerug"
+  previous: "&eVorige pagina"
+  next: "&aVolgende pagina"
+faction:
+  command:
+    no_faction: "&cJe zit niet in een faction."
+    no_permission: "&cGeen toestemming."
+    not_found: "&cFaction niet gevonden."
+    already_member: "&cJe zit al in &f{faction}"
+    name_taken: "&cDie naam is al bezet."
+    invalid_name: "&cOngeldige factienaam. Gebruik 2-16 letters, cijfers of underscores."
+    created: "&aFaction aangemaakt: &f{faction}"
+    leader_or_admin: "&cAlleen leaders of admins mogen de faction opheffen."
+    disbanded: "&aFaction &f{faction}&a opgeheven."
+    disband_failed: "&cKon de faction niet opheffen."
+    disband_confirm: "&cDit ontbindt je faction definitief! &7Bevestig met &f/{label} disband confirm"
+    player_offline: "&cSpeler is niet online."
+    player_not_found: "&cSpeler niet gevonden."
+    joined: "&aToegetreden: &f{faction}"
+    join_failed: "&cKon niet toetreden tot de faction."
+    leave_failed: "&cAls leader kun je niet vertrekken zolang er leden zijn. Gebruik &e/f setleader <speler>&c of &e/f disband&c."
+    left: "&aJe hebt je faction verlaten."
+    unknown: "&cOnbekend subcommando."
+    usage: { create: "&cGebruik: /{label} create <naam>", invite: "&cGebruik: /{label} invite <speler>", player: "&cGebruik: /{label} {sub} <speler>", ally: "&cGebruik: /{label} ally <add|remove> <faction>" }
+    info: { name: "&6Faction: &f{faction}", members: "&6Leden: &f{members} &7(online: &f{online}&7)" }
+    members: { title: "&6Leden van &f{faction}&6:" }
+    role: { leader: "&cLeader", officer: "&6Officer", member: "&7Lid" }
+    invite: { sent: "&aUitnodiging verstuurd naar &f{player}&a.", received: "&eJe bent uitgenodigd voor &f{faction}&e. &7(/{label} accept)", none: "&cJe hebt geen openstaande uitnodiging." }
+    kick: { success: "&aVerwijderd: &f{player}", failed: "&cVerwijderen mislukt. Controleer rang en faction." }
+    promote: { success: "&aGepromoveerd: &f{player} &7→ &6Officer", failed: "&cPromotie mislukt. Controleer rang en faction." }
+    demote: { success: "&aGedegradeerd: &f{player} &7→ &7Lid", failed: "&cDegradatie mislukt. Controleer rang en faction." }
+    leader: { success: "&aLeadership overgedragen aan: &f{player}", failed: "&cOverdracht mislukt. Controleer rang en faction." }
+    allies: { none: "&eGeen allies.", list: "&6Allies van &f{faction}&6: &f{allies}", leader_only: "&cAlleen leaders mogen allies wijzigen.", self: "&cJe eigen faction kan geen ally zijn.", added: "&aAlliantie met &f{faction} &aingeschakeld.", removed: "&eAlliantie met &f{faction} &everwijderd." }
+    home: { officer_only: "&cAlleen leaders en officers mogen de home instellen.", wrong_world: "&cDe faction-home kan alleen worden ingesteld in je eigen faction-wereld.", set: "&aFaction-home ingesteld.", missing: "&cGeen faction-home ingesteld.", teleported: "&aGeteleporteerd naar de faction-home." }
+  inbox:
+    no_faction: "&cJe zit niet in een faction."
+    empty: "&6Faction-inbox &8» &7Geen nieuwe meldingen."
+    header: "&6Faction-inbox &8» &f{count} meldingen"
+    hint: "&7Gebruik &f/f inbox clear &7om de meldingen te verwijderen."
+    cleared: "&aFaction-inbox geleegd."
+    join_hint: "&6Faction-inbox &8» &e{count} ongelezen meldingen. &7Gebruik &f/f inbox&7."
+    entry: { attacked: "&c⚔ &f{actor} &7heeft je faction aangevallen.", left: "&e• &f{actor} &7heeft de faction verlaten.", kicked: "&c• &f{actor} &7is verwijderd door &f{target}&7.", raidshop_purchase: "&d✦ &f{actor} &7kocht in de RaidShop: &d{target}&7." }
+    attacked_hint: "&c⚔ &7Je factie werd laatst aangevallen door &f{attacker} &8({time})&7. &f{count} aanvallen in 24u &8» &f/raid revenge"
+  shop:
+    title: "&2Faction-shop"
+    empty: "&cDe faction-shop is leeg."
+    list_title: "&8—— &aFaction-shop &8——"
+    no_items: "&7Geen items beschikbaar."
+    price: "&7Prijs: &e{price} Coins"
+    click_buy: "&8Klik om te kopen"
+    not_enough: "&cNiet genoeg coins."
+    purchased: "&aGekocht: &f{item} &7voor &e{price} Coins"
+    usage: { buy: "&e/{label} buy <itemId>", main: "&e/{label} list &8| &e/{label} buy <itemId>" }
+  banner:
+    title: "&c&lVetro&6&lForge &8• &fFaction-banner"
+    no_faction: "&cJe zit niet in een faction."
+    leader_only: "&cAlleen de faction-leader kan de banner aanpassen."
+    not_enough: "&cJe hebt &e{cost} Coins &cnodig."
+    option: "&fBanner: &e{color}"
+    price: "&7Prijs: &e{cost} Coins"
+    purchased: "&aFaction-banner ingesteld. &7Kosten: &e{cost} Coins"
+  upgrades:
+    title: "&c&lVetro&6&lForge &8• &fFractiemacht"
+    no_faction: "&cJe zit niet in een faction."
+    leader_only: "&cAlleen de faction-leader kan upgrades kopen."
+    elo: { name: "&b&lFractiemacht", lore: "&7Beschikbaar: &b{elo} Fractiemacht" }
+    tnt: { name: "&c&lTNT-schade", effect: "&7Bonus: &c+{value} obsidian-schade" }
+    shard_bank: { name: "&d&lShard-bank", effect: "&7Bonus: &d+{value} shard-capaciteit" }
+    obsidian: { name: "&5&lObsidian-health", effect: "&7Bonus: &d+{value} obsidian-HP" }
+    level: "&7Level: &f{level}&8/&f{max}"
+    cost: "&7Volgend level: &b{cost} Fractiemacht"
+    max: "&aMaximaal level bereikt."
+    not_enough: "&cJe hebt &b{cost} Fractiemacht &cnodig."
+    purchased: "&a{upgrade} &7is nu level &f{level}&7."
+common:
+  back: "&cTerug"
+  next: "&aVolgende"
+  page: "Pagina"
+  none: "Geen"
+  players_only: "&cAlleen spelers."
+kdr:
+  title: "&eK/D"
+  kills: "Kills"
+  deaths: "Doden"
+  ratio: "K/D"
+  notfound: "&cSpeler niet gevonden of offline."
+  usage: "Gebruik"
+warzone:
+  disparity: { low: "&aLAAG", medium: "&eMIDDEL", high: "&6HOOG", severe: "&5ERNSTIG", extreme: "&cEXTREEM", cataclysmic: "&4&lCATASTROFAAL" }
+  enter:
+    title: "&4&lWARZONE"
+    subtitle: "&7Let op: PvP actief"
+    actionbar: "&6VetroForge &8• &eJe betreedt de warzone &8» &fVeel succes!"
+  leave:
+    title: "&a&lSPAWN"
+    subtitle: "&7Je hebt de warzone verlaten"
+    actionbar: "&6VetroForge &8• &eJe verlaat de warzone &8» &fBlijf alert!"
+events:
+  gui:
+    title: "&3Events"
+    calendar: "&eEvent-kalender"
+    none_active: "&7Er is momenteel geen community-event actief."
+    upcoming: "&8Aankomende events verschijnen hier."
+    goal: "&7Doel: &f{goal}"
+    duration: "&7Duur: &f{duration}"
+    open: "Open"
+    activation: "&8Geactiveerd door staff of rotatie."
+    progress: "&7Voortgang: &f{current}&7/&f{goal} &8({pct}%)"
+    ends: "&7Einde: &f{remaining}"
+    no_limit: "&7Geen tijdslimiet"
+    info: "&eInfo"
+    id: "&7ID: &f{id}"
+    paused: "&6Status: &eGEPAUZEERD"
+    active: "&aStatus: &aACTIEF"
+    started: "&7Gestart: &f{started}"
+    reward: "&6Beloning: &fEvent Tokens"
+lootdrop:
+  spawn: "&6Lootdrop &8» &7{type} &8• &f{tier} &8• &e5:00 &8• &f{x}/{y}/{z}"
+  missing: "&cDeze lootdrop bestaat niet meer."
+  already_opened: "&eDeze lootdrop is al geopend."
+  already_looted: "&eDeze lootdrop is al geplunderd."
+  cooling: "&eDe meteoor koelt nog af: &f{seconds}s"
+  exclusive: "&cDeze lootdrop is kort exclusief voor &f{faction}"
+  too_late: "&eIemand was sneller - al geopend."
+  looted: "&aJe hebt de {tier}&a lootdrop geplunderd!"
+  rare_find: "&d&lRARE FIND &8» &f{player} &7heeft &d{item} &7gevonden!"
+  lockpick_failed: "&cLockpick mislukt!"
+  actionbar: { loot: "&aLOOT", lock: "&eLOCK {seconds}s" }
+skills:
+  gui:
+    title: "&d&lSkills &8» &7Kies je pad"
+    detail_title: "&d&l{skill} &8» &7Vaardigheden"
+    tree: "&6Skill-tree"
+  tree:
+    title: "&6Skill-tree"
+    level: "&6Level {level}"
+    status: { label: "&7Status:", unlocked: "&aVrijgespeeld", next: "&eVolgend level", locked: "&7Vergrendeld" }
+    reward: "&8• &7Beloning volgt"
+    power: "&8• &7Meer power"
+gui: { close: "&cSluiten", previous: "&eTerug", next: "&eVolgende", page: "&7Pagina {page}/{max}" }
+top:
+  crystals:
+    title: "&6Top Oorlogsbuit"
+    unavailable: "&cOorlogsbuit-systeem niet beschikbaar"
+    empty: "&7Nog geen faction-oorlogsbuit"
+    entry: "&f#{rank} &e{faction}"
+    amount: "&7Oorlogsbuit: &d{amount}"
+  players:
+    title: "&6&lTop Spelers &8» &7Kills"
+    unavailable: "&cTop-GUI is momenteel niet beschikbaar."
+    opened: "&6Toplijst &8• &ePagina &f{page}"
+    entry: "&f#{rank} &e{player}"
+    kills: "&7Kills: &a{amount}"
+    deaths: "&7Deaths: &c{amount}"
+    kdr: "&7K/D: &b{amount}"
+    prestige: "&7Prestige: &6{amount}"
+    help:
+      title: "&6VetroForge &7• &fToplijst"
+      open: "&e/{label} &7- opent pagina &f1"
+      page: "&e/{label} <pagina> &7- bijv. &e/{label} 2"
+      next: "&e/{label} next &7- volgende pagina"
+      previous: "&e/{label} prev &7- vorige pagina"
+help:
+  header: "&cVetro&6Forge &7• Hulp"
+  header_staff: "&cVetro&6Forge &7• Staff-hulp"
+  commands:
+    - "/help - Toon deze hulp"
+    - "/stats [speler] - Toon stats"
+    - "/f - Faction-commando's"
+    - "/fmenu - Open factions-menu"
+    - "/shop - Open shop"
+    - "/story - Bekijk verhaal"
+  staff:
+    commands:
+      - "/raidadmin start <atk> <tgt> <sec> <goal>"
+      - "/raidadmin stop <tgt>"
+      - "/ban <speler> <reden>"
+      - "/mute <speler> [minuten] <reden>"
+      - "/kick <speler> <reden>"
+items:
+  codex:
+    title: "&8Item-codex"
+    discovered: "&aOntdekt"
+    missing: "&7Nog niet gevonden"
+    new: "&6Item-codex &8» &aNieuw ontdekt: &f{item}"
+  dragons_breath:
+    cooldown: "&6Dragon's Breath &8» &cCooldown: &f{seconds}s"
+crates:
+  hold_key: "&6Crates &8» &cHoud een crate-key in je hoofdhand."
+  opening: "&6Crates &8» &7Open &f{crate}&7..."
+  npc_only: "&6Crystals &8» &7Wissel je Crystal in bij de &fCrystal NPC&7."
+  key_lore:
+    line1: "&7Deze {rarity} Crystal kan"
+    line2: "&7bij de &fCrystal NPC &7worden ingewisseld."
+prestige:
+  gui:
+    title: "&8Prestige"
+    overview: "&6Prestige-overzicht"
+    level: "&7Level: &f{level}"
+    rank: "&7Rang: &e{rank}"
+    xp: "&7XP: &f{xp}&8/&f{need}"
+    next: "&aVolgende rang"
+    progress: "&7Voortgang: &f{pct}%"
+    remaining: "&7Resterend: &f{xp} XP"
+links:
+  discord: "dc.vetroforge.net"
+energy:
+  regenerated: "&a+1 Energy &7({current}/{cap})"
+  command: { unavailable: "&cEnergy-systeem is niet geïnitialiseerd.", title: "⚡ Raid Energy", max: "Maximum bereikt - volledig opgeladen!", max_title: "⚡ Max Energy", max_subtitle: "Je bent volledig opgeladen", next: "Volgende +1 over ", next_actionbar: "⏳ {remaining} tot +1 Energy", rate: "(1 Energy per uur · Max. {cap})" }
+crystals:
+  command:
+    unavailable: "&cOorlogsbuit is momenteel niet beschikbaar."
+    title: "✦ Oorlogsbuit"
+    source: { faction: "Faction Bank", player: "Spelerdepot", label: "Bron: " }
+    mode: { shared: "Gedeelde faction-rekening", personal: "Persoonlijke oorlogsbuit-rekening" }
+    owner: { no_faction: "&7Je zit niet in een faction.", faction: "&7Faction: &e{faction}", player: "&7Speler: &e{player}" }
+    redeem: "Inwisselen: "
+    top: "Top Factions"
+    tip: "✨ Tip: verdien oorlogsbuit via events, lootdrops en capture zones"
+scoreboard:
+  rank: "Rang"
+  faction: "Faction"
+  faction_crystals: "Faction-oorlogsbuit"
+  player_crystals: "Jouw oorlogsbuit"
+  money: "Geld"
+  coins: "Coins"
+  elo: "Fractiemacht"
+  energy: "Energie"
+  status: "Status"
+  scouting_active: "&6Scouting actief"
+  own_faction: "Eigen faction"
+  target_faction: "Doel-faction"
+  own_online: "Eigen online"
+  target_online: "Doel online"
+  scouts: "Scouts"
+  raid_active: "&cRaid actief"
+  target: "Doel"
+  raiders: "Raiders"
+  join_time: "Join-tijd"
+  building: "Bouwen"
+  before_red_line: "&aVoor rode lijn"
+  prestige: "Prestige"
+  warzone_online: "Warzone online"
+  lootdrop: "LootDrop"
+  time: "Tijd"
+  distance: "Afstand"
+  modifier: "Modifier"
+  obsidian: "Obsidiaan"
+  attackers: "Aanvallers"
+tablist:
+  mode:
+    scouting: "&6👁 &eRaid Scouting &6👁"
+    warzone: "&6⚔ &eWarzone Gevechtszone &6⚔"
+    spawn: "&c✦ &fFactions Netwerk &c✦"
+  status:
+    scouting: "&6Scouting &8» &eActief"
+    warzone: "&6Warzone &8» &cPvP actief"
+    spawn: "&aSpawn &8» &7Veilig"
+  features:
+    scouting: "Fly • Onzichtbaar • Scout-modus"
+    default: "Raids • Warzone • Factions"
+  label:
+    faction: "Factie"
+    faction_elo: "Fractiemacht"
+    status: "Status"
+    online: "Online"
+combat:
+  blocked: "&cJe bent in gevecht en kunt dit commando niet gebruiken. &7Nog {seconds}s."
+raid:
+  broadcast:
+    started: "&cRaid &8» &7{attacker} valt &f{target} &7aan!"
+    fight: "&6Raid &8» &eGevechtsfase!"
+    ended: "&cRaid &8» &7Beëindigd (&f{reason}&7)"
+  reason: { completed: "Voltooid", timeout: "Tijd verstreken", admin: "Admin-stop", cancelled: "Geannuleerd door faction" }
+  actionbar: { active: "&c⚔ &f{target} &8| &6{broken}/{goal} &8| &e{seconds}s" }
+  shop:
+    title: "&5Raid-shop"
+    balance: { name: "&dOorlogsbuit", lore: "&7Saldo: &f{current} &8/ &f{max}" }
+    offer: { breach2: "&aBreach Charge x2", obsidian_64: "&aObsidian x64", pearls_16: "&aEnderpearls x16", speed2: "&aSpeed II (8:00)", strength2: "&aStrength II (1:30)", creeper_eggs_2: "&aCreeper-eieren x2" }
+    price: "&7Prijs: &f{price} ✦"
+    click_buy: "&8Klik om te kopen"
+    not_enough: "&cNiet genoeg Oorlogsbuit."
+    purchased: "&aGekocht! Nieuw saldo: &f{balance} ✦"
+    potion: { speed2: "&bSpeed II (8:00)", strength2: "&cStrength II (1:30)" }
+  gui:
+    title: "&4&lRaid &8» &7Systeem"
+    revenge_title: "&8Wraakdoelen"
+    start: { name: "&6Raid &8» &aRaid starten", description: "&7Start raid-scouting." }
+    attack: { name: "&6Raid &8» &cAanval starten", description: "&7Start de aanval van 30 minuten op je doelwit." }
+    join: { name: "&6Raid &8» &aRaid joinen", description: "&7Teleporteert je naar de actieve aanvalsfase." }
+    stats: { name: "&6Raid &8» &eRaid-statistieken", description: "&7Toont de huidige voortgang van je raid." }
+    target: "&7Doelwit: &c{target}"
+    costs: "&7Kosten:"
+    energy_cost: "&8• &f3 Energie &7(huidig: &e{current}&7)"
+    crystal_cost: "&8• &f3 Oorlogsbuit &7(huidig: &d{current}&7)"
+    already_scouting: "&cJe bent al aan het scouten."
+    click_start: "&eKlik om te starten"
+    click_attack: "&cKlik om de aanval te starten"
+    click_join: "&aKlik om de raid te joinen"
+    click_stats: "&eKlik voor raid-statistieken"
+    cancel: { name: "&6Raid &8» &cRaid annuleren", description: "&7Annuleert scouting of je raid.", scouting: "&eHuidig: &fScouting", raid: "&eHuidig: &fRaid", none: "&7Niets actief." }
+    shop: { name: "&6Raid &8» &aRaid-shop", description: "&7Opent de raid-shop." }
+    click_open: "&eKlik om te openen"
+    status:
+      scouting: "&eStatus &8» &fScouting"
+      raid: "&cStatus &8» &fIn raid"
+      ready: "&7Status &8» &fKlaar"
+      faction: "&7Faction: &f{faction}"
+      target: "&7Doelwit: &c{target}"
+      energy: "&7Energie: &e{energy}"
+      crystals: "&7Oorlogsbuit: &d{crystals}"
+  title: { scouting: "&6Scouting gestart", target: "&7Doel: &f{target}", prepared: "&6Raid voorbereid", join: "&7Gebruik &f/raid join&7 om mee te doen", fight: "&c⚔ Gevechtsfase", fight_subtitle: "&7De aanval begint nu", fight_locked: "&cNog niet!", wait_for_fight: "&7Wacht op de gevechtsfase", seconds: "&7{seconds}s", under_attack: "&c&l{attacker} &c&lvalt de faction aan!", under_attack_subtitle: "&7Verdedig jullie of gebruik later &f/raid revenge" }
+  session: { next: "&6Raid &8» &eVolgende faction", start: "&6Raid &8» &aAanval starten", cancel: "&6Raid &8» &cScouting annuleren", legacy_start: "&6Raid &8» &eRaid starten", lore_title: "&8VetroForge Raid", lore_locked: "&7Dit item kan niet worden gedropt." }
+  item: { breach_charge: "&cBreach Charge" }
+  message:
+    session_unavailable: "&6Raid &8» &cRaidSessionService is niet beschikbaar."
+    system_unavailable: "&6Raid &8» &cHet raid-systeem is nog niet klaar."
+    under_attack: "&c⚔ &lRAID! &7{attacker} &7valt je faction aan!"
+    join_unavailable: "&6Raid &8» &cDe raid-joinservice is niet beschikbaar."
+    faction_manager_unavailable: "&6Raid &8» &cFactionManager is niet beschikbaar."
+    already_scouting: "&6Raid &8» &cJe bent al aan het scouten."
+    already_raiding: "&6Raid &8» &cJe zit al in een raid."
+    no_faction: "&6Raid &8» &cJe zit niet in een faction."
+    not_enough_energy: "&6Raid &8» &cNiet genoeg Energy &8(&f{amount} nodig&8)&c."
+    not_enough_crystals: "&6Raid &8» &cNiet genoeg oorlogsbuit &8(&f{amount} nodig&8)&c."
+    no_targets: "&6Raid &8» &cGeen geldige doelen beschikbaar."
+    target_without_spawn: "&6Raid &8» &cDit doel heeft geen geldige faction-spawn."
+    energy_charge_failed: "&6Raid &8» &cEnergy kon niet worden afgeschreven."
+    scouting_failed_refunded: "&6Raid &8» &cScouting kon niet starten. Kosten zijn terugbetaald."
+    nothing_active: "&6Raid &8» &cJe hebt geen actieve scouting of raid."
+    no_active_raid: "&6Raid &8» &cEr is geen actieve raid."
+    eliminated_cannot_rejoin: "&6Raid &8» &cJe bent geelimineerd uit deze raid en kunt niet opnieuw meedoen."
+    eliminated_title: "&c&lGEELIMINEERD"
+    eliminated_subtitle: "&7Je bent uitgesloten van deze raid."
+    lives_remaining: "&6Raid &8» &7Levens over: &f{lives}"
+    no_ally_raid: "&6Raid &8» &cEr wordt momenteel geen bondgenoot-faction aangevallen."
+    ally_defend_joined: "&6Raid &8» &aJe helpt nu &f{target} &averdedigen."
+    no_revenge_targets: "&6Raid &8» &7Niemand heeft je factie de afgelopen 24u aangevallen."
+    scouting_stopped: "&6Raid &8» &fScouting gestopt."
+    stop_confirm: "&6Raid &8» &eBevestig annuleren: &f/raid stop confirm &7(10 seconden)"
+    stats_title: "&6Raid-statistieken &8————————"
+    stats_target: "&8» &7Doelwit: &f{target}"
+    stats_obsidian: "&8» &7Obsidian: &f{broken}&7/&f{goal}"
+    stats_raiders: "&8» &7Aanvallers: &f{raiders}"
+    stats_winner: "&8» &7Winnaar: &f{winner}"
+    stats_reason: "&8» &7Reden: &f{reason}"
+    unknown_command: "&6Raid &8» &cOnbekend commando."
+    join_phase_started: "&6Raid &8» &aJoin-fase gestart."
+    target_faction: "&8» &7Doel-faction: &c{target}"
+    join_instruction: "&8» &7Gebruik &f/raid join &7binnen &f{seconds} seconden&7."
+    join_phase_expired: "&6Raid &8» &cDe join-fase is verlopen."
+    no_join_phase: "&6Raid &8» &cJouw faction heeft geen actieve join-fase."
+    joined: "&6Raid &8» &fJe doet mee aan de raid tegen &e{target}&f."
+    red_line_building: "&8» &7Voor de rode lijn mag je bouwen, erachter niet."
+    left: "&6Raid &8» &cJe hebt de raid verlaten."
+    ended: "&6Raid &8» &cDe raid is beëindigd."
+    cannot_build_enemy: "&6Raid &8» &cJe kunt niet achter de rode lijn bouwen."
+    cannot_break_enemy: "&6Raid &8» &cJe kunt achter de rode lijn geen blokken breken."
+    crossed_red_line: "&6Raid &8» &cJe bent over de rode lijn gegaan."
+    enemy_territory: "&8» &7Dit is vijandelijk gebied. Bouwen is uitgeschakeld."
+    before_red_line: "&6Raid &8» &aJe bent weer voor de rode lijn."
+    building_enabled: "&8» &7Je kunt hier weer bouwen."
+    cannot_break_here: "&6Faction &8» &cJe kunt hier geen blokken breken."
+    cannot_build_here: "&6Faction &8» &cJe kunt hier niet bouwen."
+    obsidian_tnt_only: "&6Raid &8» &cObsidian kan alleen met TNT worden opengebroken."
+    breach_active_raid_only: "&6Raid &8» &cBreach Charges werken alleen tijdens jouw actieve raid."
+    breach_wrong_target: "&6Raid &8» &cDeze lading kan alleen op obsidian van jouw raid-doel worden geplaatst."
+    breach_armed: "&6Raid &8» &eBreach Charge geactiveerd. Ontploffing over 4 seconden."
+    underground_protected: "&6Faction &8» &cDe ondergrond is beschermd."
+    energy_manager_unavailable: "&6Raid &8» &cEnergyManager is niet beschikbaar."
+    target_service_unavailable: "&6Raid &8» &cRaidTargetService is niet beschikbaar."
+    crystal_manager_unavailable: "&6Raid &8» &cRaidCrystalManager is niet beschikbaar."
+    raid_manager_unavailable: "&6Raid &8» &cRaidManager is niet beschikbaar."
+    item_no_drop: "&6Raid &8» &cJe kunt dit item niet droppen."
+    faction_scouted: "&6Raid &8» &cJouw faction wordt gescout!"
+    attacker_faction: "&8» &7Aanvallende faction: &f{faction}"
+    scouting_target: "&6Raid &8» &fJe scout nu &e{target}&f."
+    zone_missing: "&6Raid &8» &cDe raid-zone kon niet worden gevonden."
+    invalid_target: "&6Raid &8» &cGeen geldig doel gevonden."
+    scouting_started: "&6Raid &8» &7Scouting gestart op &c{target}&7."
+    not_scouting: "&6Raid &8» &cJe bent niet aan het scouten."
+    no_scouting_target: "&6Raid &8» &cGeen scouting-doel gevonden."
+    start_failed: "&6Raid &8» &cDe raid kon niet starten. Het doel vecht mogelijk al."
+    prepared: "&6Raid &8» &aRaid voorbereid."
+    reset: "&6Raid &8» &7Je raid-status is gereset."
+    new_scouting_target: "&6Raid &8» &7Nieuw scouting-doel: &c{target}"
+    spawn_missing: "&6Raid &8» &cSpawn kon niet worden gevonden."
+    scouting_restart: "&6Raid &8» &cScouting beëindigd door een serverherstart."
+    raid_restart: "&6Raid &8» &cRaid beëindigd door een serverherstart."
+    crystals_spent: "&c-{amount} oorlogsbuit"
+    reward_progress: "&dOorlogsbuit &8» &a+{crystals} &7(Raid: {broken}/{goal} obsidian)"
+    attack_active: "&c⚔ Je valt nu actief aan!"
+    spectating: "&7Je bekijkt de raid."
+    spectating_left: "&cJe hebt spectator-modus verlaten."
+    spectating_target: "&7Nieuw doelwit: &f{target}"
+    spectating_started: "&aRaid gestart tegen &f{target}"
+    scouting_expired: "&6Raid &8» &cScouting is verlopen."
+    scouting_actionbar: "&6Scouting &8» &fResterend: &e{remaining}"
+    ping: "&ePing &8» &f{block}{hp} &8(&7{x},{y},{z}&8)"
+    rune_unknown_command: "&cOnbekend subcommando."
+    rune_invalid: "&cOngeldige rune."
+    rune_hand_required: "&cHoud een item in je hand."
+    rune_item_required: "&cLeg eerst een item in het vakje."
+    rune_added: "&aRune toegevoegd: &f{rune} &7(-{cost} oorlogsbuit)"
+    rune_already_applied: "&cDeze rune zit al op dit item."
+    rune_insufficient_crystals: "&cNiet genoeg oorlogsbuit. Nodig: &f{cost}"
